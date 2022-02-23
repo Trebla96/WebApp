@@ -4,11 +4,9 @@
 <!-- coment -->
 
 <head>
-    <!-- estilo de los caracteres... -->
+    <!-- meta es para dar info a los navegadores metadatos? -->
     <meta charset="iso-8859-l" />
-    <!-- revisar -->
     <meta name="descripcion" content="Ejemplo de HTML5" />
-    <!-- revisar -->
     <meta name="keywords" content="HTML5, CSS3, JavaScript">
     <!-- titulo del documento/pagina web -->
     <title>titulo del DOCUMENTO</title>
@@ -18,9 +16,11 @@
 
 <body>
     <header>
-        <h1>Titulo principal</h1>
+        <hgroup>
+            <h1>Titulo principal</h1>
+            <h2>Subtitulo principal</h2>
+        </hgroup>
         <nav>
-
             <ul>
                 <li>principal</li>
                 <li>fotos</li>
@@ -28,19 +28,40 @@
                 <li>contacto</li>
             </ul>
             <section>
-                texto fuera de article
+                <p>
+                    texto fuera de article
+                </p>
+                <p>
+                     <span> palabra <mark>resaltada</mark> </span>
+                </p>
+                <p>palabra <strong>negrita</strong></p>
+                <p><address><a href="https://www.youtube.com/"> youtube</a></address></p>
+
                 <article>texto del mensaje 1</article>
                 <article>texto del mensaje 2</article>
                 <article>
                     <header>
-                        <h1>Titulo del articulo</h1>
-
+                        <hgroup>
+                            <h1>Titulo del articulo 1</h1>
+                            <h2> Subtitulo del articulo 2</h2>
+                            <h3> Sub subtitulo 3</h3>
+                            <h4> sub sub subtitulo 4</h4>
+                        </hgroup>
                     </header>
-                    Texto del article .....
+                    <p>
+                        Texto del article .....
+                    </p>
+                    <figure>
+                        <img src="amungus.png" alt="">
+                        <figcaption>
+                            Esto es un amungus
+                        </figcaption>
+                    </figure>
                     <footer>
                         <p>comentarios, pie de articulo</p>
                     </footer>
                 </article>
+
 
             </section>
             <aside>
