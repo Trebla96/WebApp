@@ -1,0 +1,24 @@
+/* Establecer que todoas las etiquetas h1 del html seran asi (sin utilidad real) */
+h1 {
+    color: blue;
+    font-family: fantasy;
+}
+
+/* assignacion de un estilo a una etiqueta */
+#parrafo1 {
+    color: chocolate;
+}
+
+/* Creacion de una classe que podremos aplicar a distintas etiquetas del html */
+.clase_1_css {
+    color: blueviolet;
+    font-family: fantasy;
+    font-size: 20px;
+}
+
+/*
+
+Para modificar el aspecto de la pagina html asta con retocar este archivo,
+de tal manera que la estructura de la pagina sera estatica
+
+*/
