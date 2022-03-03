@@ -4,6 +4,13 @@ h1 {
     font-family: fantasy;
 }
 
+/* * {
+    
+    background: rgba(171, 160, 182, 0.5) url('amungus.png') center top;
+    background-size: contain;
+    height: 500px;
+} */
+
 /* assignacion de un estilo a una etiqueta */
 #parrafo1 {
     color: chocolate;
@@ -41,6 +48,40 @@ article p {
     color: tomato;
 }
 
+/* pseudo class selector
+son selectores de clases
+*/
+a:link, a:visited{ 
+    text-decoration: none;
+    background-color: darkgoldenrod;
+    border: 5px solid burlywood;
+    /* displa block indica que estamos trabajando con bloques */
+    display: block;
+    margin-bottom: 1px;
+    text-align: center;
+    margin: 5px;
+    width: 30%;
+
+}
+
+a:hover, a:active {
+
+    background-color: turquoise;
+}
+
+
+/* todos los did hijos de un section impares tendran un fondo de color x */
+section div:nth-child(odd){
+    background-color: teal;
+}
+
+/* el hijo div de un section numero 4 que al pasar el raton por encima (hover)
+pone el fondo de color x
+*/
+section div:nth-child(4):hover{
+    background-color: brown;
+    cursor: pointer;
+}
 
 
 /*
