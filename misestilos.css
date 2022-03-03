@@ -17,6 +17,32 @@ h1 {
     
 }
 
+/* se puede asignar un estilo a mas de un elemento */
+.clase2, #etiqueta {
+    color: chartreuse;
+}
+
+
+/* todas los parrafos (p) que sean de la clase 3*/
+p.clase3{
+    color: yellow;
+}
+
+
+/* se aplica a todas las p que tienen como padre un article */
+article > p {
+    color: aqua;
+
+}
+
+
+/* revisar selector hijos */
+article p {
+    color: tomato;
+}
+
+
+
 /*
 
 Para modificar el aspecto de la pagina html asta con retocar este archivo,
