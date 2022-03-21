@@ -1,0 +1,20 @@
+{
+    "@type": "Place",
+    "address": null,
+    "geo": null,
+    "Text": null,
+    "branchCode":null,
+    "event":[null],
+    "isAccessibleForFree":[null],
+    "review":[null],
+    "publicAccess": null,
+    "OpeningHoursSpecification": null,
+    "photo": null,
+    "keywords": null,
+    "specialOpeningHoursSpecification":null,
+    "telephone": null,
+    "description": null,
+    "identifier": null,
+    "image": null,
+    "name": null
+}
