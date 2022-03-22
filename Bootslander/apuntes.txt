@@ -1,0 +1,14 @@
+video{
+    mp4 -> mp3/AAC -> H264 / H265 / AV1
+    Ogg -> Vorbis -> Theora
+    WebM -> - -> Vp8 / VP9 / AV1
+}
+
+Audio{
+    mp4
+    OggMebM
+    mp3 (musica de fondo, video pequeño)
+    WAV (download)
+}
+
+Servidor, trevisar propiedad crossOrigin, para que se puedan hacer peticiones desde fuera al contenido
