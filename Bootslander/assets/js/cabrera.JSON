@@ -1,20 +1,46 @@
-{
-    "@type": "Place",
-    "address": null,
-    "geo": null,
-    "Text": null,
-    "branchCode":null,
-    "event":[null],
-    "isAccessibleForFree":[null],
-    "review":[null],
-    "publicAccess": null,
-    "OpeningHoursSpecification": null,
-    "photo": null,
-    "keywords": null,
-    "specialOpeningHoursSpecification":null,
-    "telephone": null,
-    "description": null,
-    "identifier": null,
-    "image": null,
-    "name": null
-}
+[
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "country: Revisar-formato",
+            "addressLocality": null,
+            "addressRegion": null,
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "review": {
+            "@type": "Review",
+            "author": null,
+            "datePublished": null,
+            "reviewBody": null,
+            "name": null,
+            "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": null,
+                "WorstRating": "0"
+            }
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": null,
+            "longitude": null
+        },
+        "event": [
+            null
+        ],
+        "isAccessibleForFree": [
+            null
+        ],
+        "publicAccess": null,
+        "OpeningHoursSpecification": null,
+        "photo": null,
+        "telephone": null,
+        "description": null,
+        "identifier": null,
+        "image": null,
+        "name": null,
+        "url": null
+    }
+]
