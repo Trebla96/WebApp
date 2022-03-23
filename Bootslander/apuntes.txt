@@ -13,3 +13,5 @@ Audio{
 
 Servidor, trevisar propiedad crossOrigin, para que se puedan hacer peticiones desde fuera al contenido
 
+video de fondo hero:
+https://alvarotrigo.com/blog/background-video-css/
