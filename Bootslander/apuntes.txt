@@ -15,3 +15,8 @@ Servidor, trevisar propiedad crossOrigin, para que se puedan hacer peticiones de
 
 video de fondo hero:
 https://alvarotrigo.com/blog/background-video-css/
+
+comentaros:
+python anywhere
+
+server: netlify

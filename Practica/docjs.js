@@ -13,12 +13,7 @@ if (video.canPlayType) {
     }
     // Turn the controls on.
     //video.setAttribute("controls", "controls");
-/*
-    video.setAttribute("playsInline","playsInline");
-    video.setAttribute("muted", "muted");
-    video.setAttribute("autoplay", "autoplay");
-    video.setAttribute("loop","loop");
-*/
+
     video.autoplay = true
     video.playsInline = true
     video.muted = true
