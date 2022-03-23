@@ -1,6 +1,6 @@
 // mas info:  https://blog.webdevsimplified.com/2020-11/class-list/
 const body = document.body;
-body.append("hi","he");
+body.append("hi", "he");
 
 // Creamos div
 const div = document.createElement("div");
@@ -17,15 +17,11 @@ Pero mejor crear elementos nuevos
 */
 
 const strong = document.createElement("strong");
-strong.setAttribute("id","idstrong");
+
+strong.setAttribute("id", "idstrong");
 div.id = "iddediv";
 
 strong.innerText = "hey strong text";
-
-
-div.appendChild(strong);
-//div.appendChild(div)
-
 
 
 //Añadimos div a la pagina
