@@ -13,9 +13,23 @@ if (video.canPlayType) {
     }
     // Turn the controls on.
     //video.setAttribute("controls", "controls");
+/*
+    video.setAttribute("playsInline","playsInline");
+    video.setAttribute("muted", "muted");
     video.setAttribute("autoplay", "autoplay");
+    video.setAttribute("loop","loop");
+*/
+    video.autoplay = true
+    video.playsInline = true
+    video.muted = true
+    video.loop = true
+    
+   
+    video.load();
 
     document.body.appendChild(video);
+   
+
 } else {
     var div = document.createElement("div");
     div.innerHtml = "Backup message shown if the browser does not support the video tag.";
