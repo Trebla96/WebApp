@@ -348,13 +348,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------------------------------------------------
 # Hero Section
+
+Poner overflow hidden
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  background: url("../img/hero-bg.gif");
+/*   background: url("../img/hero-bg.gif");
+  background-repeat: no-repeat; 
+*/
+  background-size: cover;
   position: relative;
   padding: 120px 0 0 0;
 }
+
+/* new */
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* end new */
+
 #hero:before {
   content: "";
   background: rgba(2, 5, 161, 0.1);
