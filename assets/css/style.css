@@ -362,8 +362,6 @@ Poner overflow hidden
   padding: 120px 0 0 0;
 }
 
-/* new */
-
 #myVideo {
   position: absolute;
   width: 100%;
@@ -731,9 +729,16 @@ section {
   font-size: 14px;
 }
 .about .video-box {
+
   background: url("../img/about.png") center center no-repeat;
   background-size: contain;
   min-height: 300px;
+  /* new */
+ 
+
+
+
+  /* end new */
 }
 .about .play-btn {
   width: 94px;
