@@ -1,2 +1,0 @@
-# WebApp
-Tecnología multimedia
