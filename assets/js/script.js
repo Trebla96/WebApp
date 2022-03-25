@@ -12,7 +12,7 @@ function heroVideo() {
             HeroVideo.src = "assets/video/mivideo.mp4";
         }
 
-        
+
 
         // Variables
         HeroVideo.autoplay = true;
@@ -29,17 +29,14 @@ function heroVideo() {
             promise.catch(error => {
                 // Auto-play was prevented
                 // Show a UI element to let the user manually start playback
-                window.alert("no ok");
-                HeroVideo.controls= true;
+                HeroVideo.controls = true;
                 HeroVideo.play();
 
             }).then(() => {
                 // Auto-play started
-                window.alert("ok");
-                
             });
-        } 
-        
+        }
+
 
     } else {
 
