@@ -23,18 +23,23 @@ function heroVideo() {
 
         hero.appendChild(HeroVideo);
 
-         var promise = hero.querySelector('video').play();
+        var promise = hero.querySelector('video').play();
 
         if (promise !== undefined) {
             promise.catch(error => {
                 // Auto-play was prevented
                 // Show a UI element to let the user manually start playback
                 window.alert("no ok");
+                HeroVideo.controls= true;
+                HeroVideo.play();
+
             }).then(() => {
                 // Auto-play started
                 window.alert("ok");
+                
             });
         } 
+        
 
     } else {
 
