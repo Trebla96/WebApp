@@ -27,19 +27,39 @@
             "latitude": null,
             "longitude": null
         },
-        "event": [
-            null
-        ],
-        "isAccessibleForFree": [
-            null
-        ],
+        "event": null,
+        "isAccessibleForFree": null,
         "publicAccess": null,
-        "OpeningHoursSpecification": null,
-        "photo": null,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null
+        },
+        "image": "usar image o photo, no las 2",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": null,
+                "encodingFormat": null
+            },
+            "exifData": null,
+            "thumbnail": {
+                "@type":"ImageObject",
+                "caption": {
+                    "@type":"MediaObject",
+                    "contentURL": null,
+                    "encodingFormat": null
+                },
+                "exifData": null
+            }
+
+        },
         "telephone": null,
         "description": null,
         "identifier": null,
-        "image": null,
         "name": null,
         "url": null
     }
