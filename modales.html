@@ -1,0 +1,98 @@
+<div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    
+    <div class="modal-dialog" id="añadirInfoElemento">
+        
+        <div class="modal-content">
+
+            <div class="close-modal" data-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- Nombre y descripción del elemento -->
+                <div class="modal-body" id="nombreElement"></div>
+            </div>
+
+            <div class="container" id="carouselElement"></div> <!-- Carousel del elemento -->
+
+            <div class="modal-body" id="descripcioElement"></div>
+
+            <div class="container">
+                <div class="row justify-content-left" style="margin-bottom: 15px; margin-top: 15px;">
+                    <div class="col-lg-6 ">
+                        
+                        <div class="dropdown">
+                            <p>Ara: <button onclick="myFunction()" class="btn btn-primary text-uppercas dropbtn"
+                                    id="horario"></button></p>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#" id="horariDll"></a>
+                                <a href="#" id="horariDm"></a>
+                                <a href="#" id="horariDx"></a>
+                                <a href="#" id="horariDj"></a>
+                                <a href="#" id="horariDv"></a>
+                                <a href="#" id="horariDs"></a>
+                                <a href="#" id="horariDg"></a>
+                            </div>
+                        </div>
+
+                        <!-- Datos information -->
+                        <div id="datosElemento"></div>
+                        <!-- Estrellas puntuación -->
+                        <div id="puntuacioPreu"></div>
+                        <!-- Favoritos -->
+                        <div class="row justify-content-center">
+                            <div id="Textfavorito"> </div>
+                            <div id="favorito"></div>
+                        </div>
+                        <div id="enlaces"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Widget tiempo -->
+                        <div class="container">
+                            <div class="weather">
+                                <div class="boxWeather">
+                                    <div class="text-center">
+                                        <h7 id="diaSetmana0"></h7><br>
+                                        <h5 id="actualTemp0"></h5>
+                                        <img id="icono0"><br>
+                                        <h7 id="description0" style="font-size: 10px;"></h7><br>
+                                        <h7 id="temp0"></h7>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="weather">
+                                <div class="boxWeather">
+                                    <div class="text-center">
+                                        <h7 id="diaSetmana1"></h7><br>
+                                        <h5 id="actualTemp1"></h5>
+                                        <img id="icono1"><br>
+                                        <h7 id="description1" style="font-size: 10px;"></h7><br>
+                                        <h7 id="temp1"></h7>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="weather">
+                                <div class="boxWeather">
+                                    <div class="text-center">
+                                        <h7 id="diaSetmana2"></h7><br>
+                                        <h5 id="actualTemp2"></h5>
+                                        <img id="icono2"><br>
+                                        <h7 id="description2" style="font-size: 10px;"></h7><br>
+                                        <h7 id="temp2"></h7>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End widged tiempo -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- Mapa -->
+                    <div class="col-md-12" id='mapid'></div>
+                </div>
+                <!-- Comentarios usuarios 
+                <div id="comentaris" class="elfsight-app-4cf356d3-6a73-4798-8a50-148d829a9c5d"></div> -->
+            </div>
+        </div>
+    </div>
+</div>

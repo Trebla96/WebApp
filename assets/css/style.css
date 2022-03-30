@@ -730,16 +730,14 @@ section {
 }
 .about .video-box {
 
-  /* background: url("../img/about.png") center center no-repeat;
-  background-size: contain; */
- 
+  background: url("../img/amungus.png") center center no-repeat;
+  background-size: contain;
   
- position: relative;
- justify-content: center;
- align-items: center;
- /* importante */
- align-self: center;
-
+  position: relative;
+/*  justify-content: center; */
+/*  align-items: center; */
+/* importante, para centrar el contenido*/
+/*  align-self: center; */
 }
 .about .videoPres{
   position: relative;

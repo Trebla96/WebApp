@@ -22,6 +22,9 @@
   <!-- AOS Animated On Scroll (animaciones al bajar a lo largo de la pagina) -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <!-- Bootstrap... -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <!-- Iconos de la pagina -->
@@ -63,32 +66,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#about">Resumen</a></li>
           <li><a class="nav-link scrollto" href="#details">Historia</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Lugares</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Itinerarios</a></li>
-          <!-- 
-            Borrar, cargarse classe dropdown  y bi bi-chevron-right ?¿??¿
-
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          -->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">Comentarios</a></li>
+          <li><a class="nav-link scrollto" href="#faq">Utilidades</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -104,7 +87,7 @@
       <source src="assets/video/mivideo.mp4" type="video/mp4">
     </video> -->
     <script>heroVideo()</script>
-    
+
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
@@ -150,17 +133,33 @@
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch"
             data-aos="fade-right">
 
-            <video controls class="videoPres" >
-              <source src="assets/video/mivideoc.mp4" type="video/mp4">
-            </video>
+            <!-- la imagen de background esta en video-box (css) -->
+            <button type="button" class="venobox play-btn mb-4" data-toggle="modal" data-target="#myModal"></button>
 
-            <div class="venobox play-btn mb-4"></div>
-
-<!-- 
-            <a href="https://www.youtube.com/watch?v=iiADhChRriM&list=PLZlA0Gpn_vH85jM1TWO6TdCtSr6ruglWn"
-              class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-            -->
           </div>
+          <!-- Ventana Modal -->
+          <div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <div class="modal-dialog modal-lg" id="añadirInfoElemento">
+
+              <div class="modal-content">
+
+                <div class="close-modal" data-dismiss="modal">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="icon"><i class="bx bx-x"></i></div>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <video autoplay loop controls class="videoPres">
+                    <source src="assets/video/mivideoc.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- Fin Ventana modal -->
 
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
@@ -353,7 +352,85 @@
         </div>
 
       </div>
-    </section><!-- End Gallery Section -->
+    </section>
+
+    <!-- End Gallery Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Itinerarios</h2>
+          <p>Explora los itinerarios</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+              <h3>Itinerario nº1</h3>
+              <ul>
+                <li>Descripcion</li>
+                <li>Imagen iconica de fondo</li>
+                <li class="na">Borrar classe na</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+            <!-- Cuidado classe box featured !! -->
+            <div class="box featured" data-aos="zoom-in" data-aos-delay="200">
+              <h3>Itinerario nº2</h3>
+              <ul>
+                <li>Descripcion</li>
+                <li>Imagen iconica de fondo</li>
+                <li class="na">Borrar classe na</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="300">
+              <h3>Itinerario nº3</h3>
+              <ul>
+                <li>Descripcion</li>
+                <li>Imagen iconica de fondo</li>
+                <li class="na">Borrar classe na</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="400">
+              <!-- Cuidado classe avanced -->
+              <span class="advanced">Advanced</span>
+              <h3>Itinerario nº4</h3>
+              <ul>
+                <li>Descripcion</li>
+                <li>Imagen iconica de fondo</li>
+                <li class="na">Borrar classe na</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
 
     <!-- ======= Testimonials Section ======= -->
     <!-- La imagen del fondo se encuentra en el css -->
@@ -446,95 +523,104 @@
     </section>
     <!-- End Testimonials Section -->
 
-    <!-- ======= Team Section ======= -->
-    <!-- deleted secction -->
-    <!-- End Team Section -->
-
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Itinerarios</h2>
-          <p>Explora los itinerarios</p>
+          <h2>Comenta tu experiencia</h2>
+          <p>Cuentanos tu experiencia de la visita al parque</p>
         </div>
 
-        <div class="row" data-aos="fade-left">
+        <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Itinerario nº1</h3>
-              <ul>
-                <li>Descripcion</li>
-                <li>Imagen iconica de fondo</li>
-                <li class="na">Borrar classe na</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
+          <!-- <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="info">
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <!-- Cuidado classe box featured !! -->
-            <div class="box featured" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Itinerario nº2</h3>
-              <ul>
-                <li>Descripcion</li>
-                <li>Imagen iconica de fondo</li>
-                <li class="na">Borrar classe na</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>A108 Adam Street, New York, NY 535022</p>
               </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <h3>Itinerario nº3</h3>
-              <ul>
-                <li>Descripcion</li>
-                <li>Imagen iconica de fondo</li>
-                <li class="na">Borrar classe na</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
               </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="400">
-              <!-- Cuidado classe avanced -->
-              <span class="advanced">Advanced</span>
-              <h3>Itinerario nº4</h3>
-              <ul>
-                <li>Descripcion</li>
-                <li>Imagen iconica de fondo</li>
-                <li class="na">Borrar classe na</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
               </div>
+
             </div>
+
+          </div> -->
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Envia Comentario</button></div>
+            </form>
+
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section><!-- End Contact Section -->
+
+    <!-- ======= Team Section ======= -->
+    <!-- deleted secction -->
+    <!-- End Team Section -->
 
     <!-- ======= F.A.Q Section ======= -->
     <section id="faq" class="faq section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>F.A.Q</h2>
-          <p>Sustituir por API de goofle maps geo cabrera</p>
+          <h2>Utilidades</h2>
+          <p>Consulta la informacion util antes de tu visita</p>
         </div>
 
-        <div class="faq-list">
+        <div>
+          Mapa de cabrera con la api de google
+        </div>
+
+        <div>
+          Api del tiempo en cabrera
+        </div>
+
+        <div>
+          Calendario de eventos
+        </div>
+
+        <div>
+          Grafico con estadisticas de visitantes por mes (svg)
+        </div>
+
+        <!-- <div class="faq-list">
           <ul>
             <li data-aos="fade-up">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
@@ -602,78 +688,12 @@
             </li>
 
           </ul>
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End F.A.Q Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Borrar</p>
-          <p>guardamos el formulario para coments de lugares en ventanas emergentes</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -764,6 +784,17 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
