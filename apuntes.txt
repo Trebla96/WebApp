@@ -16,6 +16,10 @@ Servidor, trevisar propiedad crossOrigin, para que se puedan hacer peticiones de
 video de fondo hero:
 https://alvarotrigo.com/blog/background-video-css/
 
+itinerarios
+
+https://es.balearsnatura.com/parque_natural/parque-nacional-maritimo-terrestre-del-archipielago-de-cabrera/#itinerario3
+
 comentaros:
 python anywhere
 
