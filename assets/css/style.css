@@ -1222,7 +1222,7 @@ section {
   color: #fff;
 }
 
-/* Start Carrusel itinerarios */
+/* Start Carrusel itinerarios Fuente en el HTML */
 
 @media (max-width: 768px) {
   .carousel-inner .carousel-item > div {

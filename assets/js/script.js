@@ -1,4 +1,4 @@
-/* Start Carrusel de itinerarios */
+/* Start Carrusel de itinerarios fuente en el HTML */
 
 $('#recipeCarousel').carousel({
     interval: 10000
@@ -23,6 +23,7 @@ $('#recipeCarousel').carousel({
   });
 
 /* Fin Carrusel itinerarios */
+heroVideo();
 
 function heroVideo() {
     // Create the video tag.
@@ -35,7 +36,7 @@ function heroVideo() {
         }
         // Check for mp4 support.
         if (HeroVideo.canPlayType("video/mp4")) {
-            HeroVideo.src = "assets/video/mivideo.mp4";
+            HeroVideo.src = "assets/video/mivideoc.mp4";
         }
 
 
