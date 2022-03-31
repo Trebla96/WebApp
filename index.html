@@ -40,8 +40,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- JavaScript -->
-  <script src="assets/js/script.js"></script>
+
 
   <!-- =======================================================
   * Template Name: Bootslander - v4.7.2
@@ -82,11 +81,11 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
 
-    <!-- <video autoplay muted loop id="myVideo">
+    <video autoplay muted loop id="myVideo">
       <source src="assets/video/mivideo.webm" type="video/webm">
       <source src="assets/video/mivideo.mp4" type="video/mp4">
-    </video> -->
-    <script>heroVideo()</script>
+    </video>
+   <!--  <script>heroVideo()</script> -->
 
     <div class="container">
       <div class="row justify-content-between">
@@ -134,7 +133,7 @@
             data-aos="fade-right">
 
             <!-- la imagen de background esta en video-box (css) -->
-              <button type="button" class="venobox play-btn mb-4" data-toggle="modal" data-target="#myModal"></button>
+            <button type="button" class="venobox play-btn mb-4" data-toggle="modal" data-target="#myModal"></button>
 
           </div>
           <!-- Ventana Modal -->
@@ -149,10 +148,10 @@
                     <div class="icon"><i class="bx bx-x"></i></div>
                   </button>
                 </div>
-                
+
                 <div class="modal-body">
                   <div class="embed-responsive embed-responsive-item">
-                    
+
                     <video autoplay muted loop controls class="videoPres">
                       <source src="assets/video/mivideoc.mp4" type="video/mp4">
                       <source src="assets/video/mivideo.webm" type="video/webm">
@@ -368,8 +367,130 @@
           <h2>Itinerarios</h2>
           <p>Explora los itinerarios</p>
         </div>
+        <!-- code from: -->
+        <!-- https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-multiple-cards -->
 
-         
+        <div class="container text-center my-3">
+          <h2 class="font-weight-light">Comprueba todos los itinerarios</h2>
+          <div class="row mx-auto my-auto">
+            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+              <div class="carousel-inner w-100" role="listbox">
+                
+                <div class="carousel-item active">
+                  <div class="col-md-4">
+                    <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
+
+                        <h3>El far de l'Enciola</h3>
+                        
+                          <img src="assets/img/itineraris/FarEnciola.jpg" class="img-fluid imagebox" alt="">
+                        
+                        <div class="btn-wrap">
+                          <a href="#" class="btn-buy">Ver itinerario</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
+                        <h3>Itinerario 2</h3>
+
+                        
+                          <img src="assets/img/amungus.png" class="img-fluid imagebox" alt="">
+                        
+
+                        <div class="btn-wrap">
+                          <a href="#" class="btn-buy">Ver itinerario</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
+
+                        <h3>Itinerario 3</h3>
+
+                        <img src="assets/img/itineraris/FarEnciola.jpg" class="img-fluid" alt="">
+
+                        <div class="btn-wrap">
+                          <a href="#" class="btn-buy">Ver itinerario</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
+
+                        <h3>Itinerario 4</h3>
+
+                        <img src="assets/img/itineraris/FarEnciola.jpg" class="img-fluid" alt="">
+
+                        <div class="btn-wrap">
+                          <a href="#" class="btn-buy">Ver itinerario</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
+
+                        <h3>Itinerario 5</h3>
+
+                        <img src="assets/img/itineraris/FarEnciola.jpg" class="img-fluid" alt="">
+
+                        <div class="btn-wrap">
+                          <a href="#" class="btn-buy">Ver itinerario</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-4">
+                    <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
+
+                        <h3>Itinerario 6</h3>
+
+                        <img src="assets/img/amungus.png" class="img-fluid" alt="">
+
+                        <div class="btn-wrap">
+                          <a href="#" class="btn-buy">Ver itinerario</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
+                  aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle"
+                  aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!--       
         <div class="row" data-aos="fade-left">
 
           <div class="col-lg-3 col-md-6">
@@ -412,7 +533,7 @@
 
           <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
             <div class="box featured" data-aos="zoom-in" data-aos-delay="400">
-              <!-- <span class="advanced">Advanced</span> -->
+               <span class="advanced">Advanced</span> 
               <h3>Itinerario nº4</h3>
               
               <img src="assets/img/itineraris/FarEnciola.jpg" class="img-fluid" alt="" >
@@ -423,11 +544,13 @@
             </div>
           </div>
 
-        </div> 
-      
+        </div>  
+      -->
+
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section>
+    <!-- End Pricing Section -->
 
 
     <!-- ======= Testimonials Section ======= -->
@@ -603,16 +726,16 @@
         </div>
 
         <div class="row" data-aos="fade-left">
-          
+
           <div class="col-lg-3 col-md-6">
             <div class="box featured enciola" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/utilitats/mapacabrera.png" class="img-fluid" alt="" >
+              <img src="assets/img/utilitats/mapacabrera.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-6">
             <div class="box featured enciola" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/utilitats/grafico.png" class="img-fluid" alt="" >
+              <img src="assets/img/utilitats/grafico.png" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -622,87 +745,17 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="box featured enciola" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/utilitats/calendario.png" class="img-fluid" alt="" >
+              <img src="assets/img/utilitats/calendario.png" class="img-fluid" alt="">
             </div>
           </div>
-          
+
           <div class="col-lg-3 col-md-6">
             <div class="box featured enciola" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/utilitats/tiempo.png" class="img-fluid" alt="" >
+              <img src="assets/img/utilitats/tiempo.png" class="img-fluid" alt="">
             </div>
           </div>
 
         </div>
-
-        <!-- <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                  gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
-                class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                  donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                  ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
-                class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-                  Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi
-                  quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
-                class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
-                  vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
-                  gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
-                class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem
-                dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
-                  nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis
-                  tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div> -->
 
       </div>
     </section><!-- End F.A.Q Section -->
@@ -803,7 +856,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
-   <!--  <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
+  <!--  <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
@@ -813,6 +866,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
 
 </body>
 
