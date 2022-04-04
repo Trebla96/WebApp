@@ -38,3 +38,7 @@ Obligatorio:
     -idea: (delineado de la isla de cabrera)
 
 * Descargar iconos svg
+
+<li> meter un audio de las olas del mar que suene por defecto en el hero (olas arriba) </li>
+                <li> Poner abajo geo de la isla, api google</li>
+                <li> Añadir otra pagina con una seccion que ponga mas cultura y poner contenido importado?</li>
