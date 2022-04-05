@@ -372,30 +372,6 @@ Poner overflow hidden
   top: 0;
   bottom: 0;
   z-index: -1;
-
-  /* 
-  position: fixed; -> nope, provoca error
-
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-
-  overflow: hidden; -> not working
-  */
-
-  /* 
-  width: 100vw; % mejor
-  height: 100vh; % mejor
-  object-fit: cover;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  */
-  
 }
 
 /* end new */
@@ -730,15 +706,10 @@ section {
 }
 .about .video-box {
 
-  background: url("../img/amungus.png") center center no-repeat;
-  background-size: contain;
-  min-height: 300px;
+  background: url("../img/cabrera.jpeg") center center no-repeat;
   
- /*  position: relative; */
-/*  justify-content: center;
- align-items: center; */
-/* importante, para centrar el contenido*/
- /* align-self: center; */
+  background-size: cover;
+  overflow: hidden;
 }
 .about .videoPres{
   position: relative;
@@ -940,28 +911,158 @@ section {
 .details .content p:last-child {
   margin-bottom: 0;
 }
+.details .container .content .imagebox{
+
+  overflow: hidden;
+  
+   object-fit: contain;
+   width: 25rem;
+   height: auto;
+   
+}
 
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
-.gallery .gallery-item {
+
+.gallery .container .barraBusqueda{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-wrap: wrap;
+  background-color:#0d11fcc9;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 255, 0.1),
+  inset -5px -5px 15px rgba(0, 0, 255, 0.1),
+  5px 5px 15px rgba(0, 0, 0, 0.3), 
+  -5px -5px 15px rgba(0, 0, 255, 0.1);
+  border-radius: 10px;
+  width: 100rem;
+  height: 3rem;
+  
+
+}
+
+.gallery .container .barraBusqueda span{
+
+  font-size: 1rem;
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+/* .gallery .container .barraBusqueda .wrapper input{
+
+  Pendiente poner espaciado predeterminado antes de buscar
+
+} */
+
+.gallery .container .contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px 0;
+
+}
+
+.gallery .container .contenedor .card {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 255, 0.1),
+    inset -5px -5px 15px rgba(0, 0, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), 
+    -5px -5px 15px rgba(0, 0, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  transition: 0.5s;
+  width: 1rem;
+}
+
+.gallery .container .contenedor .card .box .content button {
+  transition: 0.5s;
+}
+
+.gallery .container .contenedor .card .box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
+  transition: 0.5s;
 }
-.gallery .gallery-item img {
-  transition: all ease-in-out 0.4s;
+
+.gallery .container .contenedor .card:hover {
+  transform: translateY(-50px);
 }
-.gallery .gallery-item:hover img {
-  transform: scale(1.1);
+
+.gallery .container .contenedor .card .box .content {
+  padding: 0px;
+  text-align: center;
+  position:relative;
+  justify-content: center;
+  background-color: #1acc8d;
+  border-radius: 10px;
+  transition: 0.5s;
 }
+
+.gallery .container .contenedor .card .box .content .imagebox {
+
+  height: 23em;
+  width: auto;
+}
+
+ 
+.gallery .container .contenedor .card .box .content h3 {
+  font-size: 1.8rem;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+  position: relative;
+  top: 1rem;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.gallery .container .contenedor .card .box .content button {
+ 
+  display: inline-block;
+  
+  padding: 8px 5px;
+  background: #1acc8d;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 255, 0.2);
+  transition: 0.5s;
+}
+.gallery .container .contenedor .card .box .content button:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 255, 0.6);
+  background: #fff;
+  color: #000;
+}
+
+/* end new */
 
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials_bg.jpg") no-repeat;
+  background: url("../img/testimonials/testimonials_bg.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -986,7 +1087,11 @@ section {
   color: #fff;
 }
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  
+  overflow: hidden;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.5);
   margin: 0 auto;
@@ -1128,12 +1233,15 @@ section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%; 
+  height: 100%;
+
 }
 
 .pricing .imagebox{
  
-  object-fit: contain;
+  object-fit: cover;
+  height: 23em;
+  width: auto;
 
 }
 
@@ -1221,6 +1329,13 @@ section {
   background: #1acc8d;
   color: #fff;
 }
+/* 
+.pricing .cartaCarrusel{
+  vh/vm -> uniudades respecto al viewport total
+  em/rem -> respecto fuente div actual/respecto fuente padre -> buscar
+}
+*/
+
 
 /* Start Carrusel itinerarios Fuente en el HTML */
 

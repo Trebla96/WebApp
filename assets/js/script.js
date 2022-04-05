@@ -23,6 +23,10 @@ $('.carousel .carousel-item').each(function () {
 });
 
 /* Fin Carrusel itinerarios */
+
+/* Ventana modal */
+
+/* Fin ventana modal */
 heroVideo();
 
 function heroVideo() {
