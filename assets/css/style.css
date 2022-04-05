@@ -982,10 +982,6 @@ section {
   width: 1rem;
 }
 
-.gallery .container .contenedor .card .box .content button {
-  transition: 0.5s;
-}
-
 .gallery .container .contenedor .card .box {
   position: absolute;
   top: 10px;
@@ -1036,7 +1032,7 @@ section {
 
 }
 
-.gallery .container .contenedor .card .box .content button {
+.gallery .container .contenedor .card .box .content a {
  
   display: inline-block;
   
@@ -1049,7 +1045,7 @@ section {
   box-shadow: 0 10px 20px rgba(0, 0, 255, 0.2);
   transition: 0.5s;
 }
-.gallery .container .contenedor .card .box .content button:hover {
+.gallery .container .contenedor .card .box .content a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 255, 0.6);
   background: #fff;
   color: #000;

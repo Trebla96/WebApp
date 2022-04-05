@@ -385,7 +385,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Castillo</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/castillo.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -395,7 +395,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Far de l'Enciola</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/FarEnciola.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -405,7 +405,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Sa Cova Blava</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/covablava.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -415,7 +415,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Monumento a los franceses</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/frances.jpeg" class="imagebox" alt="">
                 </div>
               </div>
@@ -425,7 +425,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Jardin botanico</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/botanico.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -435,7 +435,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Cantina</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/cantina.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -445,7 +445,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Necropolis Bizantina</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/necrobizan.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -455,7 +455,7 @@
               <div class="box">
                 <div class="content">
                   <h3>Museo</h3>
-                  <a href="#" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
                   <img src="assets/img/lugares/museo.jpg" class="imagebox" alt="">
                 </div>
               </div>
@@ -465,15 +465,52 @@
               <div class="box">
                 <div class="content">
                   <h3>Taller de purpura</h3>
-                  <button type="button" class="position-absolute bottom-0 start-50 translate-middle-x"
-                    data-target="#myModal2">Mas información</button>
+                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas información</a>
+                  
                   <img src="assets/img/lugares/purpura.png" class="imagebox" alt="">
                 </div>
-
               </div>
             </div>
-
           </div>
+
+          <!-- Ventana Modal -->
+          <div class="portfolio-modal modal fade" id="why" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <div class="modal-dialog modal-xl" id="añadirInfoElemento">
+
+              <div class="modal-content">
+
+                <div class="close-modal" data-dismiss="modal">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="icon"><i class="bx bx-x"></i></div>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="embed-responsive embed-responsive-item">
+                    <h2>Castillo</h2>
+
+                    <img src="assets/img/lugares/castillo.jpg" alt="">
+                    <div>
+                      <p>
+                        informacion del Castillo informacion del Castillo 
+                        informacion del Castillo informacion del Castillo
+                        informacion del Castillo informacion del Castillo
+                        informacion del Castillo informacion del Castillo 
+                        informacion del Castillo informacion del Castillo
+                        informacion del Castillo informacion del Castillo
+                      </p>
+                      <img src="assets/img/mapa_Castillo.png" alt="">
+                      <img src="assets/img/puntuacion.png" alt=""> 
+                      <p>Añadir a favoritos.</p>
+                      <img src="assets/img/coments.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fin Ventana modal -->
 
         </div>
 
@@ -482,33 +519,12 @@
 
     </section>
 
-    <!-- Ventana Modal -->
-    <div class="portfolio-modal modal fade" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- <button type="button" class="position-absolute bottom-0 start-50 translate-middle-x"
+                    data-target="#why">Mas información</button>
+   
+ -->
 
-      <div class="modal-dialog modal-xl" id="añadirInfoElemento">
 
-        <div class="modal-content">
-
-          <div class="close-modal" data-dismiss="modal">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <div class="icon"><i class="bx bx-x"></i></div>
-            </button>
-          </div>
-
-          <div class="modal-body">
-            <div class="embed-responsive embed-responsive-item">
-
-              <!-- <video autoplay muted loop controls class="videoPres">
-                                      <source src="assets/video/mivideoc.mp4" type="video/mp4">
-                                      <source src="assets/video/mivideo.webm" type="video/webm">
-                                    </video> -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- Fin Ventana modal -->
 
     <!-- End Gallery Section -->
 
