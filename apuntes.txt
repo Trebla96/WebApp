@@ -47,3 +47,29 @@ Obligatorio:
 Quizas intentar capturar de un fichero JASON algunos comentarios que deje la gente y printarlos aqui?
                   Eliminar la imagen de perfil y añadir la puntuacuion del comentario, quizas añadir una foto miniatura
                   del lugar sovre el que comenta, o dejar solo cments de cabrera en general?
+
+
+Documentacion 1a entrega:
+
+    - Disseño grafico {Enfasis}
+    - Interfaz de usuario
+        -bootstrap-platilla 
+        -modificaciones a la plantilla
+            -botones
+            - efectos visuales
+    -JSON 
+        - con 2 ejemplos (o enteros)
+        - Datos propios explicados.
+
+Segunda entrega (1a/2a semana de mayo): -> intentar acabar durante fiestas // BAsicamente tener la web terminada practicamente
+
+    - Prototipo + Funcionalidad(todas las funcionalidades de la web operativas, busquedas apis...)
+    -JSON propios completos
+    -API's externas funcionando
+    -Funcionalidad completa de la pagina web
+
+Tercera entrega:
+
+    - Web sematica ???
+    - Progresive web App ???
+
