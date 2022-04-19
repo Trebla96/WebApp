@@ -306,9 +306,132 @@
             }
         },
         "telephone": null,
-        "description": "",
+        "description": "Restos de estructuras que podrían haber formado parte de un taller de producción de púrpura en Cabrera, que habría mantenido su actividad en el siglo V d.C.",
         "identifier": null,
         "name": "Taller de purpura",
+        "url": null
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.140103, 
+            "longitude": 2.941354 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/jardin.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "",
+        "identifier": null,
+        "name": "Jardin Botanico",
+        "url": null
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.143784,
+            "longitude": 2.938669 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/jardin.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "Cinco tumbas cubiertas con losas son algunos de los descubrimientos de la necrópolis bizantina. También al lado de estas se puede apreciar una fosa con muros de piedra formando una pileta.",
+        "identifier": null,
+        "name": "Necropolis Bizantina",
+        "url": null
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": null,
+            "longitude": null 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/jardin.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "meter coordenadas del taller de purpura",
+        "identifier": null,
+        "name": "Factoria de salazones",
         "url": null
     }
     
