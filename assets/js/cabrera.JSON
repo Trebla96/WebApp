@@ -62,5 +62,172 @@
         "identifier": null,
         "name": null,
         "url": null
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.152591,
+            "longitude": 2.931742
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/castillo.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "El Castillo de Cabrera es una fortificación situada en la isla española de Cabrera, municipio de Palma de Mallorca, Baleares. Actualmente es una sólida mole hexagonal, ligeramente alargada, situada sobre la punta oriental de la entrada a su puerto natural, con una altura de 72 metros sobre el nivel del mar. Los sucesivos ataques que ha sufrido a lo largo de su historia hacen pensar que tiene poco que ver con la construcción original. Sólo en el siglo XVI el castillo fue destruido y reconstruido al menos en diez ocasiones.",
+        "identifier": "RI-51-0008363",
+        "name": "Castillo",
+        "url": "https://es.wikipedia.org/wiki/Castillo_de_Cabrera_(Baleares)"
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.162818, 
+            "longitude": 2.947318
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/cova_blava.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "Sa Cova Blava, o Cueva Azul, es una cueva a la cual únicamente podrás acceder por mar, A media tarde, los rayos del sol entran en la cueva creando unos efectos de luz que dan lugar a un incréible color del mar, una gran gama de azules que se reflejan en el techo y crean un escenario idílico. Ya dentro de Sa Cova Blava es el momento de olvidarse de todo, contemplar este lugar y disfrutar de un apetecible baño.",
+        "identifier": null,
+        "name": "Sa Cova Blava",
+        "url": null
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.139855, 
+            "longitude": 2.941240
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":"15:00:00",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "12:30:00",
+            "exceptions": null,
+            "description": null
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/museo.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "El museo de Cabrera es un antiguo \"celler\" habilitado como museo en el parque nacional marítimo terrestre del Archipiélago de Cabrera. \"Es Celler\" se encuentra hacia el interior de la isla, en dirección al valle de Ses Quatre Quarterades. Tiene tres plantas, comunicadas entre sí por espacios que dejan ver toda la altura del edificio. Se exponen elementos de etnología y naturaleza relacionados con el parque, y en las inmediaciones del edificio un pequeño jardín botánico muestra muchas de las plantas de Cabrera, que constituyen el 21% de los endemismos del archipiélago balear.",
+        "identifier": null,
+        "name": "Museo de Cabrera",
+        "url": "https://www.illesbalears.travel/recurso-turistico/es/mallorca/museo-cabrera"
+    },
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.140115, 
+            "longitude": 2.941371
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/museo.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "El museo de Cabrera es un antiguo \"celler\" habilitado como museo en el parque nacional marítimo terrestre del Archipiélago de Cabrera. \"Es Celler\" se encuentra hacia el interior de la isla, en dirección al valle de Ses Quatre Quarterades. Tiene tres plantas, comunicadas entre sí por espacios que dejan ver toda la altura del edificio. Se exponen elementos de etnología y naturaleza relacionados con el parque, y en las inmediaciones del edificio un pequeño jardín botánico muestra muchas de las plantas de Cabrera, que constituyen el 21% de los endemismos del archipiélago balear.",
+        "identifier": null,
+        "name": "Monumento de los franceses",
+        "url": null
     }
+
+
+    
 ]

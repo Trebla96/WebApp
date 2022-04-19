@@ -73,3 +73,7 @@ Tercera entrega:
     - Web sematica ???
     - Progresive web App ???
 
+
+
+https://schema.org/OpeningHoursSpecification
+
