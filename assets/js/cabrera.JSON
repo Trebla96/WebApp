@@ -199,8 +199,8 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.140115, 
-            "longitude": 2.941371
+            "latitude": 39.139424, 
+            "longitude": 2.940461 
         },
         "event": null,
         "isAccessibleForFree": true,
@@ -217,17 +217,99 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/museo.jpg",
+                "contentURL": "assets/img/lugares/monumento_franceses.jpg",
                 "encodingFormat": null
             }
         },
         "telephone": null,
-        "description": "El museo de Cabrera es un antiguo \"celler\" habilitado como museo en el parque nacional marítimo terrestre del Archipiélago de Cabrera. \"Es Celler\" se encuentra hacia el interior de la isla, en dirección al valle de Ses Quatre Quarterades. Tiene tres plantas, comunicadas entre sí por espacios que dejan ver toda la altura del edificio. Se exponen elementos de etnología y naturaleza relacionados con el parque, y en las inmediaciones del edificio un pequeño jardín botánico muestra muchas de las plantas de Cabrera, que constituyen el 21% de los endemismos del archipiélago balear.",
+        "description": "El Monumento a los prisioneros de las guerras napoleónicas que murieron en Cabrera fue erigido por el Príncipe de Joinville en 1847. La mayor parte de los prisioneros habitaron el valle del puerto, y muchos de ellos fueron enterrados en esta zona.",
         "identifier": null,
         "name": "Monumento de los franceses",
         "url": null
+    },
+
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.129188,  
+            "longitude": 2.921810 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/far_enciola.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "El faro de n'Ensiola es un faro situado en el suroeste de la Isla de Cabrera, Aunque las obras del faro terminaron en 1868, en 1870 se instaló el aparato óptico. El proyecto original de agosto de 1861 era un faro de 2º orden con un gran edificio circular de unos 25 m de diámetro y con la torre no en el centro sino en la parte interna del arco de circunferencia orientado hacia el mar. Tenía 15 habitaciones y fue rechazado en Madrid por considerarlo con excesivas dependencias y lujo fuera de lugar para un edificio destinado a faro.",
+        "identifier": null,
+        "name": "Far de n'Enciola",
+        "url": null
+    },
+
+
+    {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": 39.143990,   
+            "longitude": 2.936197 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "OpeningHoursSpecification": {
+            "@type":"OpeningHoursSpecification",
+            "closes":null,
+            "dayOfWeek": null,
+            "opens": null,
+            "exceptions": null,
+            "description": "No cierra"
+        },
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/purpura.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "",
+        "identifier": null,
+        "name": "Taller de purpura",
+        "url": null
     }
-
-
     
 ]
