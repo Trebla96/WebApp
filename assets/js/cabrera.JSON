@@ -3,71 +3,6 @@
         "@type": "Place",
         "address": {
             "@type": "PostalAddress",
-            "addressCounter": "country: Revisar-formato",
-            "addressLocality": null,
-            "addressRegion": null,
-            "postalCode": null,
-            "streetAddress": null
-        },
-        "review": {
-            "@type": "Review",
-            "author": null,
-            "datePublished": null,
-            "reviewBody": null,
-            "name": null,
-            "reviewRating": {
-                "@type": "Rating",
-                "bestRating": "5",
-                "ratingValue": null,
-                "WorstRating": "0"
-            }
-        },
-        "geo": {
-            "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null
-        },
-        "event": null,
-        "isAccessibleForFree": null,
-        "publicAccess": null,
-        "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
-            "dayOfWeek": null,
-            "opens": null,
-            "exceptions": null
-        },
-        "image": "usar image o photo, no las 2",
-        "photo": {
-            "@type": "ImageObject",
-            "caption": {
-                "@type":"MediaObject",
-                "contentURL": null,
-                "encodingFormat": null
-            },
-            "exifData": null,
-            "thumbnail": {
-                "@type":"ImageObject",
-                "caption": {
-                    "@type":"MediaObject",
-                    "contentURL": null,
-                    "encodingFormat": null
-                },
-                "exifData": null
-            }
-
-        },
-        "telephone": null,
-        "description": null,
-        "identifier": null,
-        "name": null,
-        "url": null
-    },
-
-    {
-        "@type": "Place",
-        "address": {
-            "@type": "PostalAddress",
             "addressCounter": "España",
             "addressLocality": "Palma de Mallorca",
             "addressRegion": "Islas Baleares",
@@ -135,7 +70,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/cova_blava.jpg",
+                "contentURL": "assets/img/lugares/cova_blava.jpeg",
                 "encodingFormat": null
             }
         },
@@ -217,7 +152,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/monumento_franceses.jpg",
+                "contentURL": "assets/img/lugares/monumento_franceses.jpeg",
                 "encodingFormat": null
             }
         },
@@ -301,7 +236,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.jpg",
+                "contentURL": "assets/img/lugares/purpura.png",
                 "encodingFormat": null
             }
         },
@@ -383,7 +318,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/jardin.jpg",
+                "contentURL": "assets/img/lugares/necrobizan.jpg",
                 "encodingFormat": null
             }
         },
@@ -424,7 +359,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/jardin.jpg",
+                "contentURL": "assets/img/lugares/purpura.png",
                 "encodingFormat": null
             }
         },

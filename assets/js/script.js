@@ -1,4 +1,76 @@
+/* start JSON */
 
+
+
+
+
+
+function cargarDades() {
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = "assets/js/cabrera.json";
+
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            dades = JSON.parse(xmlhttp.responseText);
+            for (var i = 0; i < dades.length; i++) {
+
+                crearCarta(dades[i].name, dades[i].photo.caption.contentURL);
+            }
+        }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+
+function crearCarta(titol, foto) {
+    //id = cartas_lugares
+
+    var carta = document.createElement("div");
+    carta.classList.add("card");
+
+    var caja = document.createElement("div");
+    caja.classList.add("box");
+
+    var contenido = document.createElement("div");
+    contenido.classList.add("content");
+
+    var titulo = document.createElement("h3");
+    titulo.innerText = titol;
+
+    var boton = document.createElement("a");
+    boton.classList.add("position-absolute");
+    boton.classList.add("bottom-0");
+    boton.classList.add("start-50");
+    boton.classList.add("translate-middle-x");
+    boton.href = "#why";
+    boton.innerText = "Mas información";
+    var att = document.createAttribute("data-toggle");
+    att.value = "modal";
+    boton.setAttribute("data-toggle", "modal");
+    
+
+    var imagen = document.createElement("img");
+    imagen.src = foto;
+    imagen.classList.add("imagebox");
+    imagen.alt = "";
+
+    contenido.appendChild(titulo);
+    contenido.appendChild(boton);
+    contenido.appendChild(imagen);
+    caja.appendChild(contenido);
+    carta.appendChild(caja);
+    cartas_lugares.appendChild(carta);
+
+}
+
+cargarDades();
+
+
+/* end JSON */
 
 /* Ventana modal */
 
@@ -56,15 +128,17 @@ function heroVideo() {
 
 
 /* Start Carrousel */
-jQuery(document).ready(function () {
+/* jQuery(document).ready(function () {
 
     new WOW().init();
 
     $('#carousel-example').on('slide.bs.carousel', function (e) {
-        /*
-            CC 2.0 License Iatek LLC 2018 - Attribution required
-        */
-        var $e = $(e.relatedTarget);
+
+         */
+/*
+    CC 2.0 License Iatek LLC 2018 - Attribution required
+*/
+/*         var $e = $(e.relatedTarget);
         var idx = $e.index();
         var itemsPerSlide = 5;
         var totalItems = $('.carousel-item').length;
@@ -82,5 +156,5 @@ jQuery(document).ready(function () {
             }
         }
     });
-});
+}); */
 /* End Carrousel */
