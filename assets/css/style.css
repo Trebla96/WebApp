@@ -928,12 +928,93 @@ section {
   -5px -5px 15px rgba(0, 0, 255, 0.1);
   border-radius: 10px;
   width: 100rem;
-  height: 3rem;
+  height:fit-content;
+
+}
+
+.gallery .container .barraBusqueda .sort-container{
+
+  float: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   
 
 }
 
 .gallery .container .barraBusqueda span{
+  color: #FFFFFF;
+  font-size: 1.2rem;
+
+}
+
+.gallery .container .barraBusqueda .sort-container .sort-selector{
+  margin-left: 1rem;;
+  height: 2rem;
+  width: 20rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 2rem 0 1rem;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,1);
+}
+
+.gallery .container .barraBusqueda .wrapper{
+  max-width: 20rem;
+}
+
+.gallery .container .barraBusqueda .wrapper .search-container{
+  position: relative;
+  float: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  margin-left: 0rem;
+  width: 45rem;
+}
+
+.gallery .container .barraBusqueda .wrapper .search-container input{
+  position: relative;
+  height: 2rem;
+  width: 15rem;
+  margin-left: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 2rem 0 1rem;
+  font-size: 1.2rem;
+  box-shadow: 0px 1px 5px rgba(0,0,0,1);
+}
+
+/* .gallery .container .barraBusqueda .wrapper .search-container.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+/* .gallery .container .barraBusqueda .wrapper .search-container .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+/* .gallery .container .barraBusqueda .wrapper .search-container .autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.gallery .container .barraBusqueda .wrapper .search-container.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.gallery .container .barraBusqueda .wrapper .gallery .container .barraBusqueda span{
 
   font-size: 1rem;
   position: relative;
@@ -941,7 +1022,7 @@ section {
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
 
-}
+} */
 
 /* .gallery .container .barraBusqueda .wrapper input{
 
@@ -988,7 +1069,7 @@ section {
 }
 
 .gallery .container .contenedor .card:hover {
-  transform: translateY(-50px);
+  transform: translateY(-1.2rem);
 }
 
 .gallery .container .contenedor .card .box .content {

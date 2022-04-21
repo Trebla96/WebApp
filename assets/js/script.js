@@ -1,8 +1,11 @@
 /* start JSON */
 
+var dades_internes= [];
+
+cargarDades();
 
 
-
+  
 
 
 function cargarDades() {
@@ -16,18 +19,33 @@ function cargarDades() {
             dades = JSON.parse(xmlhttp.responseText);
             for (var i = 0; i < dades.length; i++) {
 
-                crearCarta(dades[i].name, dades[i].photo.caption.contentURL);
+                if (dades[i].type == "Place"){
+
+                    dades_internes.push(dades[i]);
+
+                }
             }
+
+            crear_portfoli_lugares();
+            
         }
     };
-
+     
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
 
+function crear_portfoli_lugares() {
+         
+    for (var i = 0; i < dades_internes.length; i++) {
 
+        crearCarta(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
+        
+    }
+}
+
+//Funcion que crea cartas de los lugares a visitar
 function crearCarta(titol, foto) {
-    //id = cartas_lugares
 
     var carta = document.createElement("div");
     carta.classList.add("card");
@@ -67,7 +85,7 @@ function crearCarta(titol, foto) {
 
 }
 
-cargarDades();
+
 
 
 /* end JSON */

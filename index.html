@@ -355,13 +355,14 @@
 
         <div class="row">
 
-          <div class="barraBusqueda" data-aos="fade-up">
+          <div class="row barraBusqueda" data-aos="fade-up">
 
-            <div class=" col-lg-6 ">
+            <div class=" col-lg-6 sort-container">
+              <!-- col-md-4 order-1 order-md-2 -->
               <!-- sort-container col-lg-6 -->
               <!-- Filtrar -->
               <span>Ordenar por:</span>
-              <select id="selectOrden">
+              <select id="selectOrden" class = sort-selector>
                 <option value="0">Predeterminado</option>
                 <option value="1">Mas valorados</option>
               </select>
@@ -370,11 +371,16 @@
             <div class="col-lg-6 wrapper">
               <!-- wrapper col-lg-6 -->
               <!-- Barra buscador-->
+              
               <div class="search-container">
+                <span>Busqueda por nombre:</span>
                 <a href="" target="_blank" rel="noopener" hidden></a>
                 <input type="text" name="search" id="myInput" placeholder="Buscar..." /> <!-- text-indent: 1em -->
-                <div class="autocom-box">
-                </div>
+                <!-- Makr it weith js... -->
+<!--                 <div class="autocom-box">
+                 <li>Aaa 1</li>
+                  <li>bbb 2</li> 
+                </div> -->
                 <div class="icon"><i class="fas fa-search"></i></div>
               </div>
             </div>
@@ -564,7 +570,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/lugares/museo.jpeg" class="testimonial-img" alt="">
+                <img src="assets/img/lugares/museo.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
 
                 <p>

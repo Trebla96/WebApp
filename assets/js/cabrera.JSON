@@ -1,6 +1,6 @@
 [
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -41,7 +41,7 @@
     },
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -82,7 +82,7 @@
     },
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -123,7 +123,7 @@
     },
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -165,7 +165,7 @@
 
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -207,7 +207,7 @@
 
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -248,7 +248,7 @@
     },
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -289,7 +289,7 @@
     },
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
@@ -330,7 +330,7 @@
     },
 
     {
-        "@type": "Place",
+        "type": "Place",
         "address": {
             "@type": "PostalAddress",
             "addressCounter": "España",
