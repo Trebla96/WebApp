@@ -1,11 +1,11 @@
 /* start JSON */
 
-var dades_internes= [];
+var dades_internes = [];
 
 cargarDades();
 
 
-  
+
 
 
 function cargarDades() {
@@ -19,7 +19,7 @@ function cargarDades() {
             dades = JSON.parse(xmlhttp.responseText);
             for (var i = 0; i < dades.length; i++) {
 
-                if (dades[i].type == "Place"){
+                if (dades[i].type == "Place") {
 
                     dades_internes.push(dades[i]);
 
@@ -27,20 +27,20 @@ function cargarDades() {
             }
 
             crear_portfoli_lugares();
-            
+
         }
     };
-     
+
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
 
 function crear_portfoli_lugares() {
-         
+
     for (var i = 0; i < dades_internes.length; i++) {
 
         crearCarta(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
-        
+
     }
 }
 
@@ -69,7 +69,7 @@ function crearCarta(titol, foto) {
     var att = document.createAttribute("data-toggle");
     att.value = "modal";
     boton.setAttribute("data-toggle", "modal");
-    
+
 
     var imagen = document.createElement("img");
     imagen.src = foto;
@@ -146,33 +146,29 @@ function heroVideo() {
 
 
 /* Start Carrousel */
-/* jQuery(document).ready(function () {
-
-    new WOW().init();
-
-    $('#carousel-example').on('slide.bs.carousel', function (e) {
-
-         */
-/*
-    CC 2.0 License Iatek LLC 2018 - Attribution required
-*/
-/*         var $e = $(e.relatedTarget);
-        var idx = $e.index();
-        var itemsPerSlide = 5;
-        var totalItems = $('.carousel-item').length;
-
-        if (idx >= totalItems - (itemsPerSlide - 1)) {
-            var it = itemsPerSlide - (totalItems - idx);
-            for (var i = 0; i < it; i++) {
-                // append slides to end
-                if (e.direction == "left") {
-                    $('.carousel-item').eq(i).appendTo('.carousel-inner');
-                }
-                else {
-                    $('.carousel-item').eq(0).appendTo('.carousel-inner');
-                }
-            }
+$('.owl-carousel').owlCarousel({
+    loop: true,
+   
+    stagePadding: 0,
+    autoWidth:true,
+    nav: true,
+    center :true,
+    
+    
+    responsive: {
+        0: {
+            items: 1,
+            
+        },
+        600: {
+            items: 2,
+            
+        },
+        1000: {
+            items: 3,
+            
         }
-    });
-}); */
-/* End Carrousel */
+    }
+})
+
+/* End carousel */
