@@ -152,6 +152,7 @@ $('.owl-carousel').owlCarousel({
     stagePadding: 0,
     autoWidth:true,
     nav: true,
+    navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
     center :true,
     
     
