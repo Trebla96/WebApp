@@ -4,10 +4,6 @@ var dades_internes = [];
 
 cargarDades();
 
-
-
-
-
 function cargarDades() {
 
     var xmlhttp = new XMLHttpRequest();
@@ -19,14 +15,13 @@ function cargarDades() {
             dades = JSON.parse(xmlhttp.responseText);
             for (var i = 0; i < dades.length; i++) {
 
-                if (dades[i].type == "Place") {
+                dades_internes.push(dades[i]);
 
-                    dades_internes.push(dades[i]);
-
-                }
             }
 
             crear_portfoli_lugares();
+            carousel_itineraris();
+            carrr();
 
         }
     };
@@ -39,9 +34,73 @@ function crear_portfoli_lugares() {
 
     for (var i = 0; i < dades_internes.length; i++) {
 
-        crearCarta(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
+        if (dades[i].type == "Place") {
 
+            crearCarta(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
+        }
     }
+}
+
+function carousel_itineraris() {
+
+    for (var i = 0; i < dades_internes.length; i++) {
+
+        if (dades[i].type == "Itinerari") {
+
+            crearItem(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
+        }
+    }
+}
+
+function crearItem(titol, foto) {
+
+    var item = document.createElement("div");
+    item.classList.add("item");
+
+    var columna = document.createElement("div");
+    columna.classList.add("col-md-4");
+
+    var carta = document.createElement("div");
+    carta.classList.add("card");
+    carta.classList.add("card-body");
+    carta.classList.add("box");
+    carta.classList.add("featured");
+    var att = document.createAttribute("data-in");
+    att.value = "zoom-in";
+    var att2 = document.createAttribute("data-aos-delay");
+    att2.value = "100";
+
+    var titulo = document.createElement("h3");
+    titulo.innerText = titol;
+
+    var imagen = document.createElement("img");
+    imagen.src = foto;
+    imagen.classList.add("imagebox");
+    imagen.alt = "";
+
+    var boton = document.createElement("div");
+    boton.classList.add("btn-wrap");
+
+    var boton_l = document.createElement("button");
+    boton_l.classList.add("btn-buy");
+    boton_l.type="button";
+    var att3 = document.createAttribute("data-toggle");
+    att3.value = "modal";
+    boton_l.setAttribute("data-toggle", "modal");
+    var att4 = document.createAttribute("data-target");
+    att4.value = "#why2";
+    boton_l.setAttribute("data-target", "#why2");
+    boton_l.innerText = "Mas información";
+
+
+    boton.appendChild(boton_l);
+    carta.appendChild(titulo);
+    carta.appendChild(imagen);
+    carta.appendChild(boton);
+    columna.appendChild(carta);
+    item.appendChild(columna);
+    carousel.prepend(item);
+    
 }
 
 //Funcion que crea cartas de los lugares a visitar
@@ -85,9 +144,6 @@ function crearCarta(titol, foto) {
 
 }
 
-
-
-
 /* end JSON */
 
 /* Ventana modal */
@@ -108,8 +164,6 @@ function heroVideo() {
         if (HeroVideo.canPlayType("video/mp4")) {
             HeroVideo.src = "assets/video/mivideoc.mp4";
         }
-
-
 
         // Variables
         HeroVideo.autoplay = true;
@@ -145,31 +199,39 @@ function heroVideo() {
 
 
 
+
 /* Start Carrousel */
-$('.owl-carousel').owlCarousel({
-    loop: true,
-   
-    stagePadding: 0,
-    autoWidth:true,
-    nav: true,
-    navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
-    center :true,
+
+function carrr(){
+
+    $('.owl-carousel').owlCarousel({
+
+        loop: true,
+        stagePadding: 0,
+        autoWidth: true,
+        nav: true,
+        navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
+        center: true,
     
-    
-    responsive: {
-        0: {
-            items: 1,
-            
-        },
-        600: {
-            items: 2,
-            
-        },
-        1000: {
-            items: 3,
-            
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 3,
+            }
         }
-    }
-})
+    })
+
+}
+
 
 /* End carousel */
+
+/* Start API maps */
+
+
+/* End API maps */
