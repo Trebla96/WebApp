@@ -1,5 +1,5 @@
 /* start JSON */
-
+var dades = [];
 var dades_internes = [];
 
 cargarDades();
@@ -12,7 +12,9 @@ function cargarDades() {
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
             dades = JSON.parse(xmlhttp.responseText);
+
             for (var i = 0; i < dades.length; i++) {
 
                 dades_internes.push(dades[i]);
@@ -28,7 +30,9 @@ function cargarDades() {
 
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+
 }
+
 
 function crear_portfoli_lugares() {
 
@@ -83,7 +87,7 @@ function crearItem(titol, foto) {
 
     var boton_l = document.createElement("button");
     boton_l.classList.add("btn-buy");
-    boton_l.type="button";
+    boton_l.type = "button";
     var att3 = document.createAttribute("data-toggle");
     att3.value = "modal";
     boton_l.setAttribute("data-toggle", "modal");
@@ -100,7 +104,7 @@ function crearItem(titol, foto) {
     columna.appendChild(carta);
     item.appendChild(columna);
     carousel.prepend(item);
-    
+
 }
 
 //Funcion que crea cartas de los lugares a visitar
@@ -202,7 +206,7 @@ function heroVideo() {
 
 /* Start Carrousel */
 
-function carrr(){
+function carrr() {
 
     $('.owl-carousel').owlCarousel({
 
@@ -212,7 +216,7 @@ function carrr(){
         nav: true,
         navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
         center: true,
-    
+
         responsive: {
             0: {
                 items: 1,
@@ -235,3 +239,28 @@ function carrr(){
 
 
 /* End API maps */
+
+function r(val) {
+    console.log(val)
+}
+
+
+/* Actualiza la ventana modal */
+function rellenar_plantilla(nombre) {
+    const plantilla = document.querySelector("#plantilla")
+    const container = document.querySelector("#info-dinamica-modal")
+    const cuerpoAnterior = container.firstChild
+
+    if (cuerpoAnterior !== undefined) {
+        container.removeChild(cuerpoAnterior)
+    }
+
+
+
+    plantilla_clone = plantilla.content.cloneNode(true)
+    plantilla_clone.querySelector(".parrafotemp").innerText = "texto desde js"
+    plantilla_clone.querySelector(".titulotemp").innerText = "titulo desde js"
+    container.appendChild(plantilla_clone)
+
+}
+rellenar_plantilla()

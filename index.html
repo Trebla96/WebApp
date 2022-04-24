@@ -383,12 +383,7 @@
               <div class="search-container">
                 <span>Busqueda por nombre:</span>
                 <a href="" target="_blank" rel="noopener" hidden></a>
-                <input type="text" name="search" id="myInput" placeholder="Buscar..." /> <!-- text-indent: 1em -->
-                <!-- Makr it weith js... -->
-                <!--                 <div class="autocom-box">
-                 <li>Aaa 1</li>
-                  <li>bbb 2</li> 
-                </div> -->
+                <input type="text" name="search" id="myInput" placeholder="Buscar..." />
                 <div class="icon"><i class="fas fa-search"></i></div>
               </div>
             </div>
@@ -408,7 +403,8 @@
                 </div>
               </div>
             </div>
-        -->
+
+          -->
 
           </div>
 
@@ -416,7 +412,63 @@
 
         <!-- Ventana Modal -->
 
-        <div class="portfolio-modal modal fade" id="why" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- plantilla ventana modal -->
+
+         <template id="plantilla">
+          <div class="modal-body">
+
+            <div class="embed-responsive embed-responsive-item">
+
+              <h2 class="titulotemp"></h2>
+
+              <img src="assets/img/lugares/castillo.jpg" alt="">
+              
+              <div class="paquete_1">
+
+                <p class="parrafotemp"></p>
+
+                <img src="assets/img/mapa_Castillo.png" alt=""> 
+
+  
+                <p>Añadir a favoritos.</p>
+
+                <img src="assets/img/coments.png" alt="">
+
+              </div>
+
+            </div>
+
+          </div>
+        </template>
+
+        <!-- Fin plantilla -->
+
+        <div id="ventana_modal_temp">
+          <div class="portfolio-modal modal fade" id="why" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <div class="modal-dialog modal-xl" id="añadirInfoElemento">
+
+              <div class="modal-content">
+
+                <div class="close-modal" data-dismiss="modal">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="icon"><i class="bx bx-x"></i></div>
+                  </button>
+                </div>
+
+                <!-- Plantilla aqui -->
+                <div id="info-dinamica-modal">
+                  <!-- info dinamica -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--         
+          
+          <div class="portfolio-modal modal fade" id="why" tabindex="-1" role="dialog" aria-hidden="true">
 
           <div class="modal-dialog modal-xl" id="añadirInfoElemento">
 
@@ -443,7 +495,64 @@
                       informacion del Castillo informacion del Castillo
                     </p>
                     <img src="assets/img/mapa_Castillo.png" alt="">
-                    <img src="assets/img/puntuacion.png" alt="">
+                    <div id="puntuacion">
+
+                      <div class="star-source">
+
+                        <svg>
+                          <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
+                            <stop stop-color="#ffff00" offset="0%"></stop>
+                            <stop stop-color="#eeee00" offset="60%"></stop>
+                            <stop stop-color="#dddd00" offset="100%"></stop>
+                          </linearGradient>
+                          <symbol id="star" viewBox="153 89 106 108">
+                            <polygon id="star-shape" stroke="url(#grad)" stroke-width="5" fill="currentColor"
+                              points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085">
+                            </polygon>
+                          </symbol>
+                        </svg>
+
+
+                      </div>
+                      <form action="/action_page.php"></form>
+                      <div class="star-container">
+                        
+                        <input type="radio" name="star" id="five">
+                        <label for="five">
+                          <svg class="star">
+                            <use xlink:href="#star" />
+                          </svg>
+                        </label>
+                        <input type="radio" name="star" id="four">
+                        <label for="four">
+                          <svg class="star">
+                            <use xlink:href="#star" />
+                          </svg>
+                        </label>
+                        <input type="radio" name="star" id="three">
+                        <label for="three" onclick="run(3)">
+                          <svg class="star">
+                            <use xlink:href="#star" />
+                          </svg>
+                        </label>
+                        <input type="radio" name="star" id="two">
+                        <label for="two" onclick="run(2)">
+                          <svg class="star">
+                            <use xlink:href="#star" />
+                          </svg>
+                        </label>
+                        <input type="radio" name="star" id="one">
+                        <label for="one" onclick="run(1)">
+                          <svg class="star">
+                            <use xlink:href="#star" />
+                          </svg>
+                        </label>
+
+                      </div>
+                    </div>
+
+                  </form>
+
                     <p>Añadir a favoritos.</p>
                     <img src="assets/img/coments.png" alt="">
                   </div>
@@ -451,7 +560,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Fin Ventana modal -->
 
@@ -481,7 +590,7 @@
         <div class="owl-container">
           <div id="carousel" class="owl-carousel owl-theme">
 
-<!--             <div class="item">
+            <!--             <div class="item">
               <div class="col-md-4">
                 <div class="card card-body box featured" data-aos="zoom-in" data-aos-delay="100">
                   <h3>Figueres 1</h3>
@@ -530,7 +639,7 @@
                     informacion del Castillo informacion del Castillo
                   </p>
                   <img src="assets/img/mapa_Castillo.png" alt="">
-                  <img src="assets/img/puntuacion.png" alt="">
+
                   <p>Añadir a favoritos.</p>
                   <img src="assets/img/coments.png" alt="">
                 </div>
