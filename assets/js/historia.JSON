@@ -1,0 +1,88 @@
+[
+    {
+        "type": "historia",
+        "titulo": "Fenicios, Romanos y Cartagineses",
+        "description": "Historia de los romanos, fenicios y cartagineses.",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/historia/antiguo.jpeg",
+                "encodingFormat": null
+            }
+        }
+
+    },
+    {
+        "type": "historia",
+        "titulo": "La llegada de los monjes bizantinos",
+        "description": "También se contaba que en la Edad Media había en Cabrera un monasterio, clausurado porque sus monjes\"... han sometido sus vidas a diversos crímenes, que manifiestan que, más que servir a Dios, luchan y lo decimos llorando, a favor del antiguo enemigo\", si bien no había restos arqueológicos. Los posibles restos del cenobio fueron hallados en 2004.",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/historia/bizantino.jpg",
+                "encodingFormat": null
+            }
+        }
+
+    },
+    {
+        "type": "historia",
+        "titulo": "Piratas y el Castillo",
+        "description": " Durante los siglos XIII y XIV la isla de Cabrera y su puerto natural eran utilizados por piratas berberiscos como base desde donde atacar las costas mallorquinas. Por este motivo, ya en el siglo XIV, se construyó un castillo en la entrada del puerto. Este castillo evitaba que se usase el puerto como base pirata y permitía una mayor vigilancia de las aguas cercanas a Mallorca.",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/historia/castillo.jpg",
+                "encodingFormat": null
+            }
+        }
+
+    },
+    {
+        "type": "historia",
+        "titulo": "El cautiverio de Cabrera",
+        "description": "En 1808 estalla la guerra de la Independencia Española. Tras la victoria española en la batalla de Bailén, los soldados franceses (unos 9000 hombres) hechos prisioneros y llevados a la isla. Este cautiverio fue el primer campo de concentración de la historia. No existía en la isla ningún edificio utilizado como cárcel, sino más bien, la prisión era la propia isla. El suministro de víveres llegaba desde Mallorca cada cuatro días, repartiendo la mínima comida para sobrevivir hasta el siguiente abastecimiento. El cautiverio terminó en 1814 al firmarse la paz. De cada cuatro presos que llegaron a Cabrera murieron tres y solo sobrevivieron unas 3600 personas de los 9000 que llegaron, además de otros presos enviados de las guerras napoleónicas que también perecieron. En recuerdo a los que murieron en esas circunstancias de sufrimiento, enterrados en el cementerio francés, se levantó un monolito en la isla.",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/historia/frances.jpg",
+                "encodingFormat": null
+            }
+        }
+
+    },
+    {
+        "type": "historia",
+        "titulo": "Final de siglo XIX y siglo XX",
+        "description": "Tras pertenecer a la familia Fontirroig durante casi dos siglos y a la familia Umbert, la isla pasa a ser propiedad de la familia Feliu a finales del siglo XIX, época en la que se intentó el cultivo de vid y para ello construyeron una bodega, que se utiliza actualmente como museo. En 1891 se acogió a la Ley de Colonias Agrícolas de 3 de junio de 1868 con la denominación de Villa Cristina. En 1916 el archipiélago fue expropiado a Sebastià Feliu i Fons por intereses de la defensa nacional. A partir de 1916, la autoridad militar de Mallorca destinó un destacamento permanente, relevado periódicamente, en Cabrera.",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/historia/Celler.jpg",
+                "encodingFormat": null
+            }
+        }
+
+    },
+    {
+        "type": "historia",
+        "titulo": "Final del siglo XX",
+        "description": " La isla se utilizaría hasta su conversión en parque nacional como área de práctica de tiro y maniobras. Esta presencia militar protegió el entorno natural al evitar que el archipiélago fuese objeto de especulación inmobiliaria. A principios de 1988, impulsado por un gran movimiento y campaña ecologista-popular, tutelado por Greenpeace, el Parlamento de las Islas Baleares tomó la decisión de iniciar el proceso de declaración de Cabrera como parque nacional Marítimo Terrestre, que culminó el 29 de abril de 1991 con su declaración legal de protección. La presencia militar permanente finalizó en 1999. Sin embargo se mantiene la propiedad y presencia militar ocasional.",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/historia/natura.webp",
+                "encodingFormat": null
+            }
+        }
+
+    }
+    
+
+]
