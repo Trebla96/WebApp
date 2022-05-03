@@ -1,13 +1,17 @@
 /* start JSON */
-var dades = [];
-var dades_internes = [];
+let dades = [];
+let dades_internes = [];
+let dades_p = [];
+let dades_privades = [];
 
-cargarDades();
+carregaDades();
+carregaDadesPrivades();
 
-function cargarDades() {
 
-    var xmlhttp = new XMLHttpRequest();
-    var url = "assets/js/cabrera.json";
+function carregaDades() {
+
+    let xmlhttp = new XMLHttpRequest();
+    let url = "assets/js/cabrera.json";
 
 
     xmlhttp.onreadystatechange = function () {
@@ -15,7 +19,7 @@ function cargarDades() {
 
             dades = JSON.parse(xmlhttp.responseText);
 
-            for (var i = 0; i < dades.length; i++) {
+            for (let i = 0; i < dades.length; i++) {
 
                 dades_internes.push(dades[i]);
 
@@ -33,10 +37,37 @@ function cargarDades() {
 
 }
 
+function carregaDadesPrivades() {
+
+    let xmlhttp = new XMLHttpRequest();
+    let url = "assets/js/historia.json";
+
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+            dades_p = JSON.parse(xmlhttp.responseText);
+
+            for (let i = 0; i < dades_p.length; i++) {
+
+                dades_privades.push(dades_p[i]);
+
+            }
+
+            crear_hist();
+
+        }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+}
+
 
 function crear_portfoli_lugares() {
 
-    for (var i = 0; i < dades_internes.length; i++) {
+    for (let i = 0; i < dades_internes.length; i++) {
 
         if (dades[i].type == "Place") {
 
@@ -47,7 +78,7 @@ function crear_portfoli_lugares() {
 
 function carousel_itineraris() {
 
-    for (var i = 0; i < dades_internes.length; i++) {
+    for (let i = 0; i < dades_internes.length; i++) {
 
         if (dades[i].type == "Itinerari") {
 
@@ -56,42 +87,78 @@ function carousel_itineraris() {
     }
 }
 
+function crear_hist(){
+
+    let contenedor = document.createElement("div");
+    contenedor.classList.add("container");
+
+    let c_titulo = document.createElement("div");
+    c_titulo.classList.add("section-title");
+    let att = document.createAttribute("data-aos");
+    att.value = "fade-up";
+    c_titulo.setAttribute("data-aos", "fade-up");
+
+    let titulo = document.createElement("h2");
+    titulo.innerText = "Historia";
+
+    let desc = document.createElement("p");
+    desc.innerText = "Hechando la vista atrás";
+
+    c_titulo.appendChild(titulo);
+    c_titulo.appendChild(desc);
+    contenedor.appendChild(c_titulo);
+
+    let c_ventana = document.querySelector("#historia");
+    c_ventana.appendChild(contenedor);
+    
+
+    for (let i = 0; i < dades_privades.length; i++) {
+
+        crear_elemento_hist((i%2 == 0), dades_privades[i].photo.caption.contentURL, dades_privades[i].titulo, dades_privades[i].description, c_ventana);
+
+    }
+
+
+}
+
 function crearItem(titol, foto) {
 
-    var item = document.createElement("div");
+    let item = document.createElement("div");
     item.classList.add("item");
 
-    var columna = document.createElement("div");
+    let columna = document.createElement("div");
     columna.classList.add("col-md-4");
 
-    var carta = document.createElement("div");
+    let carta = document.createElement("div");
     carta.classList.add("card");
     carta.classList.add("card-body");
     carta.classList.add("box");
     carta.classList.add("featured");
-    var att = document.createAttribute("data-in");
+    let att = document.createAttribute("data-in");
     att.value = "zoom-in";
-    var att2 = document.createAttribute("data-aos-delay");
+    carta.setAttribute("data-in", "zoom-in");
+    let att2 = document.createAttribute("data-aos-delay");
     att2.value = "100";
+    carta.setAttribute("data-aos-delay", "100");
 
-    var titulo = document.createElement("h3");
+    let titulo = document.createElement("h3");
     titulo.innerText = titol;
 
-    var imagen = document.createElement("img");
+    let imagen = document.createElement("img");
     imagen.src = foto;
     imagen.classList.add("imagebox");
     imagen.alt = "";
 
-    var boton = document.createElement("div");
+    let boton = document.createElement("div");
     boton.classList.add("btn-wrap");
 
-    var boton_l = document.createElement("button");
+    let boton_l = document.createElement("button");
     boton_l.classList.add("btn-buy");
     boton_l.type = "button";
-    var att3 = document.createAttribute("data-toggle");
+    let att3 = document.createAttribute("data-toggle");
     att3.value = "modal";
     boton_l.setAttribute("data-toggle", "modal");
-    var att4 = document.createAttribute("data-target");
+    let att4 = document.createAttribute("data-target");
     att4.value = "#why2";
     boton_l.setAttribute("data-target", "#why2");
     boton_l.innerText = "Mas información";
@@ -110,31 +177,31 @@ function crearItem(titol, foto) {
 //Funcion que crea cartas de los lugares a visitar
 function crearCarta(titol, foto) {
 
-    var carta = document.createElement("div");
+    let carta = document.createElement("div");
     carta.classList.add("card");
 
-    var caja = document.createElement("div");
+    let caja = document.createElement("div");
     caja.classList.add("box");
 
-    var contenido = document.createElement("div");
+    let contenido = document.createElement("div");
     contenido.classList.add("content");
 
-    var titulo = document.createElement("h3");
+    let titulo = document.createElement("h3");
     titulo.innerText = titol;
 
-    var boton = document.createElement("a");
+    let boton = document.createElement("a");
     boton.classList.add("position-absolute");
     boton.classList.add("bottom-0");
     boton.classList.add("start-50");
     boton.classList.add("translate-middle-x");
     boton.href = "#why";
     boton.innerText = "Mas información";
-    var att = document.createAttribute("data-toggle");
+    let att = document.createAttribute("data-toggle");
     att.value = "modal";
     boton.setAttribute("data-toggle", "modal");
 
 
-    var imagen = document.createElement("img");
+    let imagen = document.createElement("img");
     imagen.src = foto;
     imagen.classList.add("imagebox");
     imagen.alt = "";
@@ -147,6 +214,74 @@ function crearCarta(titol, foto) {
     cartas_lugares.appendChild(carta);
 
 }
+
+function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre){
+
+    let contenedor = document.createElement("div");
+    contenedor.classList.add("row");
+    contenedor.classList.add("content");
+
+    let c_imagen = document.createElement("div");
+    if (e_par == true){
+        c_imagen.classList.add("col-md-4");
+    }else{
+        c_imagen.classList.add("col-md-4");
+        c_imagen.classList.add("order-1");
+        c_imagen.classList.add("order-md-2");
+    }
+    
+    let att = document.createAttribute("data-aos");
+    if (e_par == true){
+        att.value = "fade-right";
+        c_imagen.setAttribute("data-aos", "fade-right");
+    }else{
+        att.value = "fade-left";
+        c_imagen.setAttribute("data-aos", "fade-left");
+    }
+
+    let imagen = document.createElement("img");
+    imagen.src = himg;
+    imagen.classList.add("imagebox");
+    imagen.classList.add("img-fluid");
+    imagen.alt="";
+
+    let contenedor_texto = document.createElement("div");
+    if (e_par == true){
+        contenedor_texto.classList.add("col-md-8");
+        contenedor_texto.classList.add("pt-4");
+    }else{
+        contenedor_texto.classList.add("col-md-8");
+        contenedor_texto.classList.add("pt-5");
+        contenedor_texto.classList.add("order-2");
+        contenedor_texto.classList.add("order-md-1");
+    }
+    let att2 = document.createAttribute("data-aos");
+    att2.value = "fade-up";
+    contenedor_texto.setAttribute("data-aos", "fade-up");
+
+    let titulo = document.createElement("h3");
+    titulo.innerText = htitulo;
+
+    let texto = document.createElement("p");
+    texto.classList.add("fst-italic");
+    texto.innerText = htexto
+
+    contenedor_texto.appendChild(titulo);
+    contenedor_texto.appendChild(texto);
+    c_imagen.appendChild(imagen);
+    contenedor.appendChild(c_imagen);
+    contenedor.appendChild(contenedor_texto);
+
+    c_padre.appendChild(contenedor);
+
+
+
+    /* let c_ventana = document.querySelector("#historia");
+    c_ventana.appendChild(c_padre);
+ */
+}
+
+
 
 /* end JSON */
 
@@ -178,7 +313,7 @@ function heroVideo() {
 
         hero.appendChild(HeroVideo);
 
-        var promise = hero.querySelector('video').play();
+        let promise = hero.querySelector('video').play();
 
         if (promise !== undefined) {
             promise.catch(error => {
@@ -195,7 +330,7 @@ function heroVideo() {
 
     } else {
 
-        var div = hero.createElement("div");
+        let div = hero.createElement("div");
         div.innerHtml = "Backup message shown if the browser does not support the video tag.";
 
     }
