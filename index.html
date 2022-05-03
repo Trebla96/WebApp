@@ -73,11 +73,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#resumen">Resumen</a></li>
-          <li><a class="nav-link scrollto" href="#historia">Historia</a></li>
           <li><a class="nav-link scrollto" href="#lugares">Lugares</a></li>
           <li><a class="nav-link scrollto" href="#itinerarios">Itinerarios</a></li>
-          <li><a class="nav-link scrollto" href="#comentarios">Comentarios</a></li>
           <li><a class="nav-link scrollto" href="#utilidades">Utilidades</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -89,12 +86,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
 
-    <!--  <video autoplay muted loop id="myVideo">
-      <source src="assets/video/mivideo.webm" type="video/webm">
-      <source src="assets/video/mivideo.mp4" type="video/mp4">
-    </video> -->
-    <!--  <script>heroVideo()</script> -->
-
+    <!-- video JS -->
 
     <div class="container">
       <div class="row justify-content-between">
@@ -145,34 +137,7 @@
             <button type="button" class="venobox play-btn mb-4" data-toggle="modal" data-target="#myModal"></button>
 
           </div>
-          <!-- Ventana Modal -->
-          <div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 
-            <div class="modal-dialog modal-xl" id="añadirInfoElemento">
-
-              <div class="modal-content">
-
-                <!-- <div class="close-modal" data-dismiss="modal">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <div class="icon"><i class="bx bx-x"></i></div>
-                  </button>
-                </div> -->
-
-                <div class="modal-body">
-                  <div class="embed-responsive embed-responsive-item">
-
-                    <video autoplay muted loop controls class="videoPres">
-                      <source src="assets/video/mivideo.mp4" type="video/mp4">
-                      <!-- <source src="assets/video/mivideoc.mp4" type="video/mp4"> -->
-                      <source src="assets/video/mivideo.webm" type="video/webm">
-                    </video>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <!-- Fin Ventana modal -->
 
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
@@ -193,7 +158,8 @@
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
 
-              <div class="icon"> <button type="button" class="venobox icon-buton" data-toggle="modal" data-target="#H_Modal"> <i class="bx bxs-bank"></i> </button> </div>
+              <div class="icon"> <button type="button" class="venobox icon-buton" data-toggle="modal"
+                  data-target="#H_Modal"> <i class="bx bxs-bank"></i> </button> </div>
 
               <h4 class="title"><a href="#H_Modal">Historia</a></h4>
 
@@ -229,7 +195,8 @@
 
       </div>
 
-      <div class="portfolio-modal modal fade" id="H_Modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Ventana Modal -->
+      <div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 
         <div class="modal-dialog modal-xl" id="añadirInfoElemento">
 
@@ -238,8 +205,33 @@
             <div class="modal-body">
               <div class="embed-responsive embed-responsive-item">
 
+                <video autoplay muted loop controls class="videoPres">
+                  <source src="assets/video/mivideo.mp4" type="video/mp4">
+                  <!-- <source src="assets/video/mivideoc.mp4" type="video/mp4"> -->
+                  <source src="assets/video/mivideo.webm" type="video/webm">
+                </video>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Fin Ventana modal -->
+
+      <div class="portfolio-modal modal fade" id="H_Modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog modal-xl" id="añadirInfoElemento">
+
+          <div class="modal-content">
+            <div class="col align-self-end close-modal" data-dismiss="modal">
+              <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
+            </div>
+
+            <div class="modal-body">
+              <div class="embed-responsive embed-responsive-item">
+
                 <section id="historia" class="details">
-                  
+                  <!-- from JS -->
                 </section>
 
               </div>
@@ -250,7 +242,7 @@
       </div>
 
     </section>
-    
+
     <!-- End About Section -->
 
     <!-- ======= Features Section ======= -->
@@ -260,126 +252,6 @@
     <!-- ======= Counts Section ======= -->
     <!-- Deleted section..... -->
     <!-- ======= End Counts Section ======== -->
-
-    <!-- ======= Details Section ======= -->
-<!--     <section id="historia" class="details">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Historia</h2>
-          <p>Echando la vista atrás</p>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4" data-aos="fade-right">
-            <img src="assets/img/historia/antiguo.jpeg" class="imagebox img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-4" data-aos="fade-up">
-            <h3>Fenicios, Romanos y Cartagineses</h3>
-            <p class="fst-italic">
-              Historia de los romanos, fenicios y cartagineses.
-            </p>
-          </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src="assets/img/historia/bizantino.jpg" class="imagebox img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>La llegada de los monjes bizantinos</h3>
-            <p class="fst-italic">
-              También se contaba que en la Edad Media había en Cabrera un monasterio, clausurado porque sus monjes
-              "... han sometido sus vidas a diversos crímenes, que manifiestan que,
-              más que servir a Dios, luchan y lo decimos llorando,
-              a favor del antiguo enemigo", si bien no había restos arqueológicos.
-              Los posibles restos del cenobio fueron hallados en 2004. </p>
-          </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4" data-aos="fade-right">
-            <img src="assets/img/historia/castillo.jpg" class="imagebox img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5" data-aos="fade-up">
-            <h3>Piratas y el Castillo</h3>
-            <p>
-              Durante los siglos XIII y XIV la isla de Cabrera y su puerto natural eran utilizados por piratas
-              berberiscos como base desde donde atacar las costas mallorquinas.
-              Por este motivo, ya en el siglo XIV, se construyó un castillo en la entrada del puerto.
-              Este castillo evitaba que se usase el puerto como base pirata y permitía una mayor vigilancia de las aguas
-              cercanas a Mallorca.
-            </p>
-          </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src="assets/img/historia/frances.jpg" class="imagebox img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>El cautiverio de Cabrera</h3>
-            <p class="fst-italic">
-              En 1808 estalla la guerra de la Independencia Española. Tras la victoria española en la batalla de Bailén,
-              los soldados franceses (unos 9000 hombres) hechos prisioneros y llevados a la isla. Este cautiverio fue el
-              primer campo de concentración de la historia.
-              No existía en la isla ningún edificio utilizado como cárcel, sino más bien, la prisión era la propia isla.
-              El suministro de víveres llegaba desde Mallorca cada cuatro días, repartiendo la mínima comida para
-              sobrevivir hasta el siguiente abastecimiento.
-              El cautiverio terminó en 1814 al firmarse la paz. De cada cuatro presos que llegaron a Cabrera murieron
-              tres y solo sobrevivieron unas 3600 personas
-              de los 9000 que llegaron, además de otros presos enviados de las guerras napoleónicas que también
-              perecieron.
-              En recuerdo a los que murieron en esas circunstancias de sufrimiento, enterrados en el cementerio francés,
-              se levantó un monolito en la isla.
-            </p>
-          </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4" data-aos="fade-right">
-            <img src="assets/img/historia/Celler.jpg" class="imagebox  img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5" data-aos="fade-up">
-            <h3>Final de siglo XIX y siglo XX</h3>
-            <p>
-              Tras pertenecer a la familia Fontirroig durante casi dos siglos y a la familia Umbert,
-              la isla pasa a ser propiedad de la familia Feliu a finales del siglo XIX, época en la que se intentó el
-              cultivo de vid y para ello construyeron una bodega,
-              que se utiliza actualmente como museo. En 1891 se acogió a la Ley de Colonias Agrícolas de 3 de junio de
-              1868 con la denominación de Villa Cristina.
-              En 1916 el archipiélago fue expropiado a Sebastià Feliu i Fons por intereses de la defensa nacional.
-              A partir de 1916, la autoridad militar de Mallorca destinó un destacamento permanente, relevado
-              periódicamente, en Cabrera.
-
-            </p>
-          </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src="assets/img/historia/natura.webp" class="imagebox img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Final del siglo XX</h3>
-            <p class="fst-italic">
-              La isla se utilizaría hasta su conversión en parque nacional como área de práctica de tiro y maniobras.
-              Esta presencia militar protegió el entorno natural al evitar que el archipiélago fuese objeto de
-              especulación inmobiliaria.
-              A principios de 1988, impulsado por un gran movimiento y campaña ecologista-popular,
-              tutelado por Greenpeace, el Parlamento de las Islas Baleares tomó la decisión de iniciar
-              el proceso de declaración de Cabrera como parque nacional Marítimo Terrestre, que culminó el 29 de abril
-              de 1991 con su declaración legal de protección.
-              La presencia militar permanente finalizó en 1999. Sin embargo se mantiene la propiedad y presencia militar
-              ocasional.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-     -->
-    <!-- End Details Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="lugares" class="gallery">
@@ -421,19 +293,7 @@
 
           <div class="contenedor" data-aos="fade-up" id="cartas_lugares">
 
-            <!-- 
-              <div class="card">
-              <div class="box">
-                <div class="content">
-                  <h3>Castillo</h3>
-                  <a data-toggle="modal" href="#why" class="position-absolute bottom-0 start-50 translate-middle-x">Mas
-                    información</a>
-                  <img src="assets/img/lugares/castillo.jpg" class="imagebox" alt="">
-                </div>
-              </div>
-            </div>
-
-          -->
+            <!-- cards JS -->
 
           </div>
 
@@ -443,25 +303,25 @@
 
         <!-- plantilla ventana modal -->
 
-         <template id="plantilla">
+        <template id="plantilla">
           <div class="modal-body">
 
             <div class="embed-responsive embed-responsive-item">
 
               <h2 class="titulotemp"></h2>
 
-              <img src="assets/img/lugares/castillo.jpg" alt="">
-              
+              <img src="" alt="">
+
               <div class="paquete_1">
 
                 <p class="parrafotemp"></p>
 
-                <img src="assets/img/mapa_Castillo.png" alt=""> 
+                <img src="" alt="">
 
-  
+
                 <p>Añadir a favoritos.</p>
 
-                <img src="assets/img/coments.png" alt="">
+                <img src="" alt="">
 
               </div>
 
@@ -473,16 +333,14 @@
         <!-- Fin plantilla -->
 
         <div id="ventana_modal_temp">
-          <div class="portfolio-modal modal fade" id="why" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="portfolio-modal modal fade" id="modal_lugares" tabindex="-1" role="dialog" aria-hidden="true">
 
             <div class="modal-dialog modal-xl" id="añadirInfoElemento">
 
               <div class="modal-content">
 
-                <div class="close-modal" data-dismiss="modal">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <div class="icon"><i class="bx bx-x"></i></div>
-                  </button>
+                <div class="col align-self-end close-modal" data-dismiss="modal">
+                  <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
                 </div>
 
                 <!-- Plantilla aqui -->
@@ -784,30 +642,6 @@
 
         <div class="row">
 
-          <!-- <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <div class="info">
-
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
-            </div>
-
-          </div> -->
 
           <div class="col-lg-10 mt-5 mt-lg-0" data-aos="fade-right" data-aos-delay="200">
             <!-- col-lg-8 mt-5 mt-lg-0 -->
@@ -888,7 +722,8 @@
         </div>
 
       </div>
-    </section><!-- End F.A.Q Section -->
+    </section>
+    <!-- End F.A.Q Section -->
 
 
 

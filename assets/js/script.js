@@ -6,8 +6,9 @@ let dades_privades = [];
 
 carregaDades();
 carregaDadesPrivades();
+heroVideo();
 
-
+/* Carrega les dades del JSON public */
 function carregaDades() {
 
     let xmlhttp = new XMLHttpRequest();
@@ -37,6 +38,7 @@ function carregaDades() {
 
 }
 
+/* Carrega les dades del JSON privat */
 function carregaDadesPrivades() {
 
     let xmlhttp = new XMLHttpRequest();
@@ -64,7 +66,7 @@ function carregaDadesPrivades() {
 
 }
 
-
+/* Mete las tarjetas de lugares dentro de contenedor */
 function crear_portfoli_lugares() {
 
     for (let i = 0; i < dades_internes.length; i++) {
@@ -76,6 +78,7 @@ function crear_portfoli_lugares() {
     }
 }
 
+/* Mete los itinerarios dentro del carrousel */
 function carousel_itineraris() {
 
     for (let i = 0; i < dades_internes.length; i++) {
@@ -87,6 +90,7 @@ function carousel_itineraris() {
     }
 }
 
+/* Crea el contenedor de historia y mete los distintos elementos */
 function crear_hist(){
 
     let contenedor = document.createElement("div");
@@ -121,6 +125,7 @@ function crear_hist(){
 
 }
 
+/* Crea los elementos de itinerarios */
 function crearItem(titol, foto) {
 
     let item = document.createElement("div");
@@ -174,7 +179,7 @@ function crearItem(titol, foto) {
 
 }
 
-//Funcion que crea cartas de los lugares a visitar
+/* Funcion que crea cartas de los lugares a visitar */
 function crearCarta(titol, foto) {
 
     let carta = document.createElement("div");
@@ -194,7 +199,9 @@ function crearCarta(titol, foto) {
     boton.classList.add("bottom-0");
     boton.classList.add("start-50");
     boton.classList.add("translate-middle-x");
-    boton.href = "#why";
+    boton.href = "#modal_lugares";
+    boton.addEventListener("click", rellenar_plantilla_lugares(titol));
+    /* boton.onclick = rellenar_plantilla_lugares(titol); */
     boton.innerText = "Mas información";
     let att = document.createAttribute("data-toggle");
     att.value = "modal";
@@ -215,6 +222,7 @@ function crearCarta(titol, foto) {
 
 }
 
+/* Crea los elementos de historia */
 function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre){
 
     let contenedor = document.createElement("div");
@@ -280,15 +288,7 @@ function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre){
     c_ventana.appendChild(c_padre);
  */
 }
-
-
-
 /* end JSON */
-
-/* Ventana modal */
-
-/* Fin ventana modal */
-heroVideo();
 
 function heroVideo() {
     // Create the video tag.
@@ -336,11 +336,7 @@ function heroVideo() {
     }
 }
 
-
-
-
 /* Start Carrousel */
-
 function carrr() {
 
     $('.owl-carousel').owlCarousel({
@@ -366,36 +362,30 @@ function carrr() {
     })
 
 }
-
-
 /* End carousel */
 
-/* Start API maps */
+/* Start Plantilla Ventana Modal */
 
-
-/* End API maps */
-
-function r(val) {
-    console.log(val)
-}
-
-
-/* Actualiza la ventana modal */
-function rellenar_plantilla(nombre) {
+/* Actualiza la ventana modal, usa una plantilla que llena con los elementos del JSON */
+function rellenar_plantilla_lugares(nombre) {
     const plantilla = document.querySelector("#plantilla")
     const container = document.querySelector("#info-dinamica-modal")
     const cuerpoAnterior = container.firstChild
 
+
+
     if (cuerpoAnterior !== undefined) {
         container.removeChild(cuerpoAnterior)
+        console.log("hi")
     }
 
-
-
     plantilla_clone = plantilla.content.cloneNode(true)
-    plantilla_clone.querySelector(".parrafotemp").innerText = "texto desde js"
-    plantilla_clone.querySelector(".titulotemp").innerText = "titulo desde js"
+    plantilla_clone.querySelector(".parrafotemp").innerText = "texto desde js";
+    plantilla_clone.querySelector(".titulotemp").innerText = nombre;
     container.appendChild(plantilla_clone)
 
 }
-rellenar_plantilla()
+/* End Plantilla ventana modal */
+
+/* Start API maps */
+/* End API maps */
