@@ -1205,7 +1205,6 @@ section {
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 40px 0;
-
 }
 
 .gallery .container .contenedor .card {
@@ -1271,8 +1270,8 @@ section {
   font-family: "Montserrat", sans-serif;
 
 }
-
-.gallery .container .contenedor .card .box .content a {
+/* a -> button */
+.gallery .container .contenedor .card .box .content button {
 
   display: inline-block;
 
@@ -1286,7 +1285,7 @@ section {
   transition: 0.5s;
 }
 
-.gallery .container .contenedor .card .box .content a:hover {
+.gallery .container .contenedor .card .box .content button:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 255, 0.6);
   background: #fff;
   color: #000;

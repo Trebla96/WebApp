@@ -7,8 +7,6 @@ let dades_privades = [];
 carregaDades();
 carregaDadesPrivades();
 heroVideo();
-rellenar_plantilla_itinerarios("hi");
-
 
 /* Carrega les dades del JSON public */
 function carregaDades() {
@@ -72,7 +70,6 @@ function carregaDadesPrivades() {
 
 /* Mete las tarjetas de lugares dentro de contenedor */
 function crear_portfoli_lugares() {
-    console.log(dades_internes)
     for (let i = 0; i < dades_internes.length; i++) {
         
         if (dades_internes[i].type == "Place") {
@@ -130,7 +127,7 @@ function crear_hist(){
 }
 
 /* Crea los elementos de itinerarios */
-function crearItem(titol, foto) {
+function crearItem(titol, foto, id) {
 
     let item = document.createElement("div");
     item.classList.add("item");
@@ -151,7 +148,7 @@ function crearItem(titol, foto) {
     carta.setAttribute("data-aos-delay", "100");
 
     let titulo = document.createElement("h3");
-    titulo.innerText = titol;
+    titulo.innerText = dades_internes[i].name;
 
     let imagen = document.createElement("img");
     imagen.src = foto;
@@ -164,15 +161,21 @@ function crearItem(titol, foto) {
     let boton_l = document.createElement("button");
     boton_l.classList.add("btn-buy");
     boton_l.type = "button";
-    /* boton_l.addEventListener("click", rellenar_plantilla_itinerarios(titol)) */
-    /* boton.addEventListener("click", rellenar_plantilla_lugares(titol)); */
-    /* boton.onclick = rellenar_plantilla_lugares(titol); */
+
+    boton_l.addEventListener("click", e => {
+        e.preventDefault();
+        rellenar_plantilla_itinerarios(titol);
+    });
+
     let att3 = document.createAttribute("data-toggle");
     att3.value = "modal";
     boton_l.setAttribute("data-toggle", "modal");
+    
     let att4 = document.createAttribute("data-target");
-    att4.value = "#ventana_modal_itinerarios";
-    boton_l.setAttribute("data-target", "#ventana_modal_itinerarios");
+    att4.value = "#modal_itinerarios";
+    boton_l.setAttribute("data-target", "#modal_itinerarios"); 
+
+   
     boton_l.innerText = "Mas información";
 
 
@@ -201,19 +204,27 @@ function crearCarta(titol, foto) {
     let titulo = document.createElement("h3");
     titulo.innerText = titol;
 
-    let boton = document.createElement("a");
+    let boton = document.createElement("button");
     boton.classList.add("position-absolute");
     boton.classList.add("bottom-0");
     boton.classList.add("start-50");
     boton.classList.add("translate-middle-x");
-    boton.href = "#modal_lugares";
-    /* boton.addEventListener("click", rellenar_plantilla_lugares(titol)); */
-    /* boton.onclick = rellenar_plantilla_lugares(titol); */
-    boton.innerText = "Mas información";
-    let att = document.createAttribute("data-toggle");
-    att.value = "modal";
-    boton.setAttribute("data-toggle", "modal");
+    boton.type = "button";
 
+    boton.addEventListener("click", e => {
+        e.preventDefault();
+        rellenar_plantilla_lugares(titol);
+    });
+
+    let att3 = document.createAttribute("data-toggle");
+    att3.value = "modal";
+    boton.setAttribute("data-toggle", "modal");
+    
+    let att4 = document.createAttribute("data-target");
+    att4.value = "#modal_lugares";
+    boton.setAttribute("data-target", "#modal_lugares"); 
+
+    boton.innerText = "Mas información";
 
     let imagen = document.createElement("img");
     imagen.src = foto;
@@ -226,7 +237,6 @@ function crearCarta(titol, foto) {
     caja.appendChild(contenido);
     carta.appendChild(caja);
 
-    /* cartas_lugares.appendChild(carta); */
     let c_padre = document.querySelector("#cartas_lugares");
     c_padre.appendChild(carta);
 
@@ -377,36 +387,35 @@ function carrr() {
 /* Start Plantilla Ventana Modal */
 
 /* Actualiza la ventana modal, usa una plantilla que llena con los elementos del JSON */
-function rellenar_plantilla_itinerarios(nombre) {
+function rellenar_plantilla_itinerarios(nombre, desc) {
     const plantilla_it = document.querySelector("#plantilla_itinerarios")
     const container_it = document.querySelector("#info-dinamica-itinerarios")
-    const cuerpoAnterior_it = container_it.firstChild
+    const cuerpoAnterior_it = container_it.querySelector("div")
 
-
-
-    if (cuerpoAnterior_it !== undefined) {
+    if (cuerpoAnterior_it !== null) {
         container_it.removeChild(cuerpoAnterior_it)
-        console.log("hi")
+        
     }
 
     plantilla_clone_it = plantilla_it.content.cloneNode(true)
-    plantilla_clone_it.querySelector(".parrafotemp2").innerText = "texto desde js";
-    plantilla_clone_it.querySelector(".titulotemp2").innerText = nombre;
+    plantilla_clone_it.querySelector(".info_it").innerText = desc
+    plantilla_clone_it.querySelector(".titulo_it").innerText = nombre;
     container_it.appendChild(plantilla_clone_it)
 
 }
 
 function rellenar_plantilla_lugares(nombre) {
     const plantilla = document.querySelector("#plantilla_lugares")
-    const container = document.querySelector("#info-dinamica-modal")
-    const cuerpoAnterior = container.firstChild
+    const container = document.querySelector("#info-dinamica-lugares")
+    const cuerpoAnterior = container.querySelector("div")
 
+    console.log(container);
+    console.log(cuerpoAnterior);
 
-
-    if (cuerpoAnterior !== undefined) {
-        container.removeChild(cuerpoAnterior)
-        console.log("hi")
+    if (cuerpoAnterior !== null) {
+        container.removeChild(cuerpoAnterior) 
     }
+   
 
     plantilla_clone = plantilla.content.cloneNode(true)
     plantilla_clone.querySelector(".parrafotemp").innerText = "texto desde js";
@@ -414,6 +423,7 @@ function rellenar_plantilla_lugares(nombre) {
     container.appendChild(plantilla_clone)
 
 }
+/* rellenar_plantilla_itinerarios("hi") */
 /* End Plantilla ventana modal */
 
 /* Start API maps */
