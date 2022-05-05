@@ -393,14 +393,14 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
+                "contentURL": "assets/img/itineraris/FarEnciola.jpg",
                 "encodingFormat": null
             }
         },
         "telephone": null,
         "description": "meter coordenadas del taller de purpura",
         "identifier": null,
-        "name": "Factoria de sanes",
+        "name": "Far de l'Enciola",
         "url": null
     },
     
@@ -427,14 +427,150 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
+                "contentURL": "assets/img/itineraris/figueres.jpg",
                 "encodingFormat": null
             }
         },
         "telephone": null,
         "description": "meter coordenadas del taller de purpura",
         "identifier": null,
-        "name": "Factoria de sanes",
+        "name": "Figueres",
+        "url": null
+    },
+
+    {
+        "type": "Itinerari",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": null,
+            "longitude": null 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/itineraris/arqueologia.png",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "meter coordenadas del taller de purpura",
+        "identifier": null,
+        "name": "arqueologic",
+        "url": null
+    },
+
+    {
+        "type": "Itinerari",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": null,
+            "longitude": null 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/itineraris/miranda.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "meter coordenadas del taller de purpura",
+        "identifier": null,
+        "name": "Miranda",
+        "url": null
+    },
+
+    {
+        "type": "Itinerari",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": null,
+            "longitude": null 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/itineraris/m_picamosques.png",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "meter coordenadas del taller de purpura",
+        "identifier": null,
+        "name": "Picamosques",
+        "url": null
+    },
+
+    {
+        "type": "Itinerari",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCounter": "España",
+            "addressLocality": "Palma de Mallorca",
+            "addressRegion": "Islas Baleares",
+            "postalCode": null,
+            "streetAddress": null
+        },
+        "geo": {
+            "@type": "geoCoordinates",
+            "latitude": null,
+            "longitude": null 
+        },
+        "event": null,
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "assets/img/lugares/castillo.jpg",
+                "encodingFormat": null
+            }
+        },
+        "telephone": null,
+        "description": "meter coordenadas del taller de purpura",
+        "identifier": null,
+        "name": "Castillo",
         "url": null
     },
 
@@ -468,143 +604,7 @@
         "telephone": null,
         "description": "meter coordenadas del taller de purpura",
         "identifier": null,
-        "name": "Factoria de sanes",
-        "url": null
-    },
-
-    {
-        "type": "Itinerari",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCounter": "España",
-            "addressLocality": "Palma de Mallorca",
-            "addressRegion": "Islas Baleares",
-            "postalCode": null,
-            "streetAddress": null
-        },
-        "geo": {
-            "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
-        },
-        "event": null,
-        "isAccessibleForFree": true,
-        "publicAccess": true,
-
-        "photo": {
-            "@type": "ImageObject",
-            "caption": {
-                "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
-                "encodingFormat": null
-            }
-        },
-        "telephone": null,
-        "description": "meter coordenadas del taller de purpura",
-        "identifier": null,
-        "name": "Factoria de sanes",
-        "url": null
-    },
-
-    {
-        "type": "Itinerari",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCounter": "España",
-            "addressLocality": "Palma de Mallorca",
-            "addressRegion": "Islas Baleares",
-            "postalCode": null,
-            "streetAddress": null
-        },
-        "geo": {
-            "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
-        },
-        "event": null,
-        "isAccessibleForFree": true,
-        "publicAccess": true,
-
-        "photo": {
-            "@type": "ImageObject",
-            "caption": {
-                "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
-                "encodingFormat": null
-            }
-        },
-        "telephone": null,
-        "description": "meter coordenadas del taller de purpura",
-        "identifier": null,
-        "name": "Factoria de sanes",
-        "url": null
-    },
-
-    {
-        "type": "Itinerari",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCounter": "España",
-            "addressLocality": "Palma de Mallorca",
-            "addressRegion": "Islas Baleares",
-            "postalCode": null,
-            "streetAddress": null
-        },
-        "geo": {
-            "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
-        },
-        "event": null,
-        "isAccessibleForFree": true,
-        "publicAccess": true,
-
-        "photo": {
-            "@type": "ImageObject",
-            "caption": {
-                "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
-                "encodingFormat": null
-            }
-        },
-        "telephone": null,
-        "description": "meter coordenadas del taller de purpura",
-        "identifier": null,
-        "name": "Factoria de sanes",
-        "url": null
-    },
-
-    {
-        "type": "Itinerari",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCounter": "España",
-            "addressLocality": "Palma de Mallorca",
-            "addressRegion": "Islas Baleares",
-            "postalCode": null,
-            "streetAddress": null
-        },
-        "geo": {
-            "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
-        },
-        "event": null,
-        "isAccessibleForFree": true,
-        "publicAccess": true,
-
-        "photo": {
-            "@type": "ImageObject",
-            "caption": {
-                "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
-                "encodingFormat": null
-            }
-        },
-        "telephone": null,
-        "description": "meter coordenadas del taller de purpura",
-        "identifier": null,
-        "name": "Factoria de sanes",
+        "name": "Factoria de salaons",
         "url": null
     }
     

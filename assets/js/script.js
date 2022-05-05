@@ -84,9 +84,9 @@ function carousel_itineraris() {
 
     for (let i = 0; i < dades_internes.length; i++) {
 
-        if (dades[i].type == "Itinerari") {
+        if (dades_internes[i].type == "Itinerari") {
 
-            crearItem(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
+            crearItem(i);
         }
     }
 }
@@ -127,7 +127,7 @@ function crear_hist(){
 }
 
 /* Crea los elementos de itinerarios */
-function crearItem(titol, foto, id) {
+function crearItem(id) {
 
     let item = document.createElement("div");
     item.classList.add("item");
@@ -148,10 +148,10 @@ function crearItem(titol, foto, id) {
     carta.setAttribute("data-aos-delay", "100");
 
     let titulo = document.createElement("h3");
-    titulo.innerText = dades_internes[i].name;
+    titulo.innerText = dades[id].name;
 
     let imagen = document.createElement("img");
-    imagen.src = foto;
+    imagen.src = dades_internes[id].photo.caption.contentURL;
     imagen.classList.add("imagebox");
     imagen.alt = "";
 
@@ -162,9 +162,11 @@ function crearItem(titol, foto, id) {
     boton_l.classList.add("btn-buy");
     boton_l.type = "button";
 
+    console.log(id);
+
     boton_l.addEventListener("click", e => {
         e.preventDefault();
-        rellenar_plantilla_itinerarios(titol);
+        rellenar_plantilla_itinerarios(id);
     });
 
     let att3 = document.createAttribute("data-toggle");
@@ -361,19 +363,24 @@ function carrr() {
 
     $('.owl-carousel').owlCarousel({
 
-        loop: true,
+        /* loop: false, */
+        
+        rewind: true,
         stagePadding: 0,
         autoWidth: true,
         nav: true,
         navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
-        center: true,
+        /* center: true, */
+        /* margin: 10, */
 
         responsive: {
             0: {
                 items: 1,
+                center: true,
             },
             600: {
                 items: 2,
+                center: true,
             },
             1000: {
                 items: 3,
@@ -387,19 +394,22 @@ function carrr() {
 /* Start Plantilla Ventana Modal */
 
 /* Actualiza la ventana modal, usa una plantilla que llena con los elementos del JSON */
-function rellenar_plantilla_itinerarios(nombre, desc) {
+function rellenar_plantilla_itinerarios(id) {
     const plantilla_it = document.querySelector("#plantilla_itinerarios")
     const container_it = document.querySelector("#info-dinamica-itinerarios")
     const cuerpoAnterior_it = container_it.querySelector("div")
 
+    console.log(id);
+
     if (cuerpoAnterior_it !== null) {
         container_it.removeChild(cuerpoAnterior_it)
         
-    }
+    }   
 
     plantilla_clone_it = plantilla_it.content.cloneNode(true)
-    plantilla_clone_it.querySelector(".info_it").innerText = desc
-    plantilla_clone_it.querySelector(".titulo_it").innerText = nombre;
+    plantilla_clone_it.querySelector(".info_it").innerText = dades_internes[id].description
+    plantilla_clone_it.querySelector(".titulo_it").innerText = dades_internes[id].name;
+    plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
     container_it.appendChild(plantilla_clone_it)
 
 }
@@ -423,7 +433,6 @@ function rellenar_plantilla_lugares(nombre) {
     container.appendChild(plantilla_clone)
 
 }
-/* rellenar_plantilla_itinerarios("hi") */
 /* End Plantilla ventana modal */
 
 /* Start API maps */

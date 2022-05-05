@@ -1780,6 +1780,17 @@ input[name="star"]:checked+label {
 
 /* end carrousel */
 
+/* Ventana modal itinerarios */
+
+.pricing .modal_img {
+
+  width: 30rem;
+  height: auto;
+
+}
+
+/* End ventana modal */
+
 /*--------------------------------------------------------------
 # F.A.Q
 --------------------------------------------------------------*/
