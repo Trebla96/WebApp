@@ -398,31 +398,93 @@
 
       <!-- Ventana Modal -->
 
+      <!-- SVG estrellas -->
+      <div class="star-source">
+        <svg>
+          <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
+            <stop stop-color="#ffff00" offset="0%"></stop>
+            <stop stop-color="#eeee00" offset="60%"></stop>
+            <stop stop-color="#dddd00" offset="100%"></stop>
+          </linearGradient>
+          <symbol id="star" viewBox="153 89 106 108">
+            <polygon id="star-shape" stroke="url(#grad)" stroke-width="5" fill="currentColor"
+              points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085">
+            </polygon>
+          </symbol>
+        </svg>
+      </div>
+      <!-- SVG estrellas -->
+
       <!-- plantilla ventana modal -->
 
       <template id="plantilla_itinerarios">
-        <div class="modal-body">
 
-          <div class="embed-responsive embed-responsive-item">
-            <h2 class="titulo_it"></h2>
 
-            <img id = "img_it" class="modal_img" src="" alt="">
+        <div id="bloq_1" class="embed-responsive embed-responsive-item">
+          <div class="cabecera">
 
-            <div class="info_it">
+            <h2 id="titulo_it" class="col-lg-6"></h2>
 
-              <p class="desc_it"></p>
+            <div class="star-container col-lg-6">
+              <input type="radio" name="star" id="five">
+              <label for="five">
+                <svg class="star">
+                  <use xlink:href="#star" />
+                </svg>
+              </label>
 
-              <div id = "map_it"></div>
+              <input type="radio" name="star" id="four">
+              <label for="four">
+                <svg class="star">
+                  <use xlink:href="#star" />
+                </svg>
+              </label>
 
-              <img src="" alt="">
+              <input type="radio" name="star" id="three">
+              <label for="three">
+                <svg class="star">
+                  <use xlink:href="#star" />
+                </svg>
+              </label>
+
+              <input type="radio" name="star" id="two">
+              <label for="two">
+                <svg class="star">
+                  <use xlink:href="#star" />
+                </svg>
+              </label>
+
+              <input type="radio" name="star" id="one">
+              <label for="one">
+                <svg class="star">
+                  <use xlink:href="#star" />
+                </svg>
+              </label>
 
             </div>
           </div>
 
+          <div class="cuerpo">
+            <img id="img_it" class="modal_img col-lg-6" src="" alt="">
+            <p class="desc_it col-lg-6"></p>
+          </div>
+
+          <div class = "complementos">
+
+            <div id="map_it"></div>
+
+          </div>
+
         </div>
+
       </template>
 
       <!-- Fin plantilla -->
+
+      <!-- Plantilla estrellas -->
+
+
+      <!-- Plantilla estrellas -->
 
       <div id="ventana_modal_itinerarios">
 
@@ -437,8 +499,12 @@
               </div>
 
               <!-- Plantilla aqui -->
-              <div id="info-dinamica-itinerarios">
-                <!-- info dinamica -->
+              <div class="modal-body">
+                <div id="info-dinamica-itinerarios">
+
+                  <!-- info dinamica -->
+                </div>
+
               </div>
 
             </div>

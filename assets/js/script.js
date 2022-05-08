@@ -395,22 +395,31 @@ function carrr() {
 
 /* Actualiza la ventana modal, usa una plantilla que llena con los elementos del JSON */
 function rellenar_plantilla_itinerarios(id) {
-    const plantilla_it = document.querySelector("#plantilla_itinerarios")
-    const container_it = document.querySelector("#info-dinamica-itinerarios")
-    const cuerpoAnterior_it = container_it.querySelector("div")
 
-    console.log(id);
+    const plantilla_it = document.querySelector("#plantilla_itinerarios");
+    const plantilla_est = document.querySelector("#plantilla_estrellas");
+
+    const container_it = document.querySelector("#info-dinamica-itinerarios");
+    const cuerpoAnterior_it = container_it.querySelector("#bloq_1");
+    
 
     if (cuerpoAnterior_it !== null) {
-        container_it.removeChild(cuerpoAnterior_it)
-        
+        container_it.removeChild(cuerpoAnterior_it);
+
     }   
 
-    plantilla_clone_it = plantilla_it.content.cloneNode(true)
-    plantilla_clone_it.querySelector(".info_it").innerText = dades_internes[id].description
-    plantilla_clone_it.querySelector(".titulo_it").innerText = dades_internes[id].name;
+    plantilla_clone_it = plantilla_it.content.cloneNode(true);
+    plantilla_clone_it.querySelector(".desc_it").innerText = dades_internes[id].description;
+    plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
-    container_it.appendChild(plantilla_clone_it)
+    
+
+
+    container_it.appendChild(plantilla_clone_it);
+/*     container_it.appendChild(plantilla_clone_est.querySelector(".star-container")); */
+
+
+
 
 }
 
