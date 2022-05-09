@@ -74,7 +74,7 @@ function crear_portfoli_lugares() {
         
         if (dades_internes[i].type == "Place") {
             
-            crearCarta(dades_internes[i].name, dades_internes[i].photo.caption.contentURL);
+            crearCarta(i);
         }
     }
 }
@@ -162,8 +162,6 @@ function crearItem(id) {
     boton_l.classList.add("btn-buy");
     boton_l.type = "button";
 
-    console.log(id);
-
     boton_l.addEventListener("click", e => {
         e.preventDefault();
         rellenar_plantilla_itinerarios(id);
@@ -192,7 +190,7 @@ function crearItem(id) {
 }
 
 /* Funcion que crea cartas de los lugares a visitar */
-function crearCarta(titol, foto) {
+function crearCarta(id) {
 
     let carta = document.createElement("div");
     carta.classList.add("card");
@@ -204,7 +202,7 @@ function crearCarta(titol, foto) {
     contenido.classList.add("content");
 
     let titulo = document.createElement("h3");
-    titulo.innerText = titol;
+    titulo.innerText = dades_internes[id].name;
 
     let boton = document.createElement("button");
     boton.classList.add("position-absolute");
@@ -215,7 +213,7 @@ function crearCarta(titol, foto) {
 
     boton.addEventListener("click", e => {
         e.preventDefault();
-        rellenar_plantilla_lugares(titol);
+        rellenar_plantilla_lugares(id);
     });
 
     let att3 = document.createAttribute("data-toggle");
@@ -229,7 +227,7 @@ function crearCarta(titol, foto) {
     boton.innerText = "Mas información";
 
     let imagen = document.createElement("img");
-    imagen.src = foto;
+    imagen.src = dades_internes[id].photo.caption.contentURL;
     imagen.classList.add("imagebox");
     imagen.alt = "";
 
@@ -397,11 +395,8 @@ function carrr() {
 function rellenar_plantilla_itinerarios(id) {
 
     const plantilla_it = document.querySelector("#plantilla_itinerarios");
-    const plantilla_est = document.querySelector("#plantilla_estrellas");
-
     const container_it = document.querySelector("#info-dinamica-itinerarios");
-    const cuerpoAnterior_it = container_it.querySelector("#bloq_1");
-    
+    const cuerpoAnterior_it = container_it.querySelector("#bloq_it");
 
     if (cuerpoAnterior_it !== null) {
         container_it.removeChild(cuerpoAnterior_it);
@@ -413,36 +408,43 @@ function rellenar_plantilla_itinerarios(id) {
     plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
     
-
-
     container_it.appendChild(plantilla_clone_it);
-/*     container_it.appendChild(plantilla_clone_est.querySelector(".star-container")); */
-
-
-
 
 }
 
-function rellenar_plantilla_lugares(nombre) {
-    const plantilla = document.querySelector("#plantilla_lugares")
-    const container = document.querySelector("#info-dinamica-lugares")
-    const cuerpoAnterior = container.querySelector("div")
+function rellenar_plantilla_lugares(id) {
+    const plantilla_lg = document.querySelector("#plantilla_lugares")
+    const container_lg = document.querySelector("#info-dinamica-lugares")
+    const cuerpoAnterior_lg = container_lg.querySelector("#bloq_lg")
 
-    console.log(container);
-    console.log(cuerpoAnterior);
-
-    if (cuerpoAnterior !== null) {
-        container.removeChild(cuerpoAnterior) 
+    if (cuerpoAnterior_lg !== null) {
+        container_lg.removeChild(cuerpoAnterior_lg);
     }
    
-
-    plantilla_clone = plantilla.content.cloneNode(true)
-    plantilla_clone.querySelector(".parrafotemp").innerText = "texto desde js";
-    plantilla_clone.querySelector(".titulotemp").innerText = nombre;
-    container.appendChild(plantilla_clone)
+    plantilla_clone_lg = plantilla_lg.content.cloneNode(true)
+    plantilla_clone_lg.querySelector(".desc_lg").innerText = dades_internes[id].description;
+    plantilla_clone_lg.querySelector("#titulo_lg").innerText = dades_internes[id].name;
+    plantilla_clone_lg.querySelector("#img_lg").src = dades_internes[id].photo.caption.contentURL;
+    
+    container_lg.appendChild(plantilla_clone_lg)
 
 }
 /* End Plantilla ventana modal */
 
 /* Start API maps */
+function initMap_lg(){
+    // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  console.log(uluru)
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map_lg"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
 /* End API maps */

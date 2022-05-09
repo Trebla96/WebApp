@@ -14,6 +14,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <!-- AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
@@ -304,35 +305,72 @@
         <!-- plantilla ventana modal -->
 
         <template id="plantilla_lugares">
-          <div class="modal-body">
-
-            <div class="embed-responsive embed-responsive-item">
-
-              <h2 class="titulotemp"></h2>
-
-              <img src="" alt="">
-
-              <div class="paquete_1">
-
-                <p class="parrafotemp"></p>
-
-                <img src="" alt="">
 
 
-                <p>Añadir a favoritos.</p>
+          <div id="bloq_lg" class="embed-responsive embed-responsive-item">
+            <div class="cabecera">
 
-                <img src="" alt="">
+              <h2 id="titulo_lg" class="col-lg-6"></h2>
+
+              <div class="star-container col-lg-6">
+                <input type="radio" name="star" id="five">
+                <label for="five">
+                  <svg class="star">
+                    <use xlink:href="#star" />
+                  </svg>
+                </label>
+
+                <input type="radio" name="star" id="four">
+                <label for="four">
+                  <svg class="star">
+                    <use xlink:href="#star" />
+                  </svg>
+                </label>
+
+                <input type="radio" name="star" id="three">
+                <label for="three">
+                  <svg class="star">
+                    <use xlink:href="#star" />
+                  </svg>
+                </label>
+
+                <input type="radio" name="star" id="two">
+                <label for="two">
+                  <svg class="star">
+                    <use xlink:href="#star" />
+                  </svg>
+                </label>
+
+                <input type="radio" name="star" id="one">
+                <label for="one">
+                  <svg class="star">
+                    <use xlink:href="#star" />
+                  </svg>
+                </label>
 
               </div>
 
             </div>
 
+            <div class="cuerpo">
+              <img id="img_lg" class="modal_img col-lg-6" src="" alt="">
+              <p class="desc_lg col-lg-6"></p>
+            </div>
+
+            <div class="complementos">
+
+             <!--  <div id="map_lg"></div> -->
+              
+
+            </div>
+
           </div>
+
         </template>
 
         <!-- Fin plantilla -->
 
-        <div id="ventana_modal_temp">
+        <div id="ventana_modal_lugares">
           <div class="portfolio-modal modal fade" id="modal_lugares" tabindex="-1" role="dialog" aria-hidden="true">
 
             <div class="modal-dialog modal-xl" id="añadirInfoElemento">
@@ -344,13 +382,23 @@
                 </div>
 
                 <!-- Plantilla aqui -->
-                <div id="info-dinamica-lugares"></div>
+                <div class="modal-body">
+                  <div id="info-dinamica-lugares">
+
+                    <!-- info dinamica -->
+                    
+                  </div>
+                  <div id="map_lg"></div>
+
+                </div>
 
               </div>
             </div>
           </div>
         </div>
         <!-- Fin Ventana modal -->
+
+        
     </section>
 
     <!-- <button type="button" class="position-absolute bottom-0 start-50 translate-middle-x"
@@ -399,20 +447,7 @@
       <!-- Ventana Modal -->
 
       <!-- SVG estrellas -->
-      <div class="star-source">
-        <svg>
-          <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
-            <stop stop-color="#ffff00" offset="0%"></stop>
-            <stop stop-color="#eeee00" offset="60%"></stop>
-            <stop stop-color="#dddd00" offset="100%"></stop>
-          </linearGradient>
-          <symbol id="star" viewBox="153 89 106 108">
-            <polygon id="star-shape" stroke="url(#grad)" stroke-width="5" fill="currentColor"
-              points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085">
-            </polygon>
-          </symbol>
-        </svg>
-      </div>
+
       <!-- SVG estrellas -->
 
       <!-- plantilla ventana modal -->
@@ -420,7 +455,7 @@
       <template id="plantilla_itinerarios">
 
 
-        <div id="bloq_1" class="embed-responsive embed-responsive-item">
+        <div id="bloq_it" class="embed-responsive embed-responsive-item">
           <div class="cabecera">
 
             <h2 id="titulo_it" class="col-lg-6"></h2>
@@ -469,7 +504,7 @@
             <p class="desc_it col-lg-6"></p>
           </div>
 
-          <div class = "complementos">
+          <div class="complementos">
 
             <div id="map_it"></div>
 
@@ -480,11 +515,6 @@
       </template>
 
       <!-- Fin plantilla -->
-
-      <!-- Plantilla estrellas -->
-
-
-      <!-- Plantilla estrellas -->
 
       <div id="ventana_modal_itinerarios">
 
@@ -811,6 +841,24 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- API Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ&callback=initMap_lg&v=weekly" defer></script>
+
+  <div class="star-source">
+    <svg>
+      <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
+        <stop stop-color="#ffff00" offset="0%"></stop>
+        <stop stop-color="#eeee00" offset="60%"></stop>
+        <stop stop-color="#dddd00" offset="100%"></stop>
+      </linearGradient>
+      <symbol id="star" viewBox="153 89 106 108">
+        <polygon id="star-shape" stroke="url(#grad)" stroke-width="5" fill="currentColor"
+          points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085">
+        </polygon>
+      </symbol>
+    </svg>
+  </div>
 
 
   <!-- No hacen nada -->

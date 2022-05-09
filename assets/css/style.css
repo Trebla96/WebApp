@@ -1240,7 +1240,7 @@ section {
 }
 
 .gallery .container .contenedor .card .box .content {
-  padding: 0px;
+  /* padding: 0px; */
   text-align: center;
   position: relative;
   justify-content: center;
@@ -1292,6 +1292,152 @@ section {
 }
 
 /* Gallery card end */
+
+/* Ventana modal lugares */
+
+.gallery .modal_img {
+
+  width: 30rem;
+  height: auto;
+
+}
+
+#titulo_lg{
+  margin: 0;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #010483;
+  display: flex;
+}
+
+.gallery .cabecera {
+  display: flex;  
+  justify-content: flex-start;
+  padding-bottom: 2rem;
+
+
+}
+.gallery .cuerpo {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.gallery .cuerpo p {
+  font-size: 14px;
+  font-weight: 500;
+/*   padding: 0; */
+  margin: 0 0 px 0;
+  letter-spacing: 2px;
+  color: #9c9c9c;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.gallery .cuerpo .desc_lg {
+  padding: 1em;
+
+}
+
+/* Star Rating */
+
+.gallery svg {
+
+  width: 3rem;
+  height: 3rem;
+  padding: 0.15rem;
+
+}
+
+/* hide radio buttons */
+input[name="star"] {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  margin-left: -2px;
+
+}
+
+/* hide source svg */
+.star-source {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+
+}
+
+
+/* set initial color to transparent so fill is empty*/
+.star {
+  color: transparent;
+  transition: color 0.2s ease-in-out;
+  width: 3rem;
+  height: 3rem;
+
+}
+
+
+/* set direction to row-reverse 
+so 5th star is at the end and ~ can be used to fill all 
+sibling stars that precede last starred element*/
+.star-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+  padding-left: 1rem;
+
+}
+
+label:hover~label .star,
+svg.star:hover,
+input[name="star"]:focus~label .star,
+input[name="star"]:checked~label .star {
+  color: #ffff00;
+}
+
+input[name="star"]:checked+label .star {
+  animation: starred 0.5s;
+}
+
+input[name="star"]:checked+label {
+  animation: scaleup 1s;
+}
+
+@keyframes scaleup {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes starred {
+  from {
+    color: #bbbb00;
+  }
+
+  to {
+    color: #ffff00;
+  }
+}
+
+/* end Star rating */
+
+/* Start Maps */
+
+#map_lg {
+  height: 50rem;
+  
+}
+
+/* End Maps */
+
+/* End ventana modal */
 
 
 
@@ -1735,7 +1881,6 @@ section {
   font-size: 14px;
   font-weight: 500;
   padding: 0;
-  line-height: 1px;
   margin: 0 0 px 0;
   letter-spacing: 2px;
   /* text-transform: uppercase; */
