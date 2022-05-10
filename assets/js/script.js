@@ -426,7 +426,20 @@ function rellenar_plantilla_lugares(id) {
     plantilla_clone_lg.querySelector("#titulo_lg").innerText = dades_internes[id].name;
     plantilla_clone_lg.querySelector("#img_lg").src = dades_internes[id].photo.caption.contentURL;
     
-    container_lg.appendChild(plantilla_clone_lg)
+    container_lg.appendChild(plantilla_clone_lg);
+
+    const uluru = { lat: dades_internes[id].geo.latitude, lng: dades_internes[id].geo.longitude };
+
+    // The map, centered at Uluru
+    const map = new google.maps.Map(document.getElementById("map_lg"), {
+      zoom: 14,
+      center: uluru,
+    });
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+    }); 
 
 }
 /* End Plantilla ventana modal */
@@ -434,16 +447,16 @@ function rellenar_plantilla_lugares(id) {
 /* Start API maps */
 function initMap_lg(){
     // The location of Uluru
-  const uluru = { lat: -25.344, lng: 131.031 };
-  console.log(uluru)
+  let cabrera = { lat: 39.141944, lng: 2.945833 };
+
   // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map_lg"), {
-    zoom: 4,
-    center: uluru,
+  let map = new google.maps.Map(document.getElementById("map_cabrera"), {
+    zoom: 8,
+    center: cabrera,
   });
   // The marker, positioned at Uluru
   const marker = new google.maps.Marker({
-    position: uluru,
+    position: cabrera,
     map: map,
   });
 }
