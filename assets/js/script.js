@@ -25,12 +25,12 @@ function carregaDades() {
                 dades_internes.push(dades[i]);
 
             }
-            
-            
+
+
             crear_portfoli_lugares();
             carousel_itineraris();
-            carrr(); 
-           
+            carrr();
+
 
         }
     };
@@ -71,9 +71,9 @@ function carregaDadesPrivades() {
 /* Mete las tarjetas de lugares dentro de contenedor */
 function crear_portfoli_lugares() {
     for (let i = 0; i < dades_internes.length; i++) {
-        
+
         if (dades_internes[i].type == "Place") {
-            
+
             crearCarta(i);
         }
     }
@@ -92,7 +92,7 @@ function carousel_itineraris() {
 }
 
 /* Crea el contenedor de historia y mete los distintos elementos */
-function crear_hist(){
+function crear_hist() {
 
     let contenedor = document.createElement("div");
     contenedor.classList.add("container");
@@ -115,11 +115,11 @@ function crear_hist(){
 
     let c_ventana = document.querySelector("#historia");
     c_ventana.appendChild(contenedor);
-    
+
 
     for (let i = 0; i < dades_privades.length; i++) {
 
-        crear_elemento_hist((i%2 == 0), dades_privades[i].photo.caption.contentURL, dades_privades[i].titulo, dades_privades[i].description, c_ventana);
+        crear_elemento_hist((i % 2 == 0), dades_privades[i].photo.caption.contentURL, dades_privades[i].titulo, dades_privades[i].description, c_ventana);
 
     }
 
@@ -170,12 +170,12 @@ function crearItem(id) {
     let att3 = document.createAttribute("data-toggle");
     att3.value = "modal";
     boton_l.setAttribute("data-toggle", "modal");
-    
+
     let att4 = document.createAttribute("data-target");
     att4.value = "#modal_itinerarios";
-    boton_l.setAttribute("data-target", "#modal_itinerarios"); 
+    boton_l.setAttribute("data-target", "#modal_itinerarios");
 
-   
+
     boton_l.innerText = "Mas información";
 
 
@@ -219,10 +219,10 @@ function crearCarta(id) {
     let att3 = document.createAttribute("data-toggle");
     att3.value = "modal";
     boton.setAttribute("data-toggle", "modal");
-    
+
     let att4 = document.createAttribute("data-target");
     att4.value = "#modal_lugares";
-    boton.setAttribute("data-target", "#modal_lugares"); 
+    boton.setAttribute("data-target", "#modal_lugares");
 
     boton.innerText = "Mas información";
 
@@ -243,26 +243,26 @@ function crearCarta(id) {
 }
 
 /* Crea los elementos de historia */
-function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre){
+function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre) {
 
     let contenedor = document.createElement("div");
     contenedor.classList.add("row");
     contenedor.classList.add("content");
 
     let c_imagen = document.createElement("div");
-    if (e_par == true){
+    if (e_par == true) {
         c_imagen.classList.add("col-md-4");
-    }else{
+    } else {
         c_imagen.classList.add("col-md-4");
         c_imagen.classList.add("order-1");
         c_imagen.classList.add("order-md-2");
     }
-    
+
     let att = document.createAttribute("data-aos");
-    if (e_par == true){
+    if (e_par == true) {
         att.value = "fade-right";
         c_imagen.setAttribute("data-aos", "fade-right");
-    }else{
+    } else {
         att.value = "fade-left";
         c_imagen.setAttribute("data-aos", "fade-left");
     }
@@ -271,13 +271,13 @@ function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre){
     imagen.src = himg;
     imagen.classList.add("imagebox");
     imagen.classList.add("img-fluid");
-    imagen.alt="";
+    imagen.alt = "";
 
     let contenedor_texto = document.createElement("div");
-    if (e_par == true){
+    if (e_par == true) {
         contenedor_texto.classList.add("col-md-8");
         contenedor_texto.classList.add("pt-4");
-    }else{
+    } else {
         contenedor_texto.classList.add("col-md-8");
         contenedor_texto.classList.add("pt-5");
         contenedor_texto.classList.add("order-2");
@@ -362,7 +362,7 @@ function carrr() {
     $('.owl-carousel').owlCarousel({
 
         /* loop: false, */
-        
+
         rewind: true,
         stagePadding: 0,
         autoWidth: true,
@@ -399,16 +399,19 @@ function rellenar_plantilla_itinerarios(id) {
     const cuerpoAnterior_it = container_it.querySelector("#bloq_it");
 
     if (cuerpoAnterior_it !== null) {
-        container_it.removeChild(cuerpoAnterior_it);
-
-    }   
+        container_it.removeChild(cuerpoAnterior_it);     
+    }
+    
 
     plantilla_clone_it = plantilla_it.content.cloneNode(true);
     plantilla_clone_it.querySelector(".desc_it").innerText = dades_internes[id].description;
     plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
-    
+   
+
     container_it.appendChild(plantilla_clone_it);
+
+    nuevoItinerario(id);
 
 }
 
@@ -420,32 +423,32 @@ function rellenar_plantilla_lugares(id) {
     if (cuerpoAnterior_lg !== null) {
         container_lg.removeChild(cuerpoAnterior_lg);
     }
-   
+
     plantilla_clone_lg = plantilla_lg.content.cloneNode(true)
     plantilla_clone_lg.querySelector(".desc_lg").innerText = dades_internes[id].description;
     plantilla_clone_lg.querySelector("#titulo_lg").innerText = dades_internes[id].name;
     plantilla_clone_lg.querySelector("#img_lg").src = dades_internes[id].photo.caption.contentURL;
-    
+
     container_lg.appendChild(plantilla_clone_lg);
 
-    const uluru = { lat: dades_internes[id].geo.latitude, lng: dades_internes[id].geo.longitude };
+    const lugar = { lat: dades_internes[id].geo.latitude, lng: dades_internes[id].geo.longitude };
 
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map_lg"), {
-      zoom: 14,
-      center: uluru,
+        zoom: 14,
+        center: lugar,
     });
     // The marker, positioned at Uluru
     const marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
-    }); 
+        position: lugar,
+        map: map,
+    });
 
 }
 /* End Plantilla ventana modal */
 
 /* Start API maps */
-function initMap_lg(){
+function initMap(){
     // The location of Uluru
   let cabrera = { lat: 39.141944, lng: 2.945833 };
 
@@ -461,3 +464,48 @@ function initMap_lg(){
   });
 }
 /* End API maps */
+
+
+function displayRoute(origin, destination, service, display, id) {
+    service
+        .route({
+            origin: origin,
+            destination: destination,
+            waypoints: dades_internes[id].waypoints,
+            travelMode: google.maps.TravelMode.WALKING,
+            avoidTolls: true,
+        })
+        .then((result) => {
+            display.setDirections(result);
+        })
+        .catch((e) => {
+            alert("Could not display directions due to: " + e);
+        });
+}
+
+function nuevoItinerario(id){
+
+    let map = new google.maps.Map(document.getElementById("map_it"), {
+        zoom: 14,
+        center: { lat: 39.141944, lng: 2.945833 }, // caberera
+    });
+    
+    let directionsService = new google.maps.DirectionsService();
+    let directionsRenderer = new google.maps.DirectionsRenderer({
+        draggable: true,
+        /* map, */
+    });
+
+     
+    displayRoute(
+        { lat: dades_internes[id].start.latitude, lng: dades_internes[id].start.longitude },
+        { lat: dades_internes[id].end.latitude, lng: dades_internes[id].end.longitude },
+        directionsService,
+        directionsRenderer,
+        id
+    );
+
+ /* https://developers.google.com/maps/documentation/javascript/reference/marker?hl=en#MarkerOptions */
+
+/* https://developers.google.com/maps/documentation/javascript/examples/directions-draggable */
+}

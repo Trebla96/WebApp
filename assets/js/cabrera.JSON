@@ -18,8 +18,8 @@
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -28,7 +28,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/castillo.jpg",
                 "encodingFormat": null
             }
@@ -39,7 +39,6 @@
         "name": "Castillo",
         "url": "https://es.wikipedia.org/wiki/Castillo_de_Cabrera_(Baleares)"
     },
-
     {
         "type": "Place",
         "address": {
@@ -52,15 +51,15 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.162818, 
+            "latitude": 39.162818,
             "longitude": 2.947318
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -69,7 +68,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/cova_blava.jpeg",
                 "encodingFormat": null
             }
@@ -80,7 +79,6 @@
         "name": "Sa Cova Blava",
         "url": null
     },
-
     {
         "type": "Place",
         "address": {
@@ -93,16 +91,24 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.139855, 
+            "latitude": 39.139855,
             "longitude": 2.941240
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":"15:00:00",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
             "opens": "12:30:00",
             "exceptions": null,
             "description": null
@@ -110,7 +116,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/museo.jpg",
                 "encodingFormat": null
             }
@@ -121,7 +127,6 @@
         "name": "Museo de Cabrera",
         "url": "https://www.illesbalears.travel/recurso-turistico/es/mallorca/museo-cabrera"
     },
-
     {
         "type": "Place",
         "address": {
@@ -134,15 +139,15 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.139424, 
-            "longitude": 2.940461 
+            "latitude": 39.139424,
+            "longitude": 2.940461
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -151,7 +156,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/monumento_franceses.jpeg",
                 "encodingFormat": null
             }
@@ -162,8 +167,6 @@
         "name": "Monumento de los franceses",
         "url": null
     },
-
-
     {
         "type": "Place",
         "address": {
@@ -176,15 +179,15 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.129188,  
-            "longitude": 2.921810 
+            "latitude": 39.129188,
+            "longitude": 2.921810
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -193,7 +196,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/far_enciola.jpg",
                 "encodingFormat": null
             }
@@ -204,8 +207,6 @@
         "name": "Far de n'Enciola",
         "url": null
     },
-
-
     {
         "type": "Place",
         "address": {
@@ -218,15 +219,15 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.143990,   
-            "longitude": 2.936197 
+            "latitude": 39.143990,
+            "longitude": 2.936197
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -235,7 +236,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/purpura.png",
                 "encodingFormat": null
             }
@@ -246,7 +247,6 @@
         "name": "Taller de purpura",
         "url": null
     },
-
     {
         "type": "Place",
         "address": {
@@ -259,15 +259,15 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": 39.140103, 
-            "longitude": 2.941354 
+            "latitude": 39.140103,
+            "longitude": 2.941354
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -276,7 +276,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/jardin.jpg",
                 "encodingFormat": null
             }
@@ -287,7 +287,6 @@
         "name": "Jardin Botanico",
         "url": null
     },
-
     {
         "type": "Place",
         "address": {
@@ -301,14 +300,14 @@
         "geo": {
             "@type": "geoCoordinates",
             "latitude": 39.143784,
-            "longitude": 2.938669 
+            "longitude": 2.938669
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -317,7 +316,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/necrobizan.jpg",
                 "encodingFormat": null
             }
@@ -328,7 +327,6 @@
         "name": "Necropolis Bizantina",
         "url": null
     },
-
     {
         "type": "Place",
         "address": {
@@ -342,14 +340,14 @@
         "geo": {
             "@type": "geoCoordinates",
             "latitude": null,
-            "longitude": null 
+            "longitude": null
         },
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
         "OpeningHoursSpecification": {
-            "@type":"OpeningHoursSpecification",
-            "closes":null,
+            "@type": "OpeningHoursSpecification",
+            "closes": null,
             "dayOfWeek": null,
             "opens": null,
             "exceptions": null,
@@ -358,7 +356,7 @@
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/purpura.png",
                 "encodingFormat": null
             }
@@ -369,7 +367,6 @@
         "name": "Factoria de salazones",
         "url": null
     },
-
     {
         "type": "Itinerari",
         "address": {
@@ -380,19 +377,24 @@
             "postalCode": null,
             "streetAddress": null
         },
-        "geo": {
+        "start": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
+            "latitude": 39.15106672923495,
+            "longitude": 2.934375448902503
         },
+        "end": {
+            "@type": "geoCoordinates",
+            "latitude": 39.129357656496936,
+            "longitude": 2.921711488397656
+        },
+        "waypoints": null,
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
-
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/itineraris/FarEnciola.jpg",
                 "encodingFormat": null
             }
@@ -403,7 +405,6 @@
         "name": "Far de l'Enciola",
         "url": null
     },
-    
     {
         "type": "Itinerari",
         "address": {
@@ -414,19 +415,37 @@
             "postalCode": null,
             "streetAddress": null
         },
-        "geo": {
+        "start": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
+            "latitude": 39.15106672923495,
+            "longitude": 2.934375448902503
         },
+        "end": {
+            "@type": "geoCoordinates",
+            "latitude": 39.14102920696307,
+            "longitude": 2.9397041354358024
+        },
+        "waypoints": [
+            {
+                "location": {
+                    "lat": 39.132027660604955,
+                    "lng": 2.9515951339271442
+                }
+            },
+            {
+                "location": {
+                    "lat": 39.14086443951531,
+                    "lng": 2.941070593622411
+                }
+            }
+        ],
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
-
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/itineraris/figueres.jpg",
                 "encodingFormat": null
             }
@@ -437,7 +456,6 @@
         "name": "Figueres",
         "url": null
     },
-
     {
         "type": "Itinerari",
         "address": {
@@ -448,19 +466,24 @@
             "postalCode": null,
             "streetAddress": null
         },
-        "geo": {
+        "start": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
+            "latitude": 39.15106672923495,
+            "longitude": 2.934375448902503
         },
+        "end": {
+            "@type": "geoCoordinates",
+            "latitude": 39.14312829622848, 
+            "longitude": 2.9307584764255536
+        },
+        "waypoints": null,
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
-
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/itineraris/arqueologia.png",
                 "encodingFormat": null
             }
@@ -471,7 +494,6 @@
         "name": "arqueologic",
         "url": null
     },
-
     {
         "type": "Itinerari",
         "address": {
@@ -482,19 +504,24 @@
             "postalCode": null,
             "streetAddress": null
         },
-        "geo": {
+        "start": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
+            "latitude": 39.15106672923495,
+            "longitude": 2.934375448902503
         },
+        "end": {
+            "@type": "geoCoordinates",
+            "latitude": 39.14446214952283,
+            "longitude": 2.945293401791869
+        },
+        "waypoints": null,
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
-
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/itineraris/miranda.jpg",
                 "encodingFormat": null
             }
@@ -505,7 +532,6 @@
         "name": "Miranda",
         "url": null
     },
-
     {
         "type": "Itinerari",
         "address": {
@@ -516,19 +542,31 @@
             "postalCode": null,
             "streetAddress": null
         },
-        "geo": {
+        "start": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
+            "latitude": 39.15106672923495,
+            "longitude": 2.934375448902503
         },
+        "end": {
+            "@type": "geoCoordinates",
+            "latitude": 39.155000168810496,
+            "longitude": 2.966447074107043
+        },
+        "waypoints": [
+            {
+                "location": {
+                    "lat": 39.148721818427276,
+                    "lng": 2.941443443958563
+                }
+            }
+        ],
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
-
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/itineraris/m_picamosques.png",
                 "encodingFormat": null
             }
@@ -536,10 +574,9 @@
         "telephone": null,
         "description": "meter coordenadas del taller de purpura",
         "identifier": null,
-        "name": "Picamosques",
+        "name": "Ses Sitges",
         "url": null
     },
-
     {
         "type": "Itinerari",
         "address": {
@@ -550,19 +587,24 @@
             "postalCode": null,
             "streetAddress": null
         },
-        "geo": {
+        "start": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
+            "latitude": 39.15106672923495,
+            "longitude": 2.934375448902503
         },
+        "end": {
+            "@type": "geoCoordinates",
+            "latitude": 39.15273773063009, 
+            "longitude": 2.931837811919044
+        },
+        "waypoints": null,
         "event": null,
         "isAccessibleForFree": true,
         "publicAccess": true,
-
         "photo": {
             "@type": "ImageObject",
             "caption": {
-                "@type":"MediaObject",
+                "@type": "MediaObject",
                 "contentURL": "assets/img/lugares/castillo.jpg",
                 "encodingFormat": null
             }
@@ -572,40 +614,5 @@
         "identifier": null,
         "name": "Castillo",
         "url": null
-    },
-
-    {
-        "type": "Itinerari",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCounter": "España",
-            "addressLocality": "Palma de Mallorca",
-            "addressRegion": "Islas Baleares",
-            "postalCode": null,
-            "streetAddress": null
-        },
-        "geo": {
-            "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null 
-        },
-        "event": null,
-        "isAccessibleForFree": true,
-        "publicAccess": true,
-
-        "photo": {
-            "@type": "ImageObject",
-            "caption": {
-                "@type":"MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
-                "encodingFormat": null
-            }
-        },
-        "telephone": null,
-        "description": "meter coordenadas del taller de purpura",
-        "identifier": null,
-        "name": "Factoria de salaons",
-        "url": null
     }
-    
 ]
