@@ -81,3 +81,15 @@ https://schema.org/OpeningHoursSpecification
 https://github.com/jandra-rm/TM_Practica
 
 https://developers.google.com/maps/documentation/javascript/examples/directions-draggable
+
+https://developers.google.com/maps/documentation/javascript/reference/marker?hl=en#MarkerOptions
+
+https://developers.google.com/maps/documentation/javascript/examples/directions-draggable
+
+77f1ce5bc50c86aff883be3e0caf2d7b    // API tiempo (weather)
+
+https://f1tracks.netlify.app/track.html //F1
+
+https://codepen.io/yagoubamine/embed/bqZdRZ?height=316&theme-id=0&default-tab=result
+
+https://openweathermap.org/guide

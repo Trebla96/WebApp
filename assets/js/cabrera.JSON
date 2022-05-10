@@ -491,7 +491,7 @@
         "telephone": null,
         "description": "meter coordenadas del taller de purpura",
         "identifier": null,
-        "name": "arqueologic",
+        "name": "Arqueologic",
         "url": null
     },
     {
@@ -567,7 +567,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/itineraris/m_picamosques.png",
+                "contentURL": "assets/img/itineraris/sitges.webp",
                 "encodingFormat": null
             }
         },

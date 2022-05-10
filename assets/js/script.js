@@ -492,8 +492,9 @@ function nuevoItinerario(id){
     
     let directionsService = new google.maps.DirectionsService();
     let directionsRenderer = new google.maps.DirectionsRenderer({
-        draggable: true,
-        /* map, */
+        /* draggable: false, */
+        map,
+        zIndex: 0
     });
 
      
@@ -505,7 +506,4 @@ function nuevoItinerario(id){
         id
     );
 
- /* https://developers.google.com/maps/documentation/javascript/reference/marker?hl=en#MarkerOptions */
-
-/* https://developers.google.com/maps/documentation/javascript/examples/directions-draggable */
 }
