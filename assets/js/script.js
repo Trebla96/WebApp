@@ -575,7 +575,7 @@ function handleData(arr){
 $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(function(position) {
        $.ajax({
-          url: 'https://api.openweathermap.org/data/2.5/weather?lat={39.141550974876765}&lon={2.9450440259637793}&appid={77f1ce5bc50c86aff883be3e0caf2d7b}',
+          url: 'https://api.openweathermap.org/data/2.5/weather?lat=39.141550974876765&lon=2.9450440259637793&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
           success: function(data) {
             handleData(data.list);
             $("#contry").text(data.city.country + "__" + data.city.name);
@@ -597,5 +597,6 @@ $(document).ready(function() {
         });
     });
 });
+
 
 /* End API Tiempo */
