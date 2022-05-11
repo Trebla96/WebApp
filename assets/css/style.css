@@ -2383,5 +2383,195 @@ input[name="star"]:checked+label {
 
 /* el tiempo */
 
+.about .tiempo .weather-widget {
+  border: 2px solid white;
+  height: 270px;
+  width: 40%;
+  min-width: 400px;
+  overflow: hidden;
+  color: #fff;
+  text-shadow: 2px 2px 2px #333333;
+}
+
+.tiempo .center {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.tiempo .weather-widget h1 {
+  margin: .3em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.tiempo .weather-widget h3 {
+  margin-left: 3em;
+  margin-bottom: 0;
+  font-size: 1.5em;
+}
+
+.tiempo .weather-widget form {
+  width: 40%;
+  float: right;
+}
+
+.weather-widget span {
+  font-size: 4.5em;
+}
+
+.tiempo .weather-widget p {
+  margin: 0 3em;
+  font-weight: bold;
+}
+
+.tiempo .weather-widget span .wi {
+  margin-left: .3em;
+}
+
+.tiempo .five-day {
+  display: flex;
+}
+
+.tiempo .five-day [class^="day-"] {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.tiempo .five-day [class^="day-"] h5 {
+  margin: .2em;
+}
+
+.tiempo .five-day [class^="day-"] span {
+  font-size: 1.5em;
+}
+
+.tiempo .pure-toggle {
+  cursor: pointer;
+  margin: 1em .2em;
+  font-size: 1.5em;
+  width: 6em;
+  height: 3em;
+  display: inline-block;
+  position: relative;
+  background: white;
+  text-align: left;
+  line-height: 3em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-perspective: 300px;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+
+.tiempo .pure-toggle:before {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #f5f5f5;
+  display: inline-block;
+  text-align: center;
+  font-family: 'WeatherIcons', sans-serif;
+  content: "\f055";
+  color: #ffffff;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -moz-transform-origin: 0% 50%;
+  -ms-transform-origin: 0% 50%;
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  /*@include box-shadow(0.1em 0 0.2em rgba(0,0,0,0.3));*/
+}
+
+.tiempo .pure-toggle .wi {
+  font-size: 2em;
+  margin-top: .3em;
+}
+
+.tiempo .pure-toggle .wi:nth-child(1) {
+  margin-left: .4em;
+  color: #5EB9CC;
+}
+
+.tiempo .pure-toggle .wi:nth-child(2) {
+  margin-left: .8em;
+  color: #cc0966;
+}
+
+.tiempo .pure-toggle.brick {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-bottom-color: #e6e6e6;
+  box-shadow: inset 0 0.1em 0.03em rgba(0, 0, 0, 0.2),
+      inset 0 0.1em 0.3em rgba(0, 0, 0, 0.3),
+      0 0 2em rgba(255, 255, 255, 0.6);
+}
+
+.tiempo .pure-toggle.brick:before {
+  margin-right: -1px;
+  margin-top: -0.14em;
+  box-shadow: 0 0.12em 0.01em #3ba5bc,
+      0 0.12em 0.3em rgba(59, 165, 188, 0.6),
+      0 0.12em 2em rgba(0, 0, 0, 0.3),
+      -0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
+  transition-duration: 0.66667s;
+  transition-timing-function: cubic-bezier(0.52, -0.41, 0.55, 1.46);
+}
+
+.tiempo .pure-toggle.brick.switch:before {
+  display: none;
+}
+
+input[type='checkbox']+.pure-toggle:before {
+  transform: rotateY(0deg);
+  background-color: #5EB9CC;
+}
+
+input[type='checkbox']+.pure-toggle [class^="fontawesome-"],
+input[type='checkbox']+.pure-toggle [class*="fontawesome-"] {
+  color: #5EB9CC;
+}
+
+input[type='checkbox']+.pure-toggle.brick:before {
+  border-bottom: 0.03em solid #71c1d2;
+  text-shadow: 0 0.05em 0 #4bb1c6;
+  transform: rotateY(0deg);
+}
+
+input[type='checkbox']+.pure-toggle.brick.switch .ok {
+  color: white;
+}
+
+input[type='checkbox']:checked+.pure-toggle:before {
+  background-color: #cc0966;
+}
+
+input[type='checkbox']:checked+.pure-toggle [class^="fontawesome-"],
+input[type='checkbox']:checked+.pure-toggle [class*="fontawesome-"] {
+  color: #cc0966;
+}
+
+input[type='checkbox']:checked+.pure-toggle.brick:before {
+  margin-right: 3em;
+  border-bottom: 0.03em solid #f5137f;
+  text-shadow: 0 0.05em 0 #9b074e;
+  transform: rotateY(0deg);
+  box-shadow: 0 0.12em 0.01em #9b074e,
+      0 0.12em 0.3em rgba(155, 7, 78, 0.6),
+      0 0.12em 2em rgba(0, 0, 0, 0.3),
+      0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
+}
+
+input[type='checkbox']:checked+.pure-toggle.brick.switch:before {
+  display: none;
+}
 
 /* End el tiempo */

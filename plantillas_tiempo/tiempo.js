@@ -27,7 +27,7 @@ function generateIcon(data){
             icon = "wi-fog";
             break;
         default:
-            icon = "wi-na";
+            icon = "wi-fog";
             break;
     }
     return icon;

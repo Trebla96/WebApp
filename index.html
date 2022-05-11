@@ -130,15 +130,73 @@
     <section id="resumen" class="about">
       <div class="container-fluid">
 
-        <div class="row">
+        <!--         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch"
             data-aos="fade-right">
 
-            <!-- la imagen de background esta en video-box (css) -->
+            la imagen de background esta en video-box (css)
             <button type="button" class="venobox play-btn mb-4" data-toggle="modal" data-target="#myModal"></button>
 
-          </div>
+          </div> 
+-->
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+            <!-- Tiempo -->
+            <div class="tiempo">
+              <div class="weather-widget center">
+                <div class="center">
+                  <h1 id="contry">Cabrera</h1>
+                  <form>
+                    <div>
+                      <input type="checkbox" id="pure-toggle-4" name="units" value="c" checked hidden />
+                      <label class="pure-toggle brick" for="pure-toggle-4">
+                        <i class="wi wi-fahrenheit"></i>
+                        <i class="wi wi-celsius"></i>
+                      </label>
+                    </div>
+                  </form>
+                  <h3>Today</h3>
+                  <span>
+                    <i id="day-0-icon" class="wi wi-na"></i>
+                  </span>
+                  <span id="day-0-temp">N/A</span>
+                  <p id="desc">N/A</p>
 
+                  <hr>
+                  <div class="five-day">
+                    <div class="day-1">
+                      <h5>N/A</h5>
+                      <i id="day-1-icon" class="wi wi-na"></i>
+                      <span id="day-1-temp">N/A</span>
+                    </div>
+                    <div class="day-2">
+                      <h5>N/A</h5>
+                      <i id="day-2-icon" class="wi wi-na"></i>
+                      <span id="day-2-temp">N/A</span>
+                    </div>
+                    <div class="day-3">
+                      <h5>N/A</h5>
+                      <i id="day-3-icon" class="wi wi-na"></i>
+                      <span id="day-3-temp">N/A</span>
+                    </div>
+                    <div class="day-4">
+                      <h5>N/A</h5>
+                      <i id="day-4-icon" class="wi wi-na"></i>
+                      <span id="day-4-temp">N/A</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="blur">
+                  <img src="https://preview.ibb.co/mLb4J5/dandelion_1737324_960_720.jpg" alt="dandelion_1737324_960_720"
+                    class="bg">
+                </div>
+              </div>
+            </div>
+
+            <!-- tiempo -->
+
+          </div>
 
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
@@ -193,11 +251,11 @@
 
           </div>
         </div>
-        
+
 
       </div>
 
-        <div id = "map_cabrera" ></div>
+      <div id="map_cabrera"></div>
 
       <!-- Ventana Modal -->
       <div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -363,7 +421,7 @@
             <div class="complementos">
 
               <!-- <div id="map_lg"></div> -->
-              
+
 
             </div>
 
@@ -389,7 +447,7 @@
                   <div id="info-dinamica-lugares">
 
                     <!-- info dinamica -->
-                    
+
                   </div>
                   <div id="map_lg"></div>
 
@@ -401,7 +459,7 @@
         </div>
         <!-- Fin Ventana modal -->
 
-        
+
     </section>
 
     <!-- <button type="button" class="position-absolute bottom-0 start-50 translate-middle-x"
@@ -537,7 +595,7 @@
 
                   <!-- info dinamica -->
                 </div>
-               
+
               </div>
 
             </div>
@@ -840,7 +898,9 @@
   <script src="assets/js/main.js"></script>
 
   <!-- API Maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ&callback=initMap&v=weekly" defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ&callback=initMap&v=weekly"
+    defer></script>
 
   <!-- ¡¡¡quitar de aqui!!! -->
   <div class="star-source">
