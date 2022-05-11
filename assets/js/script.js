@@ -515,35 +515,38 @@ function nuevoItinerario(id){
 function generateIcon(data){
     var icon;
     switch(data){
-        case "clear sky":
+        case "cielo claro":
             icon = "bi bi-sun";
             break;
-        case "few clouds":
+        case "algo de nubes":
             icon = "bi bi-cloud-sun";
             break;
-        case "scattered clouds":
-        case "broken clouds":
-            icon = "wi-cloudy";
+        case "nubes dispersas":
+            icon = "bi bi-cloud";
+            break;
+        case "nubes":
+            icon = "bi bi-clouds";
             break;
         case "shower rain":
-            icon = "wi-hail";
+            icon = "bi bi-cloud-drizzle";
             break;
         case "rain":
-            icon = "wi-day-rain-mix";
+            icon = "bi bi-cloud-lightning-rain";
             break;
         case "thunderstorm":
-            icon = "wi-thunderstorm";
+            icon = "bi bi-cloud-lightning";
             break;
         case "snow":
             icon = "bi bi-cloud-snow";
             break;
         case "mist":
-            icon = "wi-fog";
+            icon = "bi bi-cloud-fog2";
             break;
         default:
-            icon = "wi-na";
+            icon = "bi bi-emoji-dizzy";
             break;
     }
+    console.log(data)
     return icon;
 }
     
@@ -575,10 +578,10 @@ function handleData(arr){
 $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(function(position) {
        $.ajax({
-          url: 'https://api.openweathermap.org/data/2.5/weather?lat=39.141550974876765&lon=2.9450440259637793&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
+          url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
           success: function(data) {
             handleData(data.list);
-            $("#contry").text(data.city.country + "__" + data.city.name);
+            /* $("#contry").text(data.city.country + "__" + data.city.name); */
             $("#desc").text(data.list[0].weather[0].description);
             $('input').on('change', function() {
               var temps = $("[id$=temp]");
