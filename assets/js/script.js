@@ -361,27 +361,32 @@ function carrr() {
 
     $('.owl-carousel').owlCarousel({
 
-        /* loop: false, */
+        /* loop: true,*/
+        /* center: true, */
+        /* callbacks: true, */
 
         rewind: true,
         stagePadding: 0,
         autoWidth: true,
         nav: true,
         navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
-        /* center: true, */
-        /* margin: 10, */
-
+       
+        margin: 0,
+        
+        items: 1,
+       
+ 
         responsive: {
             0: {
-                items: 1,
+                /* items: 1, */
                 center: true,
             },
             600: {
-                items: 2,
+                /* items: 2, */
                 center: true,
             },
             1000: {
-                items: 3,
+                /* items: 3, */
             }
         }
     })
@@ -431,15 +436,15 @@ function rellenar_plantilla_lugares(id) {
 
     container_lg.appendChild(plantilla_clone_lg);
 
-    const lugar = { lat: dades_internes[id].geo.latitude, lng: dades_internes[id].geo.longitude };
+    let lugar = { lat: dades_internes[id].geo.latitude, lng: dades_internes[id].geo.longitude };
 
     // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map_lg"), {
+    let map = new google.maps.Map(document.getElementById("map_lg"), {
         zoom: 14,
         center: lugar,
     });
     // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
         position: lugar,
         map: map,
     });
@@ -485,18 +490,22 @@ function displayRoute(origin, destination, service, display, id) {
 
 function nuevoItinerario(id){
 
-    let map = new google.maps.Map(document.getElementById("map_it"), {
+    let cabrera = { lat: 39.141944, lng: 2.945833 };
+
+    const map = new google.maps.Map(document.getElementById("map_it"), {
         zoom: 14,
-        center: { lat: 39.141944, lng: 2.945833 }, // caberera
+        center: cabrera, // caberera
     });
-    
+
+    console.log({map})
     let directionsService = new google.maps.DirectionsService();
     let directionsRenderer = new google.maps.DirectionsRenderer({
         /* draggable: false, */
-        map,
-        zIndex: 0
+        map: map,
+        zIndex: 0,
+        
     });
-
+    
      
     displayRoute(
         { lat: dades_internes[id].start.latitude, lng: dades_internes[id].start.longitude },
@@ -505,6 +514,24 @@ function nuevoItinerario(id){
         directionsRenderer,
         id
     );
+
+    console.log(map.getZoom())
+        // The location of Uluru
+  
+
+  // The map, centered at Uluru
+/*   let map = new google.maps.Map(document.getElementById("map_cabrera"), {
+    zoom: 8,
+    center: 
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: cabrera,
+    map: map,
+  }); */
+
+
+    
 
 }
 
