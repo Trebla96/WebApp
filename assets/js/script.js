@@ -1,14 +1,43 @@
 /* start JSON */
-let dades = [];
+/* let dades = []; */
+let dades;
 let dades_internes = [];
 let dades_p = [];
 let dades_privades = [];
 
-carregaDades();
-carregaDadesPrivades();
-heroVideo();
 
-/* Carrega les dades del JSON public */
+async function getJSONFile() {
+    // lo guarda en la memoria principal (RAM)
+    let response = await fetch("assets/js/cabrera.JSON");
+    let data = await response.json();
+    dades_internes = data
+
+    let response2 = await fetch("assets/js/historia.json");
+    let data2 = await response2.json();
+    dades_privades = data2
+}
+
+window.onload = async function () {
+
+    await getJSONFile();
+    
+    heroVideo();
+    crear_portfoli_lugares();
+    carousel_itineraris();
+    carrusel();
+    crear_hist();
+
+};
+
+/* 
+function filtrar(){
+
+    let filtro = document.querySelector()
+
+} 
+*/
+
+/* OLD... Carrega les dades del JSON public*/
 function carregaDades() {
 
     let xmlhttp = new XMLHttpRequest();
@@ -40,7 +69,7 @@ function carregaDades() {
 
 }
 
-/* Carrega les dades del JSON privat */
+/* OLD... Carrega les dades del JSON privat */
 function carregaDadesPrivades() {
 
     let xmlhttp = new XMLHttpRequest();
@@ -87,6 +116,7 @@ function carousel_itineraris() {
         if (dades_internes[i].type == "Itinerari") {
 
             crearItem(i);
+            console.log(i)
         }
     }
 }
@@ -148,7 +178,7 @@ function crearItem(id) {
     carta.setAttribute("data-aos-delay", "100");
 
     let titulo = document.createElement("h3");
-    titulo.innerText = dades[id].name;
+    titulo.innerText = dades_internes[id].name;
 
     let imagen = document.createElement("img");
     imagen.src = dades_internes[id].photo.caption.contentURL;
@@ -357,7 +387,7 @@ function heroVideo() {
 }
 
 /* Start Carrousel */
-function carrr() {
+function carrusel() {
 
     $('.owl-carousel').owlCarousel({
 
@@ -370,12 +400,12 @@ function carrr() {
         autoWidth: true,
         nav: true,
         navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
-       
+
         margin: 0,
-        
+
         items: 1,
-       
- 
+
+
         responsive: {
             0: {
                 /* items: 1, */
@@ -404,15 +434,15 @@ function rellenar_plantilla_itinerarios(id) {
     const cuerpoAnterior_it = container_it.querySelector("#bloq_it");
 
     if (cuerpoAnterior_it !== null) {
-        container_it.removeChild(cuerpoAnterior_it);     
+        container_it.removeChild(cuerpoAnterior_it);
     }
-    
+
 
     plantilla_clone_it = plantilla_it.content.cloneNode(true);
     plantilla_clone_it.querySelector(".desc_it").innerText = dades_internes[id].description;
     plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
-   
+
 
     container_it.appendChild(plantilla_clone_it);
 
@@ -453,23 +483,21 @@ function rellenar_plantilla_lugares(id) {
 /* End Plantilla ventana modal */
 
 /* Start API maps */
-function initMap(){
+function initMap() {
     // The location of Uluru
-  let cabrera = { lat: 39.141944, lng: 2.945833 };
+    let cabrera = { lat: 39.141944, lng: 2.945833 };
 
-  // The map, centered at Uluru
-  let map = new google.maps.Map(document.getElementById("map_cabrera"), {
-    zoom: 8,
-    center: cabrera,
-  });
-  // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: cabrera,
-    map: map,
-  });
+    // The map, centered at Uluru
+    let map = new google.maps.Map(document.getElementById("map_cabrera"), {
+        zoom: 8,
+        center: cabrera,
+    });
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+        position: cabrera,
+        map: map,
+    });
 }
-
-
 
 function displayRoute(origin, destination, service, display, id) {
     service
@@ -488,7 +516,7 @@ function displayRoute(origin, destination, service, display, id) {
         });
 }
 
-function nuevoItinerario(id){
+function nuevoItinerario(id) {
 
     let cabrera = { lat: 39.141944, lng: 2.945833 };
 
@@ -497,16 +525,16 @@ function nuevoItinerario(id){
         center: cabrera, // caberera
     });
 
-    console.log({map})
+    console.log({ map })
     let directionsService = new google.maps.DirectionsService();
     let directionsRenderer = new google.maps.DirectionsRenderer({
         /* draggable: false, */
         map: map,
         zIndex: 0,
-        
+
     });
-    
-     
+
+
     displayRoute(
         { lat: dades_internes[id].start.latitude, lng: dades_internes[id].start.longitude },
         { lat: dades_internes[id].end.latitude, lng: dades_internes[id].end.longitude },
@@ -516,32 +544,30 @@ function nuevoItinerario(id){
     );
 
     console.log(map.getZoom())
-        // The location of Uluru
-  
-
-  // The map, centered at Uluru
-/*   let map = new google.maps.Map(document.getElementById("map_cabrera"), {
-    zoom: 8,
-    center: 
-  });
-  // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: cabrera,
-    map: map,
-  }); */
+    // The location of Uluru
 
 
-    
+    // The map, centered at Uluru
+    /*   let map = new google.maps.Map(document.getElementById("map_cabrera"), {
+        zoom: 8,
+        center: 
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: cabrera,
+        map: map,
+      }); */
+
+
+
 
 }
-
 /* End API maps */
 
 /* API Tiempo */
-
-function generateIcon(data){
+function generateIcon(data) {
     var icon;
-    switch(data){
+    switch (data) {
         case "cielo claro":
             icon = "bi bi-sun";
             break;
@@ -573,60 +599,57 @@ function generateIcon(data){
             icon = "bi bi-emoji-dizzy";
             break;
     }
-    console.log(data)
     return icon;
 }
-    
-function tempConverter(kelvin){
-   return Math.round(kelvin - 273.15);
- }    
 
-function getDate(day){
-  var date = new Date(new Date().getTime() + day * 60 * 60 * 1000);
-  return date.toLocaleDateString();
+function tempConverter(kelvin) {
+    return Math.round(kelvin - 273.15);
 }
 
-function handleData(arr){
-  var now = 0;
-  var day = 0;
-  var data;
-  for(var i=0; i <= 4; i++){
-    data = arr[now];
-    $(".day-"+i+" h5").text(getDate(day));
-    $("#day-"+i+"-icon").removeClass("wi-na");
-    $("#day-"+i+"-icon").addClass(generateIcon(data.weather[0].description));
-    $("#day-"+i+"-temp").text(tempConverter(data.main.temp));
-    day += 24;
-    now += 8;
-  }
+function getDate(day) {
+    var date = new Date(new Date().getTime() + day * 60 * 60 * 1000);
+    return date.toLocaleDateString();
 }
 
+function handleData(arr) {
+    var now = 0;
+    var day = 0;
+    var data;
+    for (var i = 0; i <= 4; i++) {
+        data = arr[now];
+        $(".day-" + i + " h5").text(getDate(day));
+        $("#day-" + i + "-icon").removeClass("wi-na");
+        $("#day-" + i + "-icon").addClass(generateIcon(data.weather[0].description));
+        $("#day-" + i + "-temp").text(tempConverter(data.main.temp));
+        day += 24;
+        now += 8;
+    }
+}
 
-$(document).ready(function() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-       $.ajax({
-          url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
-          success: function(data) {
-            handleData(data.list);
-            /* $("#contry").text(data.city.country + "__" + data.city.name); */
-            $("#desc").text(data.list[0].weather[0].description);
-            $('input').on('change', function() {
-              var temps = $("[id$=temp]");
-              var c = temps[0].textContent;
-               $.each( temps, function( i, val ) {
-                 var c = temps[i].textContent;
-                 if ($("#pure-toggle-4").is(':checked')) {
-                    $("[id=day-"+i+"-temp]").text(Math.round((c - 32) * (5/9)));
-                  } else {
-                     $("[id=day-"+i+"-temp]").text(Math.round(c * (9/5) + 32));
-                  }
-              });
-            });
-          },
-          cache: true
+$(document).ready(function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        $.ajax({
+            url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
+            success: function (data) {
+                handleData(data.list);
+                /* $("#contry").text(data.city.country + "__" + data.city.name); */
+                $("#desc").text(data.list[0].weather[0].description);
+                $('input').on('change', function () {
+                    var temps = $("[id$=temp]");
+                    var c = temps[0].textContent;
+                    $.each(temps, function (i, val) {
+                        var c = temps[i].textContent;
+                        if ($("#pure-toggle-4").is(':checked')) {
+                            $("[id=day-" + i + "-temp]").text(Math.round((c - 32) * (5 / 9)));
+                        } else {
+                            $("[id=day-" + i + "-temp]").text(Math.round(c * (9 / 5) + 32));
+                        }
+                    });
+                });
+            },
+            cache: true
         });
     });
 });
-
-
 /* End API Tiempo */
+
