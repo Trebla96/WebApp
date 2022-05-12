@@ -20,7 +20,7 @@ async function getJSONFile() {
 window.onload = async function () {
 
     await getJSONFile();
-    
+
     heroVideo();
     crear_portfoli_lugares();
     carousel_itineraris();
@@ -572,12 +572,13 @@ function generateIcon(data) {
             icon = "bi bi-sun";
             break;
         case "algo de nubes":
+        case "nubes dispersas":
             icon = "bi bi-cloud-sun";
             break;
-        case "nubes dispersas":
+        case "nubes":
             icon = "bi bi-cloud";
             break;
-        case "nubes":
+        case "muy nuboso":
             icon = "bi bi-clouds";
             break;
         case "shower rain":
@@ -599,6 +600,7 @@ function generateIcon(data) {
             icon = "bi bi-emoji-dizzy";
             break;
     }
+    console.log(data)
     return icon;
 }
 

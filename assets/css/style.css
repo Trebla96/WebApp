@@ -1304,9 +1304,18 @@ section {
 
 .gallery .modal_img {
 
-  width: 30rem;
+  width: 50%;
   height: auto;
 
+  object-fit: contain;
+
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .gallery .modal_img {
+    width: 100%;
+  }
 }
 
 #titulo_lg{
@@ -1324,12 +1333,25 @@ section {
   display: flex;  
   justify-content: flex-start;
   padding-bottom: 2rem;
-
-
 }
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .gallery .cabecera {
+    flex-direction: column;
+  }
+}
+
 .gallery .cuerpo {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .gallery .cuerpo {
+    flex-direction: column;
+  }
 }
 
 .gallery .cuerpo p {
@@ -1444,9 +1466,29 @@ input[name="star"]:checked+label {
 
 /* End Maps */
 
+.gallery .modal-back-to-top {
+  position: sticky;
+  align-self: flex-end;
+  visibility: visible;
+  opacity: 1;
+  right: 15px;
+  bottom: 15px;
+  z-index: 1;
+  background: #ffffff00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+  margin-top: -40px;
+}
+
+.gallery .modal-back-to-top:hover {
+  background: #1900ff57;
+  color: #fff;
+  opacity: 1;
+}
+
 /* End ventana modal */
-
-
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -1857,9 +1899,39 @@ input[name="star"]:checked+label {
 
 .pricing .modal_img {
 
-  width: 30rem;
+  width: 50%;
   height: auto;
+  object-fit: contain;
 
+}
+
+.pricing .modal-back-to-top {
+  position: sticky;
+  align-self: flex-end;
+  visibility: visible;
+  opacity: 1;
+  right: 15px;
+  bottom: 15px;
+  z-index: 1;
+  background: #ffffff00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+  margin-top: -40px;
+}
+
+.pricing .modal-back-to-top:hover {
+  background: #1900ff57;
+  color: #fff;
+  opacity: 1;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .pricing .modal_img {
+    width: 100%;
+  }
 }
 
 #titulo_it{
@@ -1877,13 +1949,27 @@ input[name="star"]:checked+label {
   display: flex;  
   justify-content: flex-start;
   padding-bottom: 2rem;
-
-
 }
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .pricing .cabecera {
+    flex-direction: column;
+  }
+}
+
 .pricing .cuerpo {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
 }
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .pricing .cuerpo {
+    flex-direction: column;
+  }
+}
+
 
 .pricing .cuerpo p {
   font-size: 14px;
@@ -2413,6 +2499,14 @@ input[name="star"]:checked+label {
   right: 0;
 }
 
+/* Responsive layout */
+@media (max-width: 400px) {
+  .tiempo .center {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .tiempo .weather-widget h1 {
   margin: .3em;
   font-size: 2em;
@@ -2447,6 +2541,14 @@ input[name="star"]:checked+label {
 .tiempo .five-day {
   display: flex;
   
+}
+
+/* Responsive layout */
+@media (max-width: 400px) {
+  .tiempo .five-day {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .tiempo .five-day [class^="day-"] {

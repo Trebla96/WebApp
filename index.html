@@ -49,7 +49,21 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
+  <!-- ¡¡¡quitar de aqui!!! -->
+  <div class="star-source">
+    <svg>
+      <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
+        <stop stop-color="#ffff00" offset="0%"></stop>
+        <stop stop-color="#eeee00" offset="60%"></stop>
+        <stop stop-color="#dddd00" offset="100%"></stop>
+      </linearGradient>
+      <symbol id="star" viewBox="153 89 106 108">
+        <polygon id="star-shape" stroke="url(#grad)" stroke-width="5" fill="currentColor"
+          points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085">
+        </polygon>
+      </symbol>
+    </svg>
+  </div>
 
 
   <!-- =======================================================
@@ -149,7 +163,7 @@
                   <form>
                     <div>
                       <input type="checkbox" id="pure-toggle-4" name="units" value="c" checked hidden />
-                      
+
                       <label class="pure-toggle brick" for="pure-toggle-4">
                         <i class="far ri-fahrenheit-fill"></i>
                         <i class="cel ri-celsius-fill"></i>
@@ -251,16 +265,12 @@
 
       <div id="map_cabrera"></div>
 
-      <!-- Ventana Modal -->
+      <!-- Ventana Modal video NO SE USA BORRAR-->
       <div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-
         <div class="modal-dialog modal-xl" id="añadirInfoElemento">
-
           <div class="modal-content">
-
             <div class="modal-body">
               <div class="embed-responsive embed-responsive-item">
-
                 <video autoplay muted loop controls class="videoPres">
                   <source src="assets/video/mivideo.mp4" type="video/mp4">
                   <!-- <source src="assets/video/mivideoc.mp4" type="video/mp4"> -->
@@ -268,34 +278,29 @@
                 </video>
               </div>
             </div>
-
           </div>
         </div>
       </div>
       <!-- Fin Ventana modal -->
 
+      <!-- Ventana modal historia -->
       <div class="portfolio-modal modal fade" id="H_Modal" tabindex="-1" role="dialog" aria-hidden="true">
-
         <div class="modal-dialog modal-xl" id="añadirInfoElemento">
-
           <div class="modal-content">
             <div class="col align-self-end close-modal" data-dismiss="modal">
               <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
             </div>
-
             <div class="modal-body">
               <div class="embed-responsive embed-responsive-item">
-
                 <section id="historia" class="details">
                   <!-- from JS -->
                 </section>
-
               </div>
             </div>
-
           </div>
         </div>
       </div>
+      <!-- Fin ventana modal historia -->
 
     </section>
     <!-- End About Section -->
@@ -427,15 +432,18 @@
                   <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
                 </div>
 
-                <!-- Plantilla aqui -->
                 <div class="modal-body">
+
                   <div id="info-dinamica-lugares">
-
                     <!-- info dinamica -->
-
+                    <!-- Plantilla aqui -->
                   </div>
                   <div id="map_lg"></div>
 
+                </div>
+
+                <div data-dismiss="modal" class="modal-back-to-top d-flex align-items-center justify-content-center">
+                  <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
                 </div>
 
               </div>
@@ -443,17 +451,7 @@
           </div>
         </div>
         <!-- Fin Ventana modal -->
-
-
     </section>
-
-    <!-- <button type="button" class="position-absolute bottom-0 start-50 translate-middle-x"
-                    data-target="#why">Mas información</button>
-   
- -->
-
-
-
     <!-- End Gallery Section -->
 
     <!-- ======= Pricing Section ======= -->
@@ -466,26 +464,18 @@
         </div>
 
         <!-- Start carrusel -->
-
         <div class="owl-container">
           <div id="carousel" class="owl-carousel owl-theme">
           </div>
         </div>
-
         <!-- End carrusel -->
 
       </div>
 
       <!-- Ventana Modal -->
 
-      <!-- SVG estrellas -->
-
-      <!-- SVG estrellas -->
-
       <!-- plantilla ventana modal -->
-
       <template id="plantilla_itinerarios">
-
 
         <div id="bloq_it" class="embed-responsive embed-responsive-item">
           <div class="cabecera">
@@ -560,13 +550,17 @@
                 <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
               </div>
 
-              <!-- Plantilla aqui -->
+              
               <div class="modal-body">
                 <div id="info-dinamica-itinerarios">
-
                   <!-- info dinamica -->
+                  <!-- Plantilla aqui -->
                 </div>
 
+              </div>
+
+              <div data-dismiss="modal" class="modal-back-to-top d-flex align-items-center justify-content-center">
+                <img class="modal-close" src="assets/img/Iconos/cerrar.svg" alt="Close modal">
               </div>
 
             </div>
@@ -746,12 +740,6 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="box featured enciola" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/utilitats/tiempo.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -840,7 +828,7 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
+      <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -873,21 +861,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ&callback=initMap&v=weekly"
     defer></script>
 
-  <!-- ¡¡¡quitar de aqui!!! -->
-  <div class="star-source">
-    <svg>
-      <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
-        <stop stop-color="#ffff00" offset="0%"></stop>
-        <stop stop-color="#eeee00" offset="60%"></stop>
-        <stop stop-color="#dddd00" offset="100%"></stop>
-      </linearGradient>
-      <symbol id="star" viewBox="153 89 106 108">
-        <polygon id="star-shape" stroke="url(#grad)" stroke-width="5" fill="currentColor"
-          points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085">
-        </polygon>
-      </symbol>
-    </svg>
-  </div>
+
 
 
   <!-- No hacen nada -->
