@@ -20,7 +20,6 @@ async function getJSONFile() {
 window.onload = async function () {
 
     await getJSONFile();
-
     heroVideo();
     crear_portfoli_lugares();
     carousel_itineraris();
@@ -112,11 +111,8 @@ function crear_portfoli_lugares() {
 function carousel_itineraris() {
 
     for (let i = 0; i < dades_internes.length; i++) {
-
         if (dades_internes[i].type == "Itinerari") {
-
             crearItem(i);
-            console.log(i)
         }
     }
 }
@@ -600,7 +596,6 @@ function generateIcon(data) {
             icon = "bi bi-emoji-dizzy";
             break;
     }
-    console.log(data)
     return icon;
 }
 
@@ -654,4 +649,15 @@ $(document).ready(function () {
     });
 });
 /* End API Tiempo */
+
+/* API calendario */
+document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+    });
+    calendar.render();
+});
+/* End API Calendario */
 
