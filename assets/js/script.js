@@ -1,9 +1,9 @@
-/* start JSON */
-/* let dades = []; */
-let dades;
 let dades_internes = [];
-let dades_p = [];
 let dades_privades = [];
+let dades_externes = [];
+
+let dades_p = []; /* desuso */
+let dades; /* desuso */
 
 
 async function getJSONFile() {
@@ -15,6 +15,10 @@ async function getJSONFile() {
     let response2 = await fetch("assets/js/historia.json");
     let data2 = await response2.json();
     dades_privades = data2
+
+    /* let response3 = await fetch("https://mallorcaevents.web.app/assets/js/events.json");
+    let data3 = await response3.json();
+    dades_externes = data3 */
 }
 
 window.onload = async function () {
@@ -24,72 +28,34 @@ window.onload = async function () {
     crear_portfoli_lugares();
     carousel_itineraris();
     carrusel();
+    init_calendar();
     crear_hist();
+    /* Dades exterenes -notWorking */
+   /*  carregaDades(); */
 
 };
-
-/* 
-function filtrar(){
-
-    let filtro = document.querySelector()
-
-} 
-*/
 
 /* OLD... Carrega les dades del JSON public*/
 function carregaDades() {
 
     let xmlhttp = new XMLHttpRequest();
-    let url = "assets/js/cabrera.json";
-
+    let url = "https://mallorcaevents.web.app/assets/js/events.json";
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
             dades = JSON.parse(xmlhttp.responseText);
+            console.log(dades);
 
             for (let i = 0; i < dades.length; i++) {
 
-                dades_internes.push(dades[i]);
+                dades_externes.push(dades[i]);
 
             }
 
-
-            crear_portfoli_lugares();
-            carousel_itineraris();
-            carrr();
-
-
         }
     };
-
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-
-}
-
-/* OLD... Carrega les dades del JSON privat */
-function carregaDadesPrivades() {
-
-    let xmlhttp = new XMLHttpRequest();
-    let url = "assets/js/historia.json";
-
-
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-            dades_p = JSON.parse(xmlhttp.responseText);
-
-            for (let i = 0; i < dades_p.length; i++) {
-
-                dades_privades.push(dades_p[i]);
-
-            }
-
-            crear_hist();
-
-        }
-    };
+    
 
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
@@ -327,12 +293,6 @@ function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre) {
     contenedor.appendChild(contenedor_texto);
 
     c_padre.appendChild(contenedor);
-
-
-
-    /* let c_ventana = document.querySelector("#historia");
-    c_ventana.appendChild(c_padre);
- */
 }
 /* end JSON */
 
@@ -396,11 +356,8 @@ function carrusel() {
         autoWidth: true,
         nav: true,
         navText: ["<div class='nav-button owl-prev'><div class=\"icon\"><i class=\"bi bi-chevron-compact-left\"></i></div></div>", "<div class='nav-button owl-next'><div class=\"icon\"><i class=\"bi bi-chevron-compact-right\"></i></div></div>"],
-
         margin: 0,
-
         items: 1,
-
 
         responsive: {
             0: {
@@ -416,7 +373,6 @@ function carrusel() {
             }
         }
     })
-
 }
 /* End carousel */
 
@@ -433,17 +389,14 @@ function rellenar_plantilla_itinerarios(id) {
         container_it.removeChild(cuerpoAnterior_it);
     }
 
-
     plantilla_clone_it = plantilla_it.content.cloneNode(true);
     plantilla_clone_it.querySelector(".desc_it").innerText = dades_internes[id].description;
     plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
 
-
     container_it.appendChild(plantilla_clone_it);
 
     nuevoItinerario(id);
-
 }
 
 function rellenar_plantilla_lugares(id) {
@@ -527,7 +480,6 @@ function nuevoItinerario(id) {
         /* draggable: false, */
         map: map,
         zIndex: 0,
-
     });
 
 
@@ -540,23 +492,6 @@ function nuevoItinerario(id) {
     );
 
     console.log(map.getZoom())
-    // The location of Uluru
-
-
-    // The map, centered at Uluru
-    /*   let map = new google.maps.Map(document.getElementById("map_cabrera"), {
-        zoom: 8,
-        center: 
-      });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        position: cabrera,
-        map: map,
-      }); */
-
-
-
-
 }
 /* End API maps */
 
@@ -651,13 +586,39 @@ $(document).ready(function () {
 /* End API Tiempo */
 
 /* API calendario */
-document.addEventListener('DOMContentLoaded', function () {
+
+function init_calendar(){
+
+    var initialLocaleCode = 'es';
+    var localeSelectorEl = document.getElementById('locale-selector');
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth',
+        locale: initialLocaleCode,
     });
     calendar.render();
-});
+
+    // build the locale selector's options
+    calendar.getAvailableLocaleCodes().forEach(function (localeCode) {
+        var optionEl = document.createElement('option');
+        optionEl.value = localeCode;
+        optionEl.selected = localeCode == initialLocaleCode;
+        optionEl.innerText = localeCode;
+        localeSelectorEl.appendChild(optionEl);
+    });
+
+    // when the selected option changes, dynamically change the calendar option
+    localeSelectorEl.addEventListener('change', function () {
+        if (this.value) {
+            calendar.setOption('locale', this.value);
+        }
+    });
+
+}
+
 /* End API Calendario */
 
+// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.15129157692223,2.933777072552625&radius=150&key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ
+
+// 39.15129157692223, 2.933777072552625
