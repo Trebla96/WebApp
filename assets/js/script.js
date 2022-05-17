@@ -31,8 +31,7 @@ window.onload = async function () {
     init_calendar();
     crear_hist();
     /* Dades exterenes -notWorking */
-   /*  carregaDades(); */
-
+    /* carregaDades();*/
 };
 
 /* OLD... Carrega les dades del JSON public*/
