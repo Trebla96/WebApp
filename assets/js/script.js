@@ -114,7 +114,6 @@ function crear_hist() {
 
     }
 
-
 }
 
 /* Crea los elementos de itinerarios */
@@ -392,10 +391,25 @@ function rellenar_plantilla_itinerarios(id) {
     plantilla_clone_it.querySelector(".desc_it").innerText = dades_internes[id].description;
     plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
+    /* plantilla_clone_it.getElementById("#corazon_it") */
+    plantilla_clone_it.querySelector("#corazon_it").addEventListener("click", tog_corazon, false);
+
+/*     $("corazon").click(function() {
+        $(this).toggleClass("heart heart-des");
+        
+      }); */
 
     container_it.appendChild(plantilla_clone_it);
 
     nuevoItinerario(id);
+}
+
+function tog_corazon(){
+    var cz = document.getElementById("corazon_it");
+    /* cz.toggleClass("fav_heart fav_heart-des"); */
+    $(cz).toggleClass("fav_heart fav_heart-des");
+    console.log("hi");
+    
 }
 
 function rellenar_plantilla_lugares(id) {
@@ -621,3 +635,8 @@ function init_calendar(){
 // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.15129157692223,2.933777072552625&radius=150&key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ
 
 // 39.15129157692223, 2.933777072552625
+
+/* $("corazon_lg").click(function() {
+    $(this).toggleClass("fav_heart fav_heart-des");
+    console.log("hi");
+  }); */
