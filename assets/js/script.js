@@ -31,7 +31,7 @@ window.onload = async function () {
     init_calendar();
     crear_hist();
     /* Dades exterenes -notWorking */
-    /* carregaDades();*/
+    /* carregaDades(); */
 };
 
 /* OLD... Carrega les dades del JSON public*/
@@ -391,25 +391,31 @@ function rellenar_plantilla_itinerarios(id) {
     plantilla_clone_it.querySelector(".desc_it").innerText = dades_internes[id].description;
     plantilla_clone_it.querySelector("#titulo_it").innerText = dades_internes[id].name;
     plantilla_clone_it.querySelector("#img_it").src = dades_internes[id].photo.caption.contentURL;
-    /* plantilla_clone_it.getElementById("#corazon_it") */
-    plantilla_clone_it.querySelector("#corazon_it").addEventListener("click", tog_corazon, false);
-
-/*     $("corazon").click(function() {
-        $(this).toggleClass("heart heart-des");
-        
-      }); */
+    plantilla_clone_it.querySelector("#corazon_it").addEventListener("click", tog_corazon_it, false);
 
     container_it.appendChild(plantilla_clone_it);
+
+     /* Miramos si esta en local storage */
+     if (true) {
+        /* Cambiamos el color a rojo */
+        var cz = document.getElementById("corazon_it");
+        $(cz).toggleClass("fav_heart fav_heart-des");
+        console.log("hi")
+    }
 
     nuevoItinerario(id);
 }
 
-function tog_corazon(){
+function tog_corazon_it(){
     var cz = document.getElementById("corazon_it");
-    /* cz.toggleClass("fav_heart fav_heart-des"); */
+    /* Cambiamos el corazon */
     $(cz).toggleClass("fav_heart fav_heart-des");
-    console.log("hi");
     
+    if (true) { /* local storage */
+        /* si estaba lo quita */
+    } else {
+        /* di no esta lo pone */
+    }
 }
 
 function rellenar_plantilla_lugares(id) {
@@ -425,22 +431,41 @@ function rellenar_plantilla_lugares(id) {
     plantilla_clone_lg.querySelector(".desc_lg").innerText = dades_internes[id].description;
     plantilla_clone_lg.querySelector("#titulo_lg").innerText = dades_internes[id].name;
     plantilla_clone_lg.querySelector("#img_lg").src = dades_internes[id].photo.caption.contentURL;
+    plantilla_clone_lg.querySelector("#corazon_lg").addEventListener("click", tog_corazon_lg, false);
 
     container_lg.appendChild(plantilla_clone_lg);
 
     let lugar = { lat: dades_internes[id].geo.latitude, lng: dades_internes[id].geo.longitude };
 
-    // The map, centered at Uluru
+    // The map, centered at place
     let map = new google.maps.Map(document.getElementById("map_lg"), {
         zoom: 14,
         center: lugar,
     });
-    // The marker, positioned at Uluru
+    // The marker, positioned at place
     let marker = new google.maps.Marker({
         position: lugar,
         map: map,
     });
 
+    /* Miramos si esta en local storage */
+    if (true) {
+        /* Cambiamos el color a rojo */
+        var cz = document.getElementById("corazon_lg");
+        $(cz).toggleClass("fav_heart fav_heart-des");
+    }
+}
+
+function tog_corazon_lg(){
+    var cz = document.getElementById("corazon_lg");
+    /* Cambiamos el corazon */
+    $(cz).toggleClass("fav_heart fav_heart-des");
+    
+    if (true) { /* local storage */
+        /* si estaba lo quita */
+    } else {
+        /* di no esta lo pone */
+    }
 }
 /* End Plantilla ventana modal */
 
@@ -487,14 +512,12 @@ function nuevoItinerario(id) {
         center: cabrera, // caberera
     });
 
-    console.log({ map })
     let directionsService = new google.maps.DirectionsService();
     let directionsRenderer = new google.maps.DirectionsRenderer({
         /* draggable: false, */
         map: map,
         zIndex: 0,
     });
-
 
     displayRoute(
         { lat: dades_internes[id].start.latitude, lng: dades_internes[id].start.longitude },
@@ -503,8 +526,6 @@ function nuevoItinerario(id) {
         directionsRenderer,
         id
     );
-
-    console.log(map.getZoom())
 }
 /* End API maps */
 

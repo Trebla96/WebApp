@@ -1914,11 +1914,18 @@ section {
 
 }
 
-/* Star Rating */
+/* Favorite */
 
+.pricing .fav_heart {
+  font-size: 25px;
+	color:red;
+}
+.pricing .fav_heart-des {
+  font-size: 25px;
+	color:#aaa;
+}
 
-
-/* end Star rating */
+/* end Favorite */
 
 #map_it{
 
