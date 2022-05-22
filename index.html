@@ -435,7 +435,7 @@
 
             <!-- Insertar corazon -->
             <div>
-              <i class="bi bi-heart-fill fav_heart-des" id="corazon_it" ></i>
+              <i class="bi bi-heart-fill fav_heart-des" id="corazon_it"></i>
             </div>
 
           </div>
@@ -536,79 +536,11 @@
       <div class="container">
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" id="slider_coment">
 
+            <!-- Comentarios [...] -->
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/lugares/covablava.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <!-- <h4>Ceo &amp; Founder</h4> -->
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  very nice natural park along the seashore, with many paths and people walking up and down, highly
-                  recommended
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/lugares/cantina.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Excellent water. Cool island to spend a day. The island itself offers few but a small bar.
-                  So bring food. But excellent to spend a day and swim with fish around you.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/lugares/purpura.png" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Worth the visit. It is like travelling to the past, 100% nature Amazing landscapes.
-                  An adventure for couples and family.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/lugares/museo.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  we took a one day tour with the boat to go to cabrera.
-                  A very nice place to walk and eat.
-                  The main museum was closed.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/lugares/castillo.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  We were delighted to find this beautiful Parc and beaches.
-                  The water is so turquoise it is incredible. Without a doubt my favourite
-                  place on the island.
-                  The beaches are busy but this didn't spoil anything for us.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+            </div>
 
           </div>
           <div class="swiper-pagination"></div>
@@ -630,29 +562,29 @@
         <div class="row">
 
           <div class="col-lg-10 mt-5 mt-lg-0" data-aos="fade-right" data-aos-delay="200">
-            <!-- col-lg-8 mt-5 mt-lg-0 -->
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form" id = form_coment>
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="e-mail" required>
                 </div>
               </div>
-              <!-- <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div> -->
+
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="3" placeholder="Comentario. Maximo 300 caracteres." required></textarea>
               </div>
+
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Cargando</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">Tu Comentario se ha enviado, gracias!</div>
               </div>
+
               <div class="text-center"><button type="submit">Envia Comentario</button></div>
+
             </form>
 
           </div>
@@ -754,7 +686,7 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+<!--   <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Javascript libraries-->
 

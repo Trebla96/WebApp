@@ -1,9 +1,11 @@
 let dades_internes = [];
 let dades_privades = [];
 let dades_externes = [];
+let comentaris = [];
 
 let dades_p = []; /* desuso */
 let dades; /* desuso */
+let dades_comentaris; /* desuso */
 
 
 async function getJSONFile() {
@@ -19,6 +21,11 @@ async function getJSONFile() {
     /* let response3 = await fetch("https://mallorcaevents.web.app/assets/js/events.json");
     let data3 = await response3.json();
     dades_externes = data3 */
+
+    /* Borrar */
+    let response4 = await fetch("assets/js/comentaris.json");
+    let data4 = await response4.json();
+    comentaris = data4
 }
 
 window.onload = async function () {
@@ -30,8 +37,10 @@ window.onload = async function () {
     carrusel();
     init_calendar();
     crear_hist();
+    banner_comentarios();
     /* Dades exterenes -notWorking */
     /* carregaDades(); */
+    /*  carregacomentaris(); */
 };
 
 /* OLD... Carrega les dades del JSON public*/
@@ -51,15 +60,36 @@ function carregaDades() {
                 dades_externes.push(dades[i]);
 
             }
-
         }
     };
-    
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+/*Carrega Comentaris*/
+/* function carregacomentaris() {
+
+    let xmlhttp = new XMLHttpRequest();
+    let url = "https://comentaris.000webhostapp.com/comentaris.JSON";
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+            dades_comentaris = JSON.parse(xmlhttp.responseText);
+
+            for (let i = 0; i < dades_comentaris.length; i++) {
+
+                comentaris.push(dades_comentaris[i]);
+
+            }
+        }
+    };
+
+    console.log(comentaris);
 
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
-
-}
+} */
 
 /* Mete las tarjetas de lugares dentro de contenedor */
 function crear_portfoli_lugares() {
@@ -395,8 +425,8 @@ function rellenar_plantilla_itinerarios(id) {
 
     container_it.appendChild(plantilla_clone_it);
 
-     /* Miramos si esta en local storage */
-     if (true) {
+    /* Miramos si esta en local storage */
+    if (true) {
         /* Cambiamos el color a rojo */
         var cz = document.getElementById("corazon_it");
         $(cz).toggleClass("fav_heart fav_heart-des");
@@ -406,11 +436,11 @@ function rellenar_plantilla_itinerarios(id) {
     nuevoItinerario(id);
 }
 
-function tog_corazon_it(){
+function tog_corazon_it() {
     var cz = document.getElementById("corazon_it");
     /* Cambiamos el corazon */
     $(cz).toggleClass("fav_heart fav_heart-des");
-    
+
     if (true) { /* local storage */
         /* si estaba lo quita */
     } else {
@@ -456,11 +486,11 @@ function rellenar_plantilla_lugares(id) {
     }
 }
 
-function tog_corazon_lg(){
+function tog_corazon_lg() {
     var cz = document.getElementById("corazon_lg");
     /* Cambiamos el corazon */
     $(cz).toggleClass("fav_heart fav_heart-des");
-    
+
     if (true) { /* local storage */
         /* si estaba lo quita */
     } else {
@@ -621,7 +651,7 @@ $(document).ready(function () {
 
 /* API calendario */
 
-function init_calendar(){
+function init_calendar() {
 
     var initialLocaleCode = 'es';
     var localeSelectorEl = document.getElementById('locale-selector');
@@ -653,11 +683,59 @@ function init_calendar(){
 
 /* End API Calendario */
 
-// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.15129157692223,2.933777072552625&radius=150&key=AIzaSyDWRC3dtdQqIfS-pW4Pt_eUJ7dPDSqAcIQ
+/* Comentarios Start */
 
-// 39.15129157692223, 2.933777072552625
 
-/* $("corazon_lg").click(function() {
-    $(this).toggleClass("fav_heart fav_heart-des");
-    console.log("hi");
-  }); */
+
+function item_comentario(id) {
+
+    let contenedor_padre = document.querySelector("#slider_coment");
+    let contenedor_coment = document.createElement("div");
+    contenedor_coment.classList.add("swiper-slide");
+    /* ${comentaris[id].name.substr(0,2)} */
+
+    let string_template =`
+    <div class="testimonial-item">
+        <div class="testimonial-img" alt="">${comentaris[id].name.substr(0,2)}</div>
+        <h3>${comentaris[id].name}</h3>
+        <p>
+            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+            ${comentaris[id].description}
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+        </p>
+    </div>`;
+
+    contenedor_coment.innerHTML = string_template;
+    contenedor_padre.appendChild(contenedor_coment);
+
+}
+
+function banner_comentarios() {
+
+    let contenedor_padre = document.querySelector("#slider_coment");
+    contenedor_padre.innerHTML = "";
+    let start;
+    let stop;
+
+    if (comentaris.length < 8 ) {
+        stop = comentaris.length;
+        start = 0;
+    }else{
+        stop = Math.floor((Math.random()*(comentaris.length - 10))+ 10)
+        start = stop-10; 
+    }
+    
+    for (let index = start; index < stop; index++) {
+        
+        item_comentario(index);
+    }
+
+}
+
+function todos_comentarios() {
+
+    /* let forms = document.querySelectorAll('#form_coment'); */
+    console.log("hi")
+}
+
+/* End Comentarios */

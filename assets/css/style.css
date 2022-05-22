@@ -1453,8 +1453,9 @@ section {
 .testimonials .testimonial-item .testimonial-img {
   width: 5rem;
   height: 5rem;
-  object-fit: cover;
-
+  font-size: xxx-large;
+  text-align: center;
+  display:grid;
   overflow: hidden;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.5);
