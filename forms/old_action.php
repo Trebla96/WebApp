@@ -1,6 +1,10 @@
-<?php
+Hola <?php
 
-  /**
+echo htmlspecialchars($_POST['name']);
+
+
+
+/**
   * Requires the "PHP Email Form" library
   * The "PHP Email Form" library is available only in the pro version of the template
   * The library should be uploaded to: vendor/php-email-form/php-email-form.php
@@ -39,5 +43,3 @@
   $contact->add_message( $_POST['message'], 'Message', 10);
 
   echo $contact->send(); */
-
-?>
