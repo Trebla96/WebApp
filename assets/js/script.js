@@ -23,9 +23,9 @@ async function getJSONFile() {
     dades_externes = data3 */
 
     /* Borrar */
-    let response4 = await fetch("assets/js/comentaris.json");
+    /* let response4 = await fetch("assets/js/comentaris.json");
     let data4 = await response4.json();
-    comentaris = data4
+    comentaris = data4 */
 }
 
 window.onload = async function () {
@@ -37,10 +37,10 @@ window.onload = async function () {
     carrusel();
     init_calendar();
     crear_hist();
-    banner_comentarios();
+    /* banner_comentarios(); */
     /* Dades exterenes -notWorking */
     /* carregaDades(); */
-    /*  carregacomentaris(); */
+     carregacomentaris();
 };
 
 /* OLD... Carrega les dades del JSON public*/
@@ -67,7 +67,7 @@ function carregaDades() {
 }
 
 /*Carrega Comentaris*/
-/* function carregacomentaris() {
+function carregacomentaris() {
 
     let xmlhttp = new XMLHttpRequest();
     let url = "https://comentaris.000webhostapp.com/comentaris.JSON";
@@ -83,13 +83,14 @@ function carregaDades() {
 
             }
         }
+        banner_comentarios();
     };
 
-    console.log(comentaris);
+   
 
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
-} */
+}
 
 /* Mete las tarjetas de lugares dentro de contenedor */
 function crear_portfoli_lugares() {
@@ -692,7 +693,6 @@ function item_comentario(id) {
     let contenedor_padre = document.querySelector("#slider_coment");
     let contenedor_coment = document.createElement("div");
     contenedor_coment.classList.add("swiper-slide");
-    /* ${comentaris[id].name.substr(0,2)} */
 
     let string_template =`
     <div class="testimonial-item">
@@ -735,88 +735,8 @@ function banner_comentarios() {
 function todos_comentarios() {
 
     /* let forms = document.querySelectorAll('#form_coment'); */
-    console.log("hi")
+    
 }
 
-/* (function () {
-    "use strict";
-  
-    let forms = document.querySelectorAll('.php-email-form');
-  
-    forms.forEach( function(e) {
-      e.addEventListener('submit', function(event) {
-        event.preventDefault();
-  
-        let thisForm = this;
-  
-        let action = thisForm.getAttribute('action');
-        let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-        
-        if( ! action ) {
-          displayError(thisForm, 'The form action property is not set!')
-          return;
-        }
-        thisForm.querySelector('.loading').classList.add('d-block');
-        thisForm.querySelector('.error-message').classList.remove('d-block');
-        thisForm.querySelector('.sent-message').classList.remove('d-block');
-  
-        let formData = new FormData( thisForm );
-  
-        if ( recaptcha ) {
-          if(typeof grecaptcha !== "undefined" ) {
-            grecaptcha.ready(function() {
-              try {
-                grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-                .then(token => {
-                  formData.set('recaptcha-response', token);
-                  php_email_form_submit(thisForm, action, formData);
-                })
-              } catch(error) {
-                displayError(thisForm, error)
-              }
-            });
-          } else {
-            displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-          }
-        } else {
-          php_email_form_submit(thisForm, action, formData);
-        }
-      });
-    });
-  
-    function php_email_form_submit(thisForm, action, formData) {
-      fetch(action, {
-        method: 'POST',
-        body: formData,
-        headers: {'X-Requested-With': 'XMLHttpRequest'}
-      })
-      .then(response => {
-        if( response.ok ) {
-          return response.text()
-        } else {
-          throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-        }
-      })
-      .then(data => {
-        thisForm.querySelector('.loading').classList.remove('d-block');
-        if (data.trim() == 'OK') {
-          thisForm.querySelector('.sent-message').classList.add('d-block');
-          thisForm.reset(); 
-        } else {
-          throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-        }
-      })
-      .catch((error) => {
-        displayError(thisForm, error);
-      });
-    }
-  
-    function displayError(thisForm, error) {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      thisForm.querySelector('.error-message').innerHTML = error;
-      thisForm.querySelector('.error-message').classList.add('d-block');
-    }
-  
-  })(); */
 
 /* End Comentarios */
