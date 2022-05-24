@@ -691,23 +691,23 @@ section {
   color: #010483;
 }
 
-.icon-buton{
+.icon-buton {
 
   padding: 0;
   border: none;
   background: none;
 }
 
-.modal-close{
+.modal-close {
   width: 2rem;
   height: 2rem;
 }
 
-#map_cabrera{
+#map_cabrera {
   width: 100%;
   height: 30rem;
   margin-top: 1rem;
-  
+
 }
 
 /*--------------------------------------------------------------
@@ -1116,7 +1116,7 @@ section {
 .gallery .container .barraBusqueda .sort-container .sort-selector {
   margin-left: 1rem;
   height: 2rem;
- /*  width: 20rem; */
+  /*  width: 20rem; */
   width: 80%;
   max-width: 20rem;
   outline: none;
@@ -1277,6 +1277,7 @@ section {
   font-family: "Montserrat", sans-serif;
 
 }
+
 /* a -> button */
 .gallery .container .contenedor .card .box .content button {
 
@@ -1318,7 +1319,7 @@ section {
   }
 }
 
-#titulo_lg{
+#titulo_lg {
   margin: 0;
   margin: 0;
   font-size: 36px;
@@ -1330,7 +1331,7 @@ section {
 }
 
 .gallery .cabecera {
-  display: flex;  
+  display: flex;
   justify-content: flex-start;
   padding-bottom: 2rem;
 }
@@ -1357,7 +1358,7 @@ section {
 .gallery .cuerpo p {
   font-size: 14px;
   font-weight: 500;
-/*   padding: 0; */
+  /*   padding: 0; */
   margin: 0 0 px 0;
   letter-spacing: 2px;
   color: #9c9c9c;
@@ -1373,11 +1374,12 @@ section {
 
 .gallery .fav_heart {
   font-size: 25px;
-	color:red;
+  color: red;
 }
+
 .gallery .fav_heart-des {
   font-size: 25px;
-	color:#aaa;
+  color: #aaa;
 }
 
 /* end Favorite */
@@ -1386,7 +1388,7 @@ section {
 
 #map_lg {
   height: 50rem;
-  
+
 }
 
 /* End Maps */
@@ -1455,7 +1457,7 @@ section {
   height: 5rem;
   font-size: xxx-large;
   text-align: center;
-  display:grid;
+  display: grid;
   overflow: hidden;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.5);
@@ -1860,7 +1862,7 @@ section {
   }
 }
 
-#titulo_it{
+#titulo_it {
   margin: 0;
   margin: 0;
   font-size: 36px;
@@ -1872,7 +1874,7 @@ section {
 }
 
 .pricing .cabecera {
-  display: flex;  
+  display: flex;
   justify-content: flex-start;
   padding-bottom: 2rem;
 }
@@ -1919,16 +1921,17 @@ section {
 
 .pricing .fav_heart {
   font-size: 25px;
-	color:red;
+  color: red;
 }
+
 .pricing .fav_heart-des {
   font-size: 25px;
-	color:#aaa;
+  color: #aaa;
 }
 
 /* end Favorite */
 
-#map_it{
+#map_it {
 
   height: 50rem;
 }
@@ -2325,7 +2328,7 @@ section {
 
 .about .tiempo {
   display: flex;
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(1,1,210,0.8015581232492998) 29%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(1, 1, 210, 0.8015581232492998) 29%, rgba(0, 212, 255, 1) 100%);
   height: 100%;
   width: 100%;
 
@@ -2344,7 +2347,7 @@ section {
 }
 
 .tiempo .center {
-  position:relative;
+  position: relative;
   margin: auto;
   top: 0;
   bottom: 0;
@@ -2393,7 +2396,7 @@ section {
 
 .tiempo .five-day {
   display: flex;
-  
+
 }
 
 /* Responsive layout */
@@ -2479,17 +2482,17 @@ section {
   border: 1px solid #d9d9d9;
   border-bottom-color: #e6e6e6;
   box-shadow: inset 0 0.1em 0.03em rgba(0, 0, 0, 0.2),
-      inset 0 0.1em 0.3em rgba(0, 0, 0, 0.3),
-      0 0 2em rgba(255, 255, 255, 0.6);
+    inset 0 0.1em 0.3em rgba(0, 0, 0, 0.3),
+    0 0 2em rgba(255, 255, 255, 0.6);
 }
 
 .tiempo .pure-toggle.brick:before {
   margin-right: -1px;
   margin-top: -0.14em;
   box-shadow: 0 0.12em 0.01em #3ba5bc,
-      0 0.12em 0.3em rgba(59, 165, 188, 0.6),
-      0 0.12em 2em rgba(0, 0, 0, 0.3),
-      -0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
+    0 0.12em 0.3em rgba(59, 165, 188, 0.6),
+    0 0.12em 2em rgba(0, 0, 0, 0.3),
+    -0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
   transition-duration: 0.66667s;
   transition-timing-function: cubic-bezier(0.52, -0.41, 0.55, 1.46);
 }
@@ -2533,9 +2536,9 @@ input[type='checkbox']:checked+.pure-toggle.brick:before {
   text-shadow: 0 0.05em 0 #9b074e;
   transform: rotateY(0deg);
   box-shadow: 0 0.12em 0.01em #9b074e,
-      0 0.12em 0.3em rgba(155, 7, 78, 0.6),
-      0 0.12em 2em rgba(0, 0, 0, 0.3),
-      0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
+    0 0.12em 0.3em rgba(155, 7, 78, 0.6),
+    0 0.12em 2em rgba(0, 0, 0, 0.3),
+    0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
 }
 
 input[type='checkbox']:checked+.pure-toggle.brick.switch:before {
@@ -2556,5 +2559,28 @@ input[type='checkbox']:checked+.pure-toggle.brick.switch:before {
 
 /* Corazon Favoritos */
 
+#lg_fav_btn {
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  height: 1rem;
+  width: 1rem;
+}
+
+#it_fav_btn {
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  height: 1rem;
+  width: 1rem;
+}
 
 /* End Corazon favoritos */
+
+/* Comentarios */
+
+#php_response {
+  display: none !important;
+}
+
+/* End Comentarios */
