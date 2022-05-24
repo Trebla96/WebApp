@@ -349,7 +349,7 @@
 
               <!-- insertar corazon -->
               <div>
-                <button id = "lg_fav_btn"><i class="bi bi-heart-fill fav_heart-des" id="corazon_lg"></i></button>
+                <i class="bi bi-heart-fill fav_heart-des" id="corazon_lg"></i>
               </div>
 
             </div>
@@ -435,7 +435,7 @@
 
             <!-- Insertar corazon -->
             <div>
-              <button id = "it_fav_btn"><i class="bi bi-heart-fill fav_heart-des" id="corazon_it"></i></button>
+              <i class="bi bi-heart-fill fav_heart-des" id="corazon_it"></i>
             </div>
 
           </div>
@@ -563,13 +563,24 @@
 
           <div class="col-lg-10 mt-5 mt-lg-0" data-aos="fade-right" data-aos-delay="200">
 
+           <!--  <form action="https://comentaris.000webhostapp.com/action.php" method="post">
+              <p>Su nombre: <input type="text" name="nombre" /></p>
+              <p>Su edad: <input type="text" name="edad" /></p>
+              <p><input type="submit" /></p>
+             </form> -->
+
              <!-- "https://comentaris.000webhostapp.com/action.php" -->
-              <form action = "https://comentaris.000webhostapp.com/action.php" target="php_response" method="post" role="form" class="php-email-form" id = "form_coment">
+
+              <form action="https://comentaris.000webhostapp.com/action.php" method="post" role="form" class="php-email-form" id = form_coment>
               <div class="row">
 
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                 </div>
+
+<!--                 <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="e-mail" required>
+                </div> -->
 
               </div>
 
@@ -583,12 +594,10 @@
                 <div class="sent-message">Tu Comentario se ha enviado, gracias!</div>
               </div>
 
-              <div class="text-center"><button id = "boton_enviar" type="submit">Envia Comentario</button></div>
+
+              <div class="text-center"><button type="submit">Envia Comentario</button></div>
 
             </form>
-
-            <iframe id = "php_response" src="com.html" name="php_response">
-            </iframe>
 
           </div>
 
