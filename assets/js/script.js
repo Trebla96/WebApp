@@ -42,6 +42,7 @@ window.onload = async function () {
     /* Dades exterenes -notWorking */
     carregaDades();
     carregacomentaris();
+    enviar_comentario();
 
 };
 
@@ -771,14 +772,19 @@ function banner_comentarios() {
         item_comentario(index);
     }
 
+}
+
+function enviar_comentario(){
+
     let limpiar = document.querySelector("#boton_enviar");
     let form = document.querySelector('#form_coment');
 
     limpiar.addEventListener("click", e => {
         e.preventDefault();
+        form.submit();
         form.reset();
         window.alert("Comentario enviado");
-
+        carregacomentaris();
     });
 
 }
