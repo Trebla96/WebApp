@@ -2,6 +2,7 @@ let dades_internes = [];
 let dades_privades = [];
 let dades_externes = [];
 let comentaris = [];
+let events_externs;
 
 let dades_p = []; /* desuso */
 let dades; /* desuso */
@@ -35,15 +36,16 @@ window.onload = async function () {
     crear_portfoli_lugares();
     carousel_itineraris();
     carrusel();
-    init_calendar();
+    /* init_calendar(); */
     crear_hist();
-    /* banner_comentarios(); */
+
     /* Dades exterenes -notWorking */
-    /* carregaDades(); */
-     carregacomentaris();
+    carregaDades();
+    carregacomentaris();
+
 };
 
-/* OLD... Carrega les dades del JSON public*/
+/*Carrega les dades del JSON extern*/
 function carregaDades() {
 
     let xmlhttp = new XMLHttpRequest();
@@ -53,13 +55,16 @@ function carregaDades() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
             dades = JSON.parse(xmlhttp.responseText);
-            console.log(dades);
 
             for (let i = 0; i < dades.length; i++) {
 
                 dades_externes.push(dades[i]);
 
             }
+
+            init_calendar();
+            /* events_externs = ompleix_calendari(); */
+
         }
     };
     xmlhttp.open("GET", url, true);
@@ -82,11 +87,10 @@ function carregacomentaris() {
                 comentaris.push(dades_comentaris[i]);
 
             }
-        }
-        banner_comentarios();
-    };
 
-   
+            banner_comentarios();
+        }
+    };
 
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
@@ -426,12 +430,27 @@ function rellenar_plantilla_itinerarios(id) {
 
     container_it.appendChild(plantilla_clone_it);
 
+
+    var cz_btn = document.getElementById("it_fav_btn");
+
+
+    cz_btn.addEventListener("click", e => {
+
+        let item = localStorage.getItem(dades_internes[id].name)
+
+        if (item == null || item == 0) {
+            localStorage.setItem(dades_internes[id].name, 1);
+        } else {
+            localStorage.setItem(dades_internes[id].name, 0);
+            localStorage.removeItem(dades_internes[id].name);
+        }
+    });
+
     /* Miramos si esta en local storage */
-    if (true) {
+    if (localStorage.getItem(dades_internes[id].name)) {
         /* Cambiamos el color a rojo */
         var cz = document.getElementById("corazon_it");
         $(cz).toggleClass("fav_heart fav_heart-des");
-        console.log("hi")
     }
 
     nuevoItinerario(id);
@@ -439,14 +458,7 @@ function rellenar_plantilla_itinerarios(id) {
 
 function tog_corazon_it() {
     var cz = document.getElementById("corazon_it");
-    /* Cambiamos el corazon */
     $(cz).toggleClass("fav_heart fav_heart-des");
-
-    if (true) { /* local storage */
-        /* si estaba lo quita */
-    } else {
-        /* di no esta lo pone */
-    }
 }
 
 function rellenar_plantilla_lugares(id) {
@@ -479,8 +491,24 @@ function rellenar_plantilla_lugares(id) {
         map: map,
     });
 
+    var cz_btn = document.getElementById("lg_fav_btn");
+
+
+    cz_btn.addEventListener("click", e => {
+
+        let item = localStorage.getItem(dades_internes[id].name)
+
+        if (item == null || item == 0) {
+            localStorage.setItem(dades_internes[id].name, 1);
+        } else {
+            localStorage.setItem(dades_internes[id].name, 0);
+            localStorage.removeItem(dades_internes[id].name);
+        }
+
+    });
+
     /* Miramos si esta en local storage */
-    if (true) {
+    if (localStorage.getItem(dades_internes[id].name)) {
         /* Cambiamos el color a rojo */
         var cz = document.getElementById("corazon_lg");
         $(cz).toggleClass("fav_heart fav_heart-des");
@@ -489,14 +517,7 @@ function rellenar_plantilla_lugares(id) {
 
 function tog_corazon_lg() {
     var cz = document.getElementById("corazon_lg");
-    /* Cambiamos el corazon */
     $(cz).toggleClass("fav_heart fav_heart-des");
-
-    if (true) { /* local storage */
-        /* si estaba lo quita */
-    } else {
-        /* di no esta lo pone */
-    }
 }
 /* End Plantilla ventana modal */
 
@@ -577,25 +598,27 @@ function generateIcon(data) {
         case "muy nuboso":
             icon = "bi bi-clouds";
             break;
-        case "shower rain":
+        case "lluvia ligera":
+        case "lluvia moderada":
             icon = "bi bi-cloud-drizzle";
             break;
-        case "rain":
+        case "lluvia":
             icon = "bi bi-cloud-lightning-rain";
             break;
-        case "thunderstorm":
+        case "thundetormentarstorm":
             icon = "bi bi-cloud-lightning";
             break;
-        case "snow":
+        case "nieve":
             icon = "bi bi-cloud-snow";
             break;
-        case "mist":
+        case "niebla":
             icon = "bi bi-cloud-fog2";
             break;
         default:
             icon = "bi bi-emoji-dizzy";
             break;
     }
+    console.log(data)
     return icon;
 }
 
@@ -661,6 +684,7 @@ function init_calendar() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: initialLocaleCode,
+        events: ompleix_calendari()
     });
     calendar.render();
 
@@ -682,11 +706,28 @@ function init_calendar() {
 
 }
 
+function ompleix_calendari() {
+
+    let res = {};
+    let eventos = [];
+
+    for (let i = 0; i < dades_externes.length; i++) {
+
+        if (dades_externes[i].location == "Alcúdia") {
+
+            res.title = dades_externes[i].name;
+            res.start = dades_externes[i].startDate;
+            res.end = dades_externes[i].endDate
+            eventos.push(res);
+        }
+    }
+
+    return eventos;
+}
+
 /* End API Calendario */
 
 /* Comentarios Start */
-
-
 
 function item_comentario(id) {
 
@@ -694,9 +735,9 @@ function item_comentario(id) {
     let contenedor_coment = document.createElement("div");
     contenedor_coment.classList.add("swiper-slide");
 
-    let string_template =`
+    let string_template = `
     <div class="testimonial-item">
-        <div class="testimonial-img" alt="">${comentaris[id].name.substr(0,2)}</div>
+        <div class="testimonial-img" alt="">${comentaris[id].name.substr(0, 2)}</div>
         <h3>${comentaris[id].name}</h3>
         <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -717,26 +758,28 @@ function banner_comentarios() {
     let start;
     let stop;
 
-    if (comentaris.length < 8 ) {
+    if (comentaris.length < 8) {
         stop = comentaris.length;
         start = 0;
-    }else{
-        stop = Math.floor((Math.random()*(comentaris.length - 10))+ 10)
-        start = stop-10; 
+    } else {
+        stop = Math.floor((Math.random() * (comentaris.length - 10)) + 10)
+        start = stop - 10;
     }
-    
+
     for (let index = start; index < stop; index++) {
-        
+
         item_comentario(index);
     }
 
+    let limpiar = document.querySelector("#boton_enviar");
+    let form = document.querySelector('#form_coment');
+
+    limpiar.addEventListener("click", e => {
+        e.preventDefault();
+        form.reset();
+        window.alert("Comentario enviado");
+
+    });
+
 }
-
-function todos_comentarios() {
-
-    /* let forms = document.querySelectorAll('#form_coment'); */
-    
-}
-
-
 /* End Comentarios */
