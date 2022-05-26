@@ -13,38 +13,42 @@ async function getJSONFile() {
     // lo guarda en la memoria principal (RAM)
     let response = await fetch("assets/js/cabrera.JSON");
     let data = await response.json();
-    dades_internes = data
+    dades_internes = data;
 
     let response2 = await fetch("assets/js/historia.json");
     let data2 = await response2.json();
-    dades_privades = data2
+    dades_privades = data2;
 
-    /* let response3 = await fetch("https://mallorcaevents.web.app/assets/js/events.json");
-    let data3 = await response3.json();
-    dades_externes = data3 */
-
-    /* Borrar */
-    /* let response4 = await fetch("assets/js/comentaris.json");
-    let data4 = await response4.json();
-    comentaris = data4 */
 }
+
+/* async function carregacomentaris() {
+    let response4 = await fetch("https://comentaris.000webhostapp.com/comentaris.JSON");
+    let data4 = await response4.json();
+    comentaris = [];
+    comentaris = data4;
+
+} */
+
 
 window.onload = async function () {
 
-    await getJSONFile();
-    heroVideo();
-    crear_portfoli_lugares();
-    carousel_itineraris();
-    carrusel();
-    /* init_calendar(); */
-    crear_hist();
+    await getJSONFile(); //Carrega les dades de la pagina web
+    carregacomentaris(); //Carrega els comentaris
+    heroVideo(); //Posa el video de l'inici
+    crear_portfoli_lugares(); //Crea la seccio de llocs
+    carousel_itineraris(); //Crea la seccio d' itinerairs
+    carrusel(); // Crea el carrousel on van els itineraris
+    crear_hist(); // Crea la finestra modal on es localitza la informacio de la historia
 
-    /* Dades exterenes -notWorking */
-    carregaDades();
-    carregacomentaris();
-    enviar_comentario();
+    carregaDades(); // Carrega les dades externes (Calendari d' events)
+    /* init_calendar(); */
+    //carregacomentaris();
+    /* banner_comentarios();  */// Carrega la seccio comentaris
+    enviar_comentario(); // posa el lissener que envia els comentaris
 
 };
+
+
 
 /*Carrega les dades del JSON extern*/
 function carregaDades() {
@@ -77,6 +81,7 @@ function carregacomentaris() {
 
     let xmlhttp = new XMLHttpRequest();
     let url = "https://comentaris.000webhostapp.com/comentaris.JSON";
+    comentaris = [];
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -90,6 +95,7 @@ function carregacomentaris() {
             }
 
             banner_comentarios();
+            console.log(comentaris);
         }
     };
 
@@ -619,7 +625,6 @@ function generateIcon(data) {
             icon = "bi bi-emoji-dizzy";
             break;
     }
-    console.log(data)
     return icon;
 }
 
@@ -714,7 +719,7 @@ function ompleix_calendari() {
 
     for (let i = 0; i < dades_externes.length; i++) {
 
-        if (dades_externes[i].location == "Alcúdia") {
+        if (dades_externes[i].location == "Cabrera") {
 
             res.title = dades_externes[i].name;
             res.start = dades_externes[i].startDate;
@@ -758,7 +763,7 @@ function banner_comentarios() {
     contenedor_padre.innerHTML = "";
     let start;
     let stop;
-
+    console.log(comentaris.length);
     if (comentaris.length < 8) {
         stop = comentaris.length;
         start = 0;
@@ -771,7 +776,6 @@ function banner_comentarios() {
 
         item_comentario(index);
     }
-
 }
 
 function enviar_comentario(){
@@ -781,11 +785,29 @@ function enviar_comentario(){
 
     limpiar.addEventListener("click", e => {
         e.preventDefault();
-        form.submit();
-        form.reset();
-        window.alert("Comentario enviado");
-        carregacomentaris();
+        if (valid_form(e)) {
+            form.submit();
+            form.reset();
+            carregacomentaris();
+        }
     });
 
 }
+
+function valid_form(evento){
+    evento.preventDefault();
+    var nombre = document.getElementById('name').value;
+    if(nombre.length == 0) {
+      alert('No has escrito nada en el nombre');
+      return false;
+    }
+    var coment = document.getElementById('message').value;
+    if (coment.length < 6) {
+      alert('El comentario es demasiado corto');
+      return false;
+    }
+    alert('Comentario enviado');
+    return true;
+  }
+
 /* End Comentarios */

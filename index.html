@@ -505,25 +505,13 @@
         <div class="row">
 
           <!-- d-flex justify-content-center align-items-stretch aos-init aos-animate -->
-          <div class="col-lg-6 col-md-6 justify-content-center align-items-stretch">
-
+          <!-- <div class="col-lg-6 col-md-6 justify-content-center align-items-stretch"> -->
+          <div class="col-lg-8 justify-content-center align-items-stretch">
             <select id='locale-selector'></select>
-
             <div id='calendar'></div>
-
-          </div>
-
-          <div class="col-xl-6 col-lg-6 ">
-            <!-- icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5 aos-init aos-animate -->
-            <div class="box featured enciola" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/utilitats/grafico.png" class="img-fluid" alt="">
-            </div>
           </div>
 
         </div>
-
-
-
 
       </div>
     </section>
@@ -568,13 +556,13 @@
               <div class="row">
 
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" maxlength="20" minlength="2" required>
                 </div>
 
               </div>
 
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="3" placeholder="Comentario. Maximo 300 caracteres." required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="3" placeholder="Comentario. Maximo 250 caracteres." maxlength="250" minlength="5" required></textarea>
               </div>
 
               <div class="my-3">
@@ -596,10 +584,6 @@
 
       </div>
     </section><!-- End Contact Section -->
-
-    <!-- ======= Team Section ======= -->
-    <!-- deleted secction -->
-    <!-- End Team Section -->
 
   </main><!-- End #main -->
 
