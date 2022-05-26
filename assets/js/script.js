@@ -689,6 +689,7 @@ function init_calendar() {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
+
         locale: initialLocaleCode,
         events: ompleix_calendari()
     });
@@ -716,6 +717,7 @@ function ompleix_calendari() {
 
     let res = {};
     let eventos = [];
+    let evento;
 
     for (let i = 0; i < dades_externes.length; i++) {
 
@@ -723,8 +725,18 @@ function ompleix_calendari() {
 
             res.title = dades_externes[i].name;
             res.start = dades_externes[i].startDate;
-            res.end = dades_externes[i].endDate
+            res.end = dades_externes[i].endDate;
+           
+            res.url = "https://fullcalendar.io/docs/event-object";
+            /* res.display = 'background'; */
+           /*  res.textColor = 'red' */
+           /* res.display = 'block' */
+          /*  res.eventClick = function(info){
+               console.log("hi");
+               alert("hi");
+           } */
             eventos.push(res);
+            res = {};
         }
     }
 
