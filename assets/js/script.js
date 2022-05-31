@@ -1,7 +1,7 @@
 let dades_internes = [];
 let dades_privades = [];
 let dades_externes = [];
-let comentaris = [];
+//let comentaris = [];
 let events_externs;
 
 async function getJSONFile() {
@@ -63,18 +63,18 @@ function carregacomentaris() {
 
     let xmlhttp = new XMLHttpRequest();
     let url = "https://comentaris.000webhostapp.com/comentaris.JSON";
-    comentaris = [];
+    
+    let dades_comentaris = [];
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
             dades_comentaris = JSON.parse(xmlhttp.responseText);
-
+            let comentaris = [];
             for (let i = 0; i < dades_comentaris.length; i++) {
                 comentaris.push(dades_comentaris[i]);
             }
-
-            banner_comentarios();
+            banner_comentarios(comentaris);
         }
     };
 
@@ -742,7 +742,7 @@ function ompleix_calendari() {
 /* End API Calendario */
 
 /* Comentarios Start */
-function item_comentario(id) {
+function item_comentario(id, comentaris) {
 
     let contenedor_padre = document.querySelector("#slider_coment");
     let contenedor_coment = document.createElement("div");
@@ -764,13 +764,13 @@ function item_comentario(id) {
 
 }
 
-function banner_comentarios() {
+function banner_comentarios(comentaris) {
 
     let contenedor_padre = document.querySelector("#slider_coment");
     contenedor_padre.innerHTML = "";
     let start;
     let stop;
-    if (comentaris.length < 8) {
+    if (comentaris.length < 10) {
         stop = comentaris.length;
         start = 0;
     } else {
@@ -780,8 +780,14 @@ function banner_comentarios() {
 
     for (let index = start; index < stop; index++) {
 
-        item_comentario(index);
+        item_comentario(index, comentaris);
     }
+
+    console.log(contenedor_padre);
+    //update contenedor_padre with new content
+    //contenedor_padre = document.querySelector("#slider_coment");
+    
+    
 }
 
 function enviar_comentario() {
