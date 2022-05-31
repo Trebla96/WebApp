@@ -2554,11 +2554,9 @@ input[type='checkbox']:checked+.pure-toggle.brick.switch:before {
   margin: 15%;
   color: rgb(34, 34, 34);
 }
-
 /* End el tiempo */
 
 /* Corazon Favoritos */
-
 #lg_fav_btn {
   cursor: pointer;
   border: 0px;
@@ -2574,13 +2572,10 @@ input[type='checkbox']:checked+.pure-toggle.brick.switch:before {
   height: 1rem;
   width: 1rem;
 }
-
 /* End Corazon favoritos */
 
 /* Comentarios */
-
 #php_response {
   display: none !important;
 }
-
 /* End Comentarios */
