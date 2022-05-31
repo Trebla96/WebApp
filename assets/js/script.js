@@ -21,7 +21,7 @@ window.onload = async function () {
     await getJSONFile(); //Carrega les dades de la pagina web
     carregacomentaris(); //Carrega els comentaris
     heroVideo(); //Posa el video de l'inici
-    crear_portfoli_lugares(0); //Crea la seccio de llocs
+    crear_portfoli_lugares('0'); //Crea la seccio de llocs
     carousel_itineraris(); //Crea la seccio d' itinerairs
     carrusel(); // Crea el carrousel on van els itineraris
     crear_hist(); // Crea la finestra modal on es localitza la informacio de la historia
