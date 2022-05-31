@@ -77,7 +77,7 @@
           <li><a class="nav-link scrollto" href="#utilidades">Utilidades</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
   </header><!-- End Header -->
@@ -127,16 +127,6 @@
     <!-- ======= About Section ======= -->
     <section id="resumen" class="about">
       <div class="container-fluid">
-
-        <!--         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch"
-            data-aos="fade-right">
-
-            la imagen de background esta en video-box (css)
-            <button type="button" class="venobox play-btn mb-4" data-toggle="modal" data-target="#myModal"></button>
-
-          </div> 
--->
         <div class="row">
           <div class="col-xl-5 col-lg-6 d-flex justify-content-center align-items-stretch" data-aos="fade-right">
             <!-- Tiempo -->
@@ -303,24 +293,20 @@
           <div class="row barraBusqueda" data-aos="fade-up">
 
             <div class=" col-lg-6 sort-container">
-              <!-- col-md-4 order-1 order-md-2 -->
-              <!-- sort-container col-lg-6 -->
+
               <!-- Filtrar -->
-              <span>Ordenar por:</span>
+              <span>Filtrar por:</span>
               <select id="selectOrden" class=sort-selector>
                 <option value="0">Predeterminado</option>
-                <option value="1">Mas valorados</option>
+                <option value="1">Favoritos</option>
               </select>
             </div>
 
             <div class="col-lg-6 wrapper">
-              <!-- wrapper col-lg-6 -->
-              <!-- Barra buscador-->
-
-              <div class="search-container">
+              <div id = "busqueda_nombre" class="search-container">
                 <span>Busqueda por nombre:</span>
                 <a href="" target="_blank" rel="noopener" hidden></a>
-                <input type="text" name="search" id="myInput" placeholder="Buscar..." autocomplete="off" />
+                <input type="text" name="search" id="input_busq" placeholder="Buscar..." autocomplete="off" />
                 <div class="icon"><i class="fas fa-search"></i></div>
               </div>
             </div>
@@ -341,12 +327,10 @@
 
         <template id="plantilla_lugares">
 
-
           <div id="bloq_lg" class="embed-responsive embed-responsive-item">
             <div class="cabecera">
 
               <h2 id="titulo_lg" class="col-lg-6"></h2>
-
               <!-- insertar corazon -->
               <div>
                 <button id = "lg_fav_btn"><i class="bi bi-heart-fill fav_heart-des" id="corazon_lg"></i></button>
@@ -360,10 +344,7 @@
             </div>
 
             <div class="complementos">
-
               <!-- <div id="map_lg"></div> -->
-
-
             </div>
 
           </div>
@@ -386,7 +367,6 @@
                 <div class="modal-body">
 
                   <div id="info-dinamica-lugares">
-                    <!-- info dinamica -->
                     <!-- Plantilla aqui -->
                   </div>
                   <div id="map_lg"></div>
@@ -472,7 +452,6 @@
 
               <div class="modal-body">
                 <div id="info-dinamica-itinerarios">
-                  <!-- info dinamica -->
                   <!-- Plantilla aqui -->
                 </div>
 
@@ -504,8 +483,6 @@
 
         <div class="row">
 
-          <!-- d-flex justify-content-center align-items-stretch aos-init aos-animate -->
-          <!-- <div class="col-lg-6 col-md-6 justify-content-center align-items-stretch"> -->
           <div class="col-lg-8 justify-content-center align-items-stretch">
             <select id='locale-selector'></select>
             <div id='calendar'></div>
@@ -551,7 +528,6 @@
 
           <div class="col-lg-10 mt-5 mt-lg-0" data-aos="fade-right" data-aos-delay="200">
 
-             <!-- "https://comentaris.000webhostapp.com/action.php" -->
               <form action = "https://comentaris.000webhostapp.com/action.php" target="php_response" method="post" role="form" class="php-email-form" id = "form_coment">
               <div class="row">
 
@@ -583,7 +559,8 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section>
+    <!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -598,67 +575,30 @@
               <h3>Cabrera</h3>
               <p class="pb-3"><em>Visita nuestras redes sociales</em>
               </p>
-              <!-- <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p> -->
+
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://twitter.com/TurismeBalears" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/PNCabrera/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/conselldemca/?hl=es" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://es.linkedin.com/company/consell-de-mallorca" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div> -->
-
-          <!-- <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div> -->
 
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="copyright">
+      <!-- <div class="copyright">
         &copy; Copyright <strong><span>Bootslander</span></strong>. All Rights Reserved
-      </div>
+      </div> -->
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
   </footer><!-- End Footer -->

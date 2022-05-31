@@ -35,7 +35,7 @@ function generateCard(monumento) {
         </div>
         <a href="/monumento.html?identifier=${monumento.identifier}" class="btn btn-primary formatoBoton" id="cardBtn">Ver monumento</a>
         <button type="button" data-id="${monumento.identifier}" class="favorite-btn favorite-btn-main btn btn-outline-info ${monumento.isFavorite
-          ? " is-favorite" : "" }" onclick="resultsDelegation(event)">
+      ? " is-favorite" : ""}" onclick="resultsDelegation(event)">
           ${monumento.isFavorite ? "♥" : "♡"}
         </button>
       </div>
@@ -475,7 +475,8 @@ function autocomplete(inp) {
       decrease the currentFocus variable:*/
       currentFocus--;
       /*and and make the current item more visible:*/
-      addActive(x);}
+      addActive(x);
+    }
     // } else if (e.keyCode == 13) {
     //   /*If the ENTER key is pressed, prevent the form from being submitted,*/
     //   e.preventDefault();
@@ -517,10 +518,10 @@ function autocomplete(inp) {
   });
 }
 
-function irArriba(){
-  $('.ir-arriba').click(function(){ $('body,html').animate({ scrollTop:'0px' },100); });
-  $(window).scroll(function(){
-    if($(this).scrollTop() > 0){ $('.ir-arriba').slideDown(600); }else{ $('.ir-arriba').slideUp(600); }
+function irArriba() {
+  $('.ir-arriba').click(function () { $('body,html').animate({ scrollTop: '0px' }, 100); });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) { $('.ir-arriba').slideDown(600); } else { $('.ir-arriba').slideUp(600); }
   });
 }
 

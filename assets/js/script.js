@@ -4,11 +4,6 @@ let dades_externes = [];
 let comentaris = [];
 let events_externs;
 
-let dades_p = []; /* desuso */
-let dades; /* desuso */
-let dades_comentaris; /* desuso */
-
-
 async function getJSONFile() {
     // lo guarda en la memoria principal (RAM)
     let response = await fetch("assets/js/cabrera.JSON");
@@ -21,34 +16,21 @@ async function getJSONFile() {
 
 }
 
-/* async function carregacomentaris() {
-    let response4 = await fetch("https://comentaris.000webhostapp.com/comentaris.JSON");
-    let data4 = await response4.json();
-    comentaris = [];
-    comentaris = data4;
-
-} */
-
-
 window.onload = async function () {
 
     await getJSONFile(); //Carrega les dades de la pagina web
     carregacomentaris(); //Carrega els comentaris
     heroVideo(); //Posa el video de l'inici
-    crear_portfoli_lugares(); //Crea la seccio de llocs
+    crear_portfoli_lugares(0); //Crea la seccio de llocs
     carousel_itineraris(); //Crea la seccio d' itinerairs
     carrusel(); // Crea el carrousel on van els itineraris
     crear_hist(); // Crea la finestra modal on es localitza la informacio de la historia
+    busqueda_nombre(); //Crea la cerca per nom
 
     carregaDades(); // Carrega les dades externes (Calendari d' events)
-    /* init_calendar(); */
-    //carregacomentaris();
-    /* banner_comentarios();  */// Carrega la seccio comentaris
     enviar_comentario(); // posa el lissener que envia els comentaris
-
+    favoritos();
 };
-
-
 
 /*Carrega les dades del JSON extern*/
 function carregaDades() {
@@ -89,13 +71,10 @@ function carregacomentaris() {
             dades_comentaris = JSON.parse(xmlhttp.responseText);
 
             for (let i = 0; i < dades_comentaris.length; i++) {
-
                 comentaris.push(dades_comentaris[i]);
-
             }
 
             banner_comentarios();
-            console.log(comentaris);
         }
     };
 
@@ -104,14 +83,33 @@ function carregacomentaris() {
 }
 
 /* Mete las tarjetas de lugares dentro de contenedor */
-function crear_portfoli_lugares() {
-    for (let i = 0; i < dades_internes.length; i++) {
+function crear_portfoli_lugares(fav, nombre) {
 
-        if (dades_internes[i].type == "Place") {
-
-            crearCarta(i);
-        }
-    }
+    switch (fav) {
+        case 0:
+            for (let i = 0; i < dades_internes.length; i++) {
+                if (dades_internes[i].type == "Place") {
+                    crearCarta(i);
+                }
+            }
+            break;
+        case 1:
+            for (let i = 0; i < dades_internes.length; i++) {
+                if (dades_internes[i].type == "Place" && localStorage.getItem(dades_internes[i].name) == "1") {
+                    crearCarta(i);
+                }
+            }
+            break;
+        case 2:
+            for (let i = 0; i < dades_internes.length; i++) {
+                if (dades_internes[i].type == "Place" && dades_internes[i].name.toUpperCase().includes(nombre.toUpperCase())) {
+                    crearCarta(i);
+                }
+            }
+            break;
+        default:
+            break;
+    } 
 }
 
 /* Mete los itinerarios dentro del carrousel */
@@ -680,7 +678,6 @@ $(document).ready(function () {
 /* End API Tiempo */
 
 /* API calendario */
-
 function init_calendar() {
 
     var initialLocaleCode = 'es';
@@ -726,15 +723,15 @@ function ompleix_calendari() {
             res.title = dades_externes[i].name;
             res.start = dades_externes[i].startDate;
             res.end = dades_externes[i].endDate;
-           
+
             res.url = "https://fullcalendar.io/docs/event-object";
             /* res.display = 'background'; */
-           /*  res.textColor = 'red' */
-           /* res.display = 'block' */
-          /*  res.eventClick = function(info){
-               console.log("hi");
-               alert("hi");
-           } */
+            /*  res.textColor = 'red' */
+            /* res.display = 'block' */
+            /*  res.eventClick = function(info){
+                 console.log("hi");
+                 alert("hi");
+             } */
             eventos.push(res);
             res = {};
         }
@@ -742,11 +739,9 @@ function ompleix_calendari() {
 
     return eventos;
 }
-
 /* End API Calendario */
 
 /* Comentarios Start */
-
 function item_comentario(id) {
 
     let contenedor_padre = document.querySelector("#slider_coment");
@@ -775,7 +770,6 @@ function banner_comentarios() {
     contenedor_padre.innerHTML = "";
     let start;
     let stop;
-    console.log(comentaris.length);
     if (comentaris.length < 8) {
         stop = comentaris.length;
         start = 0;
@@ -790,7 +784,7 @@ function banner_comentarios() {
     }
 }
 
-function enviar_comentario(){
+function enviar_comentario() {
 
     let limpiar = document.querySelector("#boton_enviar");
     let form = document.querySelector('#form_coment');
@@ -803,23 +797,52 @@ function enviar_comentario(){
             carregacomentaris();
         }
     });
-
 }
 
-function valid_form(evento){
+function valid_form(evento) {
     evento.preventDefault();
     var nombre = document.getElementById('name').value;
-    if(nombre.length == 0) {
-      alert('No has escrito nada en el nombre');
-      return false;
+    if (nombre.length == 0) {
+        alert('No has escrito nada en el nombre');
+        return false;
     }
     var coment = document.getElementById('message').value;
     if (coment.length < 6) {
-      alert('El comentario es demasiado corto');
-      return false;
+        alert('El comentario es demasiado corto');
+        return false;
     }
     alert('Comentario enviado');
     return true;
-  }
-
+}
 /* End Comentarios */
+
+/* Barra de busqueda */
+
+/* Selecciona los favoritos y los muestra en el apartado lugares */
+function favoritos() {
+
+    document.querySelector("#selectOrden").addEventListener("change", function () {
+        let select = document.querySelector("#selectOrden");
+        let valor = select.value;
+        let c_padre = document.querySelector("#cartas_lugares");
+        c_padre.innerHTML = "";
+        crear_portfoli_lugares(valor);
+    });
+}
+
+function busqueda_nombre() {
+    
+    entrada = document.getElementById("input_busq");
+    entrada.addEventListener("keyup", function () {
+        let c_padre = document.querySelector("#cartas_lugares");
+        c_padre.innerHTML = "";
+        
+        if (entrada.value != "") {
+            crear_portfoli_lugares(2, entrada.value);
+        } else {
+            crear_portfoli_lugares(0);
+        }
+    });
+}
+
+/* End Barra de busqueda */
