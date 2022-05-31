@@ -86,14 +86,14 @@ function carregacomentaris() {
 function crear_portfoli_lugares(fav, nombre) {
 
     switch (fav) {
-        case 0:
+        case '0':
             for (let i = 0; i < dades_internes.length; i++) {
                 if (dades_internes[i].type == "Place") {
                     crearCarta(i);
                 }
             }
             break;
-        case 1:
+        case '1':
             for (let i = 0; i < dades_internes.length; i++) {
                 if (dades_internes[i].type == "Place" && localStorage.getItem(dades_internes[i].name) == "1") {
                     crearCarta(i);
