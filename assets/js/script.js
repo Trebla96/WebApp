@@ -347,10 +347,8 @@ function heroVideo() {
     if (HeroVideo.canPlayType) {
         // Check for webm support.
         if (HeroVideo.canPlayType("video/webm")) {
-            HeroVideo.src = "assets/video/mivideo.webm";
-        }
-        // Check for mp4 support.
-        if (HeroVideo.canPlayType("video/mp4")) {
+            HeroVideo.src = "assets/video/mivideoc.webm";
+        }else if (HeroVideo.canPlayType("video/mp4")) {
             HeroVideo.src = "assets/video/mivideoc.mp4";
         }
 
@@ -656,13 +654,13 @@ function handleData(arr) {
     }
 }
 
-$(document).ready(function () {
+ $(document).ready(function () {
     navigator.geolocation.getCurrentPosition(function (position) {
         $.ajax({
             url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
             success: function (data) {
                 handleData(data.list);
-                /* $("#contry").text(data.city.country + "__" + data.city.name); */
+                
                 $("#desc").text(data.list[0].weather[0].description);
                 $('input').on('change', function () {
                     var temps = $("[id$=temp]");
@@ -680,7 +678,7 @@ $(document).ready(function () {
             cache: true
         });
     });
-});
+}); 
 /* End API Tiempo */
 
 /* API calendario */
