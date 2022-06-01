@@ -7,7 +7,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/historia/antiguo.jpeg",
+                "contentURL": "assets/img/imagenes/interior_museo_1.webp",
                 "encodingFormat": null
             }
         }
@@ -21,7 +21,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/historia/bizantino.jpg",
+                "contentURL": "assets/img/imagenes/monasterio.webp",
                 "encodingFormat": null
             }
         }
@@ -35,7 +35,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/historia/castillo.jpg",
+                "contentURL": "assets/img/imagenes/castillo.webp",
                 "encodingFormat": null
             }
         }
@@ -49,7 +49,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/historia/frances.jpg",
+                "contentURL": "assets/img/imagenes/monumento.webp",
                 "encodingFormat": null
             }
         }
@@ -63,7 +63,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/historia/Celler.jpg",
+                "contentURL": "assets/img/imagenes/celler.webp",
                 "encodingFormat": null
             }
         }
@@ -77,7 +77,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type":"MediaObject",
-                "contentURL": "assets/img/historia/natura.webp",
+                "contentURL": "assets/img/imagenes/natura.webp",
                 "encodingFormat": null
             }
         }

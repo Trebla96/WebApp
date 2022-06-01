@@ -29,7 +29,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/castillo.jpg",
+                "contentURL": "assets/img/imagenes/castillo.webp",
                 "encodingFormat": null
             }
         },
@@ -69,7 +69,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/cova_blava.jpeg",
+                "contentURL": "assets/img/imagenes/cova_blava_1.webp",
                 "encodingFormat": null
             }
         },
@@ -117,7 +117,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/museo.jpg",
+                "contentURL": "assets/img/imagenes/interior_museo_2.webp",
                 "encodingFormat": null
             }
         },
@@ -157,7 +157,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/monumento_franceses.jpeg",
+                "contentURL": "assets/img/imagenes/monumento.webp",
                 "encodingFormat": null
             }
         },
@@ -197,7 +197,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/far_enciola.jpg",
+                "contentURL": "assets/img/imagenes/FarEnciola.webp",
                 "encodingFormat": null
             }
         },
@@ -237,7 +237,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
+                "contentURL": "assets/img/imagenes/salazones.webp",
                 "encodingFormat": null
             }
         },
@@ -277,7 +277,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/jardin.jpg",
+                "contentURL": "assets/img/imagenes/jardin.webp",
                 "encodingFormat": null
             }
         },
@@ -317,7 +317,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/necrobizan.jpg",
+                "contentURL": "assets/img/imagenes/necropolis.webp",
                 "encodingFormat": null
             }
         },
@@ -357,7 +357,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/purpura.png",
+                "contentURL": "assets/img/imagenes/salazones.webp",
                 "encodingFormat": null
             }
         },
@@ -395,7 +395,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/itineraris/FarEnciola.jpg",
+                "contentURL": "assets/img/imagenes/FarEnciola.webp",
                 "encodingFormat": null
             }
         },
@@ -446,7 +446,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/itineraris/figueres.jpg",
+                "contentURL": "assets/img/imagenes/figueres.webp",
                 "encodingFormat": null
             }
         },
@@ -484,7 +484,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/itineraris/arqueologia.png",
+                "contentURL": "assets/img/imagenes/monasterio.webp",
                 "encodingFormat": null
             }
         },
@@ -522,7 +522,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/itineraris/miranda.jpg",
+                "contentURL": "assets/img/imagenes/miranda.webp",
                 "encodingFormat": null
             }
         },
@@ -567,7 +567,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/itineraris/sitges.webp",
+                "contentURL": "assets/img/imagenes/sitges.webp",
                 "encodingFormat": null
             }
         },
@@ -605,7 +605,7 @@
             "@type": "ImageObject",
             "caption": {
                 "@type": "MediaObject",
-                "contentURL": "assets/img/lugares/castillo.jpg",
+                "contentURL": "assets/img/imagenes/castillo.webp",
                 "encodingFormat": null
             }
         },
