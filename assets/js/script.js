@@ -19,21 +19,21 @@ async function getJSONFile() {
 window.onload = async function () {
 
     await getJSONFile(); //Carrega les dades de la pagina web
-    carregacomentaris(); //Carrega els comentaris
+    await carregacomentaris(); //Carrega els comentaris
+    await carregaDades(); // Carrega les dades externes (Calendari d' events)
+
     heroVideo(); //Posa el video de l'inici
     crear_portfoli_lugares('0'); //Crea la seccio de llocs
     carousel_itineraris(); //Crea la seccio d' itinerairs
     carrusel(); // Crea el carrousel on van els itineraris
     crear_hist(); // Crea la finestra modal on es localitza la informacio de la historia
     busqueda_nombre(); //Crea la cerca per nom
-
-    carregaDades(); // Carrega les dades externes (Calendari d' events)
     enviar_comentario(); // posa el lissener que envia els comentaris
     favoritos();
 };
 
 /*Carrega les dades del JSON extern*/
-function carregaDades() {
+async function carregaDades() {
 
     let xmlhttp = new XMLHttpRequest();
     let url = "https://mallorcaevents.web.app/assets/js/events.json";
@@ -59,26 +59,32 @@ function carregaDades() {
 }
 
 /*Carrega Comentaris*/
-function carregacomentaris() {
+async function carregacomentaris() {
 
     let xmlhttp = new XMLHttpRequest();
     let url = "https://comentaris.000webhostapp.com/comentaris.JSON";
     
-    let dades_comentaris = [];
+    let dades_comentaris;
 
     xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
+        let comentaris = [];
+
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            
             dades_comentaris = JSON.parse(xmlhttp.responseText);
-            let comentaris = [];
+            
+            console.log(dades_comentaris.length);
+
             for (let i = 0; i < dades_comentaris.length; i++) {
                 comentaris.push(dades_comentaris[i]);
             }
+            console.log(comentaris);
             banner_comentarios(comentaris);
         }
     };
 
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", url += (url.match(/\?/) == null ? "?" : "&") + (new Date()).getTime(), true);
     xmlhttp.send();
 }
 
@@ -800,7 +806,10 @@ function enviar_comentario() {
         if (valid_form(e)) {
             form.submit();
             form.reset();
+            $("#slider_coment").load(" #slider_coment");
             carregacomentaris();
+            alert('Comentario enviado');
+            
         }
     });
 }
@@ -813,11 +822,11 @@ function valid_form(evento) {
         return false;
     }
     var coment = document.getElementById('message').value;
-    if (coment.length < 6) {
+    if (coment.length < 2) {
         alert('El comentario es demasiado corto');
         return false;
     }
-    alert('Comentario enviado');
+    
     return true;
 }
 /* End Comentarios */
