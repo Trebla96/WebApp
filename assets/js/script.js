@@ -861,3 +861,33 @@ function busqueda_nombre() {
 }
 
 /* End Barra de busqueda */
+
+/* JSON_LD */
+
+function carregarJsonldIndex() {
+    //let infoFiraPortada = crearJsonldFira(objeto_json);
+    let info = {
+       "@context" : "https://schema.org",
+       "@type" : "WebApplication", 
+       "applicationCategory" : "Places Cabrera",
+       "applicationSubCategory" : "Places, Mercats",
+       "about" : "Excursiones i visitas a Cabrera",
+       "audience" : {
+          "audienceType" : "tourists, families",
+          "geographicArea" : "Mallorca, Cabrera"
+       },
+       "author" : "Albert Fajardo Marcus",
+       "contentLocation" : {
+          "address" : "Mallorca, Islas Baleares, Spain",
+          "geo" : {
+             "latitude"  : "39.6121518",
+             "longitude" : "2.3512632"
+          },
+       },
+       "genre" : "Fires Mallorca, Mercats Mallorca",
+       "subjectOf" : infoFiraPortada,
+    }
+    loadJSON_LD(info);
+ }
+
+/* end JSON_LD */
