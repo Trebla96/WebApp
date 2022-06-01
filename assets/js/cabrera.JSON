@@ -339,8 +339,8 @@
         },
         "geo": {
             "@type": "geoCoordinates",
-            "latitude": null,
-            "longitude": null
+            "latitude": 39.143991724956095, 
+            "longitude": 2.936198169920264
         },
         "event": null,
         "isAccessibleForFree": true,

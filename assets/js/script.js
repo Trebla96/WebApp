@@ -73,13 +73,10 @@ async function carregacomentaris() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             
             dades_comentaris = JSON.parse(xmlhttp.responseText);
-            
-            console.log(dades_comentaris.length);
 
             for (let i = 0; i < dades_comentaris.length; i++) {
                 comentaris.push(dades_comentaris[i]);
             }
-            console.log(comentaris);
             banner_comentarios(comentaris);
         }
     };
@@ -729,13 +726,6 @@ function ompleix_calendari() {
             res.end = dades_externes[i].endDate;
 
             res.url = "https://fullcalendar.io/docs/event-object";
-            /* res.display = 'background'; */
-            /*  res.textColor = 'red' */
-            /* res.display = 'block' */
-            /*  res.eventClick = function(info){
-                 console.log("hi");
-                 alert("hi");
-             } */
             eventos.push(res);
             res = {};
         }
@@ -786,11 +776,6 @@ function banner_comentarios(comentaris) {
 
         item_comentario(index, comentaris);
     }
-
-    console.log(contenedor_padre);
-    //update contenedor_padre with new content
-    //contenedor_padre = document.querySelector("#slider_coment");
-    
     
 }
 
