@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  font-display: swap;
 }
 
 a {
@@ -196,6 +197,7 @@ h6 {
   color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   transition: 0.3s;
+  font-display: swap;
 }
 
 .navbar a i,
@@ -480,6 +482,7 @@ Poner overflow hidden
   transition: 0.5s;
   color: #fff;
   background: #1acc8d;
+  font-display: swap;
 }
 
 #hero .btn-get-started:hover {
@@ -670,6 +673,7 @@ section {
   text-transform: uppercase;
   color: #aaaaaa;
   font-family: "Poppins", sans-serif;
+  font-display: swap;
 }
 
 .section-title h2::after {
@@ -689,6 +693,7 @@ section {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: #010483;
+  font-display: swap;
 }
 
 .icon-buton {
@@ -1033,6 +1038,7 @@ section {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  font-display: swap;
 }
 
 /*--------------------------------------------------------------
@@ -1157,54 +1163,6 @@ section {
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
 }
 
-/* .gallery .container .barraBusqueda .wrapper .search-container.active .autocom-box{
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto;
-} */
-
-/* .gallery .container .barraBusqueda .wrapper .search-container .autocom-box{
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto;
-} */
-
-/* .gallery .container .barraBusqueda .wrapper .search-container .autocom-box li{
-  list-style: none;
-  padding: 8px 12px;
-  display: none;
-  width: 100%;
-  cursor: default;
-  border-radius: 3px;
-}
-
-.gallery .container .barraBusqueda .wrapper .search-container.active .autocom-box li{
-  display: block;
-}
-.autocom-box li:hover{
-  background: #efefef;
-}
-
-.gallery .container .barraBusqueda .wrapper .gallery .container .barraBusqueda span{
-
-  font-size: 1rem;
-  position: relative;
-  color: #fff;
-  font-weight: 400;
-  font-family: "Montserrat", sans-serif;
-
-} */
-
-/* .gallery .container .barraBusqueda .wrapper input{
-
-  Pendiente poner espaciado predeterminado antes de buscar
-
-} */
-
-/* Gallery barra busqueda end */
-
-/* Gallery card start */
-
 .gallery .container .contenedor {
   display: flex;
   justify-content: center;
@@ -1275,6 +1233,7 @@ section {
   font-size: 21px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  font-display: swap;
 
 }
 
@@ -1328,6 +1287,7 @@ section {
   font-family: "Poppins", sans-serif;
   color: #010483;
   display: flex;
+  font-display: swap;
 }
 
 .gallery .cabecera {
@@ -1363,6 +1323,7 @@ section {
   letter-spacing: 2px;
   color: #9c9c9c;
   font-family: "Poppins", sans-serif;
+  font-display: swap;
 }
 
 .gallery .cuerpo .desc_lg {
@@ -1665,6 +1626,7 @@ section {
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   margin-bottom: 20px;
+  font-display: swap;
 }
 
 .pricing h4 sup {
@@ -1722,6 +1684,7 @@ section {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   transition: 0.3s;
+  font-display: swap;
 }
 
 .pricing .btn-buy:hover {
@@ -1871,6 +1834,7 @@ section {
   font-family: "Poppins", sans-serif;
   color: #010483;
   display: flex;
+  font-display: swap;
 }
 
 .pricing .cabecera {
@@ -1908,6 +1872,7 @@ section {
   /* text-transform: uppercase; */
   color: #9c9c9c;
   font-family: "Poppins", sans-serif;
+  font-display: swap;
 }
 
 
@@ -1971,6 +1936,7 @@ section {
   padding: 0 30px;
   outline: none;
   cursor: pointer;
+  font-display: swap;
 }
 
 .faq .faq-list .icon-help {
@@ -2204,6 +2170,7 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Montserrat", sans-serif;
+  font-display: swap;
 }
 
 #footer .footer-top .social-links a {
@@ -2459,6 +2426,7 @@ section {
   -ms-transform-origin: 0% 50%;
   -webkit-transform-origin: 0% 50%;
   transform-origin: 0% 50%;
+  font-display: swap;
   /*@include box-shadow(0.1em 0 0.2em rgba(0,0,0,0.3));*/
 }
 
