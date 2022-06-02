@@ -653,7 +653,6 @@ function handleData(arr) {
 }
 
  $(document).ready(function () {
-  /*   navigator.geolocation.getCurrentPosition(function (position) { */
         $.ajax({
             url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
             success: function (data) {
@@ -675,7 +674,6 @@ function handleData(arr) {
             },
             cache: true
         });
-   /*  }); */
 }); 
 /* End API Tiempo */
 
