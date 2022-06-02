@@ -2529,16 +2529,16 @@ input[type='checkbox']:checked+.pure-toggle.brick.switch:before {
   cursor: pointer;
   border: 0px;
   background-color: transparent;
-  height: 1rem;
-  width: 1rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 #it_fav_btn {
   cursor: pointer;
   border: 0px;
   background-color: transparent;
-  height: 1rem;
-  width: 1rem;
+  height: 2rem;
+  width: 2rem;
 }
 /* End Corazon favoritos */
 

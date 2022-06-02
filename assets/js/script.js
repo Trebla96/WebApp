@@ -30,6 +30,7 @@ window.onload = async function () {
     busqueda_nombre(); //Crea la cerca per nom
     enviar_comentario(); // posa el lissener que envia els comentaris
     favoritos();
+    carregarJsonldIndex();
 };
 
 /*Carrega les dades del JSON extern*/
@@ -854,7 +855,7 @@ function carregarJsonldIndex() {
        "@type" : "WebApplication", 
        "applicationCategory" : "Places Cabrera",
        "applicationSubCategory" : "Places, Mercats",
-       "about" : "Excursiones i visitas a Cabrera",
+       "about" : "Excursiones y visitas a Cabrera",
        "audience" : {
           "audienceType" : "tourists, families",
           "geographicArea" : "Mallorca, Cabrera"
@@ -863,14 +864,20 @@ function carregarJsonldIndex() {
        "contentLocation" : {
           "address" : "Mallorca, Islas Baleares, Spain",
           "geo" : {
-             "latitude"  : "39.6121518",
-             "longitude" : "2.3512632"
+             "latitude"  : "39.14102458283336",
+             "longitude" : "2.9450562680378676"
           },
        },
-       "genre" : "Fires Mallorca, Mercats Mallorca",
-       "subjectOf" : infoFiraPortada,
+       "genre" : "Island, Nature, Mallorca, Cabrera",
+       /* "subjectOf" : infoFiraPortada, */
     }
     loadJSON_LD(info);
  }
 
+ function loadJSON_LD(info){
+    const script = document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.textContent = JSON.stringify(info);
+    document.head.appendChild(script);
+}
 /* end JSON_LD */
