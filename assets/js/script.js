@@ -724,7 +724,7 @@ function ompleix_calendari() {
             res.start = dades_externes[i].startDate;
             res.end = dades_externes[i].endDate;
 
-            res.url = "https://fullcalendar.io/docs/event-object";
+            res.url = "https://mallorcaevents.web.app/";
             eventos.push(res);
             res = {};
         }
