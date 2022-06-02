@@ -847,7 +847,6 @@ function busqueda_nombre() {
 /* JSON_LD */
 
 function carregarJsonldIndex() {
-    //let infoFiraPortada = crearJsonldFira(objeto_json);
     let info = {
        "@context" : "https://schema.org",
        "@type" : "WebApplication", 
@@ -867,7 +866,6 @@ function carregarJsonldIndex() {
           },
        },
        "genre" : "Island, Nature, Mallorca, Cabrera",
-       /* "subjectOf" : infoFiraPortada, */
     }
     loadJSON_LD(info);
  }
