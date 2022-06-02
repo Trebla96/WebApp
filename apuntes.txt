@@ -1,3 +1,5 @@
+https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+
 video{
     mp4 -> mp3/AAC -> H264 / H265 / AV1
     Ogg -> Vorbis -> Theora
@@ -11,7 +13,7 @@ Audio{
     WAV (download)
 }
 
-Servidor, trevisar propiedad crossOrigin, para que se puedan hacer peticiones desde fuera al contenido
+Servidor, revisar propiedad crossOrigin, para que se puedan hacer peticiones desde fuera al contenido
 
 video de fondo hero:
 https://alvarotrigo.com/blog/background-video-css/
