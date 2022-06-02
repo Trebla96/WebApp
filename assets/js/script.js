@@ -590,7 +590,7 @@ function nuevoItinerario(id) {
 
 /* API Tiempo */
 function generateIcon(data) {
-    var icon;
+    let icon;
     switch (data) {
         case "cielo claro":
             icon = "bi bi-sun";
@@ -633,15 +633,15 @@ function tempConverter(kelvin) {
 }
 
 function getDate(day) {
-    var date = new Date(new Date().getTime() + day * 60 * 60 * 1000);
+    let date = new Date(new Date().getTime() + day * 60 * 60 * 1000);
     return date.toLocaleDateString();
 }
 
 function handleData(arr) {
-    var now = 0;
-    var day = 0;
-    var data;
-    for (var i = 0; i <= 4; i++) {
+    let now = 0;
+    let day = 0;
+    let data;
+    for (let i = 0; i <= 4; i++) {
         data = arr[now];
         $(".day-" + i + " h5").text(getDate(day));
         $("#day-" + i + "-icon").removeClass("wi-na");
@@ -653,7 +653,7 @@ function handleData(arr) {
 }
 
  $(document).ready(function () {
-    navigator.geolocation.getCurrentPosition(function (position) {
+  /*   navigator.geolocation.getCurrentPosition(function (position) { */
         $.ajax({
             url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
             success: function (data) {
@@ -661,10 +661,10 @@ function handleData(arr) {
                 
                 $("#desc").text(data.list[0].weather[0].description);
                 $('input').on('change', function () {
-                    var temps = $("[id$=temp]");
-                    var c = temps[0].textContent;
+                    let temps = $("[id$=temp]");
+                    let c = temps[0].textContent;
                     $.each(temps, function (i, val) {
-                        var c = temps[i].textContent;
+                        let c = temps[i].textContent;
                         if ($("#pure-toggle-4").is(':checked')) {
                             $("[id=day-" + i + "-temp]").text(Math.round((c - 32) * (5 / 9)));
                         } else {
@@ -675,7 +675,7 @@ function handleData(arr) {
             },
             cache: true
         });
-    });
+   /*  }); */
 }); 
 /* End API Tiempo */
 
