@@ -81,6 +81,19 @@
                 "encodingFormat": null
             }
         }
+    },
+    {
+        "type": "historia",
+        "titulo": "",
+        "description": "",
+        "photo": {
+            "@type": "ImageObject",
+            "caption": {
+                "@type":"MediaObject",
+                "contentURL": "",
+                "encodingFormat": null
+            }
+        }
 
     }
     

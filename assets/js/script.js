@@ -1,21 +1,13 @@
 let dades_internes = [];
 let dades_privades = [];
 let dades_externes = [];
-//let comentaris = [];
 let events_externs;
 
-async function getJSONFile() {
-    // lo guarda en la memoria principal (RAM)
-    let response = await fetch("assets/js/cabrera.JSON");
-    let data = await response.json();
-    dades_internes = data;
 
-    let response2 = await fetch("assets/js/historia.json");
-    let data2 = await response2.json();
-    dades_privades = data2;
-
-}
-
+/**
+ * Funcio inicial de la aplicación, carrega totes les funcions necessaries 
+ * per a que funcioni la aplicación
+ *  */
 window.onload = async function () {
 
     await getJSONFile(); //Carrega les dades de la pagina web
@@ -33,7 +25,27 @@ window.onload = async function () {
     carregarJsonldIndex();
 };
 
-/*Carrega les dades del JSON extern*/
+/**
+ * Carrega els fitxers JSON locals del hosting, i els guarda a dues
+ * variables distintes.
+ */
+async function getJSONFile() {
+    // lo guarda en la memoria principal (RAM)
+    let response = await fetch("assets/js/cabrera.JSON");
+    let data = await response.json();
+    dades_internes = data;
+
+    let response2 = await fetch("assets/js/historia.json");
+    let data2 = await response2.json();
+    dades_privades = data2;
+
+}
+
+
+/**
+ * Carrega les dades del JSON extern, i executa la funcio que crea el calendari
+ * d'events.
+ */
 async function carregaDades() {
 
     let xmlhttp = new XMLHttpRequest();
@@ -49,22 +61,22 @@ async function carregaDades() {
                 dades_externes.push(dades[i]);
 
             }
-
             init_calendar();
-            /* events_externs = ompleix_calendari(); */
-
         }
     };
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
 
-/*Carrega Comentaris*/
+/**
+ * carrega els comentaris de la pagina web a partir del JSON propi, ubicat al hosting extern,
+ * i executa la funcio que crea els comentaris.
+ */
 async function carregacomentaris() {
 
     let xmlhttp = new XMLHttpRequest();
     let url = "https://comentaris.000webhostapp.com/comentaris.JSON";
-    
+
     let dades_comentaris;
 
     xmlhttp.onreadystatechange = function () {
@@ -72,7 +84,7 @@ async function carregacomentaris() {
         let comentaris = [];
 
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            
+
             dades_comentaris = JSON.parse(xmlhttp.responseText);
 
             for (let i = 0; i < dades_comentaris.length; i++) {
@@ -87,9 +99,15 @@ async function carregacomentaris() {
 }
 
 /* Mete las tarjetas de lugares dentro de contenedor */
-function crear_portfoli_lugares(fav, nombre) {
+/**
+ * Crea la seccio de llocs, i afegeix les targetes de llocs a la seccio, segons els filtres que li pasen
+ * si es preferit o no i segons el nom del lloc.
+ * @param {string} filtre - Si es preferit o no
+ * @param {string} nombre - El nom del lloc que es vol crear
+ */
+function crear_portfoli_lugares(filtre, nombre) {
 
-    switch (fav) {
+    switch (filtre) {
         case '0':
             for (let i = 0; i < dades_internes.length; i++) {
                 if (dades_internes[i].type == "Place") {
@@ -112,11 +130,18 @@ function crear_portfoli_lugares(fav, nombre) {
             }
             break;
         default:
+            for (let i = 0; i < dades_internes.length; i++) {
+                if (dades_internes[i].type == "Place") {
+                    crearCarta(i);
+                }
+            }
             break;
-    } 
+    }
 }
 
-/* Mete los itinerarios dentro del carrousel */
+/**
+ * Crea la seccio de itineraris, i afegeix les targetes al carrousel d' itineraris.
+ */
 function carousel_itineraris() {
 
     for (let i = 0; i < dades_internes.length; i++) {
@@ -126,7 +151,9 @@ function carousel_itineraris() {
     }
 }
 
-/* Crea el contenedor de historia y mete los distintos elementos */
+/**
+ * Dins la finestra modla crea la seccio de historia, i afegeix els elements.
+ */
 function crear_hist() {
 
     let contenedor = document.createElement("div");
@@ -160,7 +187,10 @@ function crear_hist() {
 
 }
 
-/* Crea los elementos de itinerarios */
+/**
+ * Crea les targetes d'itineraris segons l'index que li passen.
+ * @param {int} id - index de l'itinerari.
+ */
 function crearItem(id) {
 
     let item = document.createElement("div");
@@ -223,7 +253,10 @@ function crearItem(id) {
 
 }
 
-/* Funcion que crea cartas de los lugares a visitar */
+/**
+ * Crea les cartes dels llocs segons l'index que li passen.
+ * @param {int} id - index del lloc. 
+ */
 function crearCarta(id) {
 
     let carta = document.createElement("div");
@@ -276,7 +309,14 @@ function crearCarta(id) {
 
 }
 
-/* Crea los elementos de historia */
+/**
+ * Crea els elements de la seccio de la historia.
+ * @param {int} e_par - boolea per indicar si es un element parell o senar
+ * @param {string} himg - link de la imatge.
+ * @param {string} htitulo - titol de l'element
+ * @param {string} htexto - descripcio de l'element
+ * @param {object} c_padre - contenidor pare
+ */
 function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre) {
 
     let contenedor = document.createElement("div");
@@ -338,6 +378,10 @@ function crear_elemento_hist(e_par, himg, htitulo, htexto, c_padre) {
 }
 /* end JSON */
 
+/**
+ * Posa el vido inicial de la pagina. Esta configurat peruq aparegui sense controls,
+ * sense so, amb autoplay i en bucle.
+ */
 function heroVideo() {
     // Create the video tag.
     const HeroVideo = document.createElement("video");
@@ -346,7 +390,7 @@ function heroVideo() {
         // Check for webm support.
         if (HeroVideo.canPlayType("video/webm")) {
             HeroVideo.src = "assets/video/mivideoc.webm";
-        }else if (HeroVideo.canPlayType("video/mp4")) {
+        } else if (HeroVideo.canPlayType("video/mp4")) {
             HeroVideo.src = "assets/video/mivideoc.mp4";
         }
 
@@ -382,14 +426,12 @@ function heroVideo() {
     }
 }
 
-/* Start Carrousel */
+/**
+ * Crea el contenidor del carrousel de la seccio d'itinarirs.
+ */
 function carrusel() {
 
     $('.owl-carousel').owlCarousel({
-
-        /* loop: true,*/
-        /* center: true, */
-        /* callbacks: true, */
 
         rewind: true,
         stagePadding: 0,
@@ -401,15 +443,13 @@ function carrusel() {
 
         responsive: {
             0: {
-                /* items: 1, */
                 center: true,
             },
             600: {
-                /* items: 2, */
                 center: true,
             },
             1000: {
-                /* items: 3, */
+
             }
         }
     })
@@ -418,7 +458,10 @@ function carrusel() {
 
 /* Start Plantilla Ventana Modal */
 
-/* Actualiza la ventana modal, usa una plantilla que llena con los elementos del JSON */
+/**
+ * Carrega la plantilla de la finestra modal, i l'ompleix amb la informacio concreta de l'element que s'ha clicat.
+ * @param {int} id - id del element a mostrar 
+ */
 function rellenar_plantilla_itinerarios(id) {
 
     const plantilla_it = document.querySelector("#plantilla_itinerarios");
@@ -463,11 +506,18 @@ function rellenar_plantilla_itinerarios(id) {
     nuevoItinerario(id);
 }
 
+/**
+ * agafa el cor de dins la tarjeta de la plantilla de la finestra modal, i li canvia el color.
+ */
 function tog_corazon_it() {
     var cz = document.getElementById("corazon_it");
     $(cz).toggleClass("fav_heart fav_heart-des");
 }
 
+/**
+ * Carrega la plantilla de la finestra modal d'itineraris i l'ompleix amb la informacio concreta de l'element que s'ha clicat.
+ * @param {int} id 
+ */
 function rellenar_plantilla_lugares(id) {
     const plantilla_lg = document.querySelector("#plantilla_lugares")
     const container_lg = document.querySelector("#info-dinamica-lugares")
@@ -522,6 +572,9 @@ function rellenar_plantilla_lugares(id) {
     }
 }
 
+/**
+ * agafa el cor de dins la tarjeta de la plantilla de la finestra modal, i li canvia el color.
+ */
 function tog_corazon_lg() {
     var cz = document.getElementById("corazon_lg");
     $(cz).toggleClass("fav_heart fav_heart-des");
@@ -529,22 +582,34 @@ function tog_corazon_lg() {
 /* End Plantilla ventana modal */
 
 /* Start API maps */
+
+/**
+ * Funcio que crea el mapa de google de la pagina principal centrat a cabrera.
+ */
 function initMap() {
-    // The location of Uluru
+    // The location of cabrera
     let cabrera = { lat: 39.141944, lng: 2.945833 };
 
-    // The map, centered at Uluru
+    // The map, centered at cabrera
     let map = new google.maps.Map(document.getElementById("map_cabrera"), {
         zoom: 8,
         center: cabrera,
     });
-    // The marker, positioned at Uluru
+    // The marker, positioned at cabrera
     const marker = new google.maps.Marker({
         position: cabrera,
         map: map,
     });
 }
 
+/**
+ * Pinta l'itinerari damunt el mapa de google.
+ * @param {geo} origin 
+ * @param {geo} destination 
+ * @param {directionsService} service 
+ * @param {directionsRenderer} display 
+ * @param {int} id 
+ */
 function displayRoute(origin, destination, service, display, id) {
     service
         .route({
@@ -562,6 +627,10 @@ function displayRoute(origin, destination, service, display, id) {
         });
 }
 
+/**
+ * Posa el mapa de google a la pagina de l'itinerari.
+ * @param {int} id 
+ */
 function nuevoItinerario(id) {
 
     let cabrera = { lat: 39.141944, lng: 2.945833 };
@@ -588,7 +657,13 @@ function nuevoItinerario(id) {
 }
 /* End API maps */
 
-/* API Tiempo */
+/* API temps */
+
+/**
+ * Selecciona una icon depenent de la informacio de la api del temps.
+ * @param {string} data 
+ * @returns string
+ */
 function generateIcon(data) {
     let icon;
     switch (data) {
@@ -628,15 +703,29 @@ function generateIcon(data) {
     return icon;
 }
 
+/**
+ * Kelvin a Celsius
+ * @param {int} kelvin 
+ * @returns int
+ */
 function tempConverter(kelvin) {
     return Math.round(kelvin - 273.15);
 }
 
+/**
+ * Formateja la data de la api del temps.
+ * @param {int} day 
+ * @returns string
+ */
 function getDate(day) {
     let date = new Date(new Date().getTime() + day * 60 * 60 * 1000);
     return date.toLocaleDateString();
 }
 
+/**
+ * Posa les dades de la api del temps a la pagina segons la data.
+ * @param {string[]} arr 
+ */
 function handleData(arr) {
     let now = 0;
     let day = 0;
@@ -652,32 +741,39 @@ function handleData(arr) {
     }
 }
 
- $(document).ready(function () {
-        $.ajax({
-            url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
-            success: function (data) {
-                handleData(data.list);
-                
-                $("#desc").text(data.list[0].weather[0].description);
-                $('input').on('change', function () {
-                    let temps = $("[id$=temp]");
-                    let c = temps[0].textContent;
-                    $.each(temps, function (i, val) {
-                        let c = temps[i].textContent;
-                        if ($("#pure-toggle-4").is(':checked')) {
-                            $("[id=day-" + i + "-temp]").text(Math.round((c - 32) * (5 / 9)));
-                        } else {
-                            $("[id=day-" + i + "-temp]").text(Math.round(c * (9 / 5) + 32));
-                        }
-                    });
-                });
-            },
-            cache: true
-        });
-}); 
-/* End API Tiempo */
+/**
+ * Crida a l'api del temps i posa les dades a la pagina.
+ */
+$(document).ready(function () {
+    $.ajax({
+        url: 'https://api.openweathermap.org/data/2.5/forecast?lat=39.141550974876765&lon=2.9450440259637793&lang=es&appid=77f1ce5bc50c86aff883be3e0caf2d7b',
+        success: function (data) {
+            handleData(data.list);
 
-/* API calendario */
+            $("#desc").text(data.list[0].weather[0].description);
+            $('input').on('change', function () {
+                let temps = $("[id$=temp]");
+                let c = temps[0].textContent;
+                $.each(temps, function (i, val) {
+                    let c = temps[i].textContent;
+                    if ($("#pure-toggle-4").is(':checked')) {
+                        $("[id=day-" + i + "-temp]").text(Math.round((c - 32) * (5 / 9)));
+                    } else {
+                        $("[id=day-" + i + "-temp]").text(Math.round(c * (9 / 5) + 32));
+                    }
+                });
+            });
+        },
+        cache: true
+    });
+});
+/* End API temps */
+
+/* API calendari */
+
+/**
+ * Inicialitza i posa les dades de la api del calendari a la pagina.
+ */
 function init_calendar() {
 
     var initialLocaleCode = 'es';
@@ -710,11 +806,14 @@ function init_calendar() {
 
 }
 
+/**
+ * Crea els esdeveniments a partir de les dades del JSON extern.
+ * @returns {string[]}
+ */
 function ompleix_calendari() {
 
     let res = {};
     let eventos = [];
-    let evento;
 
     for (let i = 0; i < dades_externes.length; i++) {
 
@@ -732,9 +831,15 @@ function ompleix_calendari() {
 
     return eventos;
 }
-/* End API Calendario */
+/* End API calendari */
 
-/* Comentarios Start */
+/* Comentaris */
+
+/**
+ * Utilitza una plantilla string desde la que crea els comentaris, i els posa a la pagina.
+ * @param {int} id 
+ * @param {string} comentaris 
+ */
 function item_comentario(id, comentaris) {
 
     let contenedor_padre = document.querySelector("#slider_coment");
@@ -757,6 +862,10 @@ function item_comentario(id, comentaris) {
 
 }
 
+/**
+ * Buida el contenidor de comentaris i posa els nous.
+ * @param {string} comentaris 
+ */
 function banner_comentarios(comentaris) {
 
     let contenedor_padre = document.querySelector("#slider_coment");
@@ -775,9 +884,12 @@ function banner_comentarios(comentaris) {
 
         item_comentario(index, comentaris);
     }
-    
 }
 
+/**
+ * Afegeix el click listener al formulari per enviar els comentaris, envia els comentaris 
+ * i reinicia el formulari per a afegir nous comentaris.
+ */
 function enviar_comentario() {
 
     let limpiar = document.querySelector("#boton_enviar");
@@ -791,11 +903,16 @@ function enviar_comentario() {
             $("#slider_coment").load(" #slider_coment");
             carregacomentaris();
             alert('Comentario enviado');
-            
+
         }
     });
 }
 
+/**
+ * Valida el formulari per a que no hi hagi camps buits.
+ * @param {event} evento 
+ * @returns boolean
+ */
 function valid_form(evento) {
     evento.preventDefault();
     var nombre = document.getElementById('name').value;
@@ -808,14 +925,16 @@ function valid_form(evento) {
         alert('El comentario es demasiado corto');
         return false;
     }
-    
+
     return true;
 }
-/* End Comentarios */
+/* End Comentaris */
 
-/* Barra de busqueda */
+/* Barra de cerca */
 
-/* Selecciona los favoritos y los muestra en el apartado lugares */
+/**
+ * Afegeix el listener al botó de filtre per a mostrar els llocs marcats com a preferits.
+ */
 function favoritos() {
 
     document.querySelector("#selectOrden").addEventListener("change", function () {
@@ -827,13 +946,16 @@ function favoritos() {
     });
 }
 
+/**
+ * Afegeix el listener a la barra de cerca per filtrar els llocs segons el nom introduit.
+ */
 function busqueda_nombre() {
-    
+
     entrada = document.getElementById("input_busq");
     entrada.addEventListener("keyup", function () {
         let c_padre = document.querySelector("#cartas_lugares");
         c_padre.innerHTML = "";
-        
+
         if (entrada.value != "") {
             crear_portfoli_lugares(2, entrada.value);
         } else {
@@ -845,32 +967,38 @@ function busqueda_nombre() {
 /* End Barra de busqueda */
 
 /* JSON_LD */
-
+/**
+ * Crea els tags JSON-LD per a la pàgina.
+ */
 function carregarJsonldIndex() {
     let info = {
-       "@context" : "https://schema.org",
-       "@type" : "WebApplication", 
-       "applicationCategory" : "Places Cabrera",
-       "applicationSubCategory" : "Places, Mercats",
-       "about" : "Excursiones y visitas a Cabrera",
-       "audience" : {
-          "audienceType" : "tourists, families",
-          "geographicArea" : "Mallorca, Cabrera"
-       },
-       "author" : "Albert Fajardo Marcus",
-       "contentLocation" : {
-          "address" : "Mallorca, Islas Baleares, Spain",
-          "geo" : {
-             "latitude"  : "39.14102458283336",
-             "longitude" : "2.9450562680378676"
-          },
-       },
-       "genre" : "Island, Nature, Mallorca, Cabrera",
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "applicationCategory": "Places Cabrera",
+        "applicationSubCategory": "Places, Mercats",
+        "about": "Excursiones y visitas a Cabrera",
+        "audience": {
+            "audienceType": "tourists, families",
+            "geographicArea": "Mallorca, Cabrera"
+        },
+        "author": "Albert Fajardo Marcus",
+        "contentLocation": {
+            "address": "Mallorca, Islas Baleares, Spain",
+            "geo": {
+                "latitude": "39.14102458283336",
+                "longitude": "2.9450562680378676"
+            },
+        },
+        "genre": "Island, Nature, Mallorca, Cabrera",
     }
     loadJSON_LD(info);
- }
+}
 
- function loadJSON_LD(info){
+/**
+ * incrusta els tags JSON-LD a la pàgina.
+ * @param {object} info 
+ */
+function loadJSON_LD(info) {
     const script = document.createElement('script');
     script.setAttribute('type', 'application/ld+json');
     script.textContent = JSON.stringify(info);
