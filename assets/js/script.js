@@ -151,6 +151,8 @@ function carousel_itineraris() {
     }
 }
 
+
+
 /**
  * Dins la finestra modla crea la seccio de historia, i afegeix els elements.
  */
@@ -516,7 +518,7 @@ function tog_corazon_it() {
 
 /**
  * Carrega la plantilla de la finestra modal d'itineraris i l'ompleix amb la informacio concreta de l'element que s'ha clicat.
- * @param {int} id 
+ * @param {int} id - id del element a mostrar
  */
 function rellenar_plantilla_lugares(id) {
     const plantilla_lg = document.querySelector("#plantilla_lugares")
@@ -604,11 +606,11 @@ function initMap() {
 
 /**
  * Pinta l'itinerari damunt el mapa de google.
- * @param {geo} origin 
- * @param {geo} destination 
- * @param {directionsService} service 
- * @param {directionsRenderer} display 
- * @param {int} id 
+ * @param {geo} origin - coordenades origen
+ * @param {geo} destination - coordenades desti 
+ * @param {directionsService} service - servei de google per a obtenir la informacio de la ruta
+ * @param {directionsRenderer} display - servei de google per a pintar la ruta
+ * @param {int} id - id de la ruta
  */
 function displayRoute(origin, destination, service, display, id) {
     service
@@ -629,7 +631,7 @@ function displayRoute(origin, destination, service, display, id) {
 
 /**
  * Posa el mapa de google a la pagina de l'itinerari.
- * @param {int} id 
+ * @param {int} id - id de l'itinerari
  */
 function nuevoItinerario(id) {
 
@@ -661,8 +663,8 @@ function nuevoItinerario(id) {
 
 /**
  * Selecciona una icon depenent de la informacio de la api del temps.
- * @param {string} data 
- * @returns string
+ * @param {string} data - informacio de la api del temps
+ * @returns string - icon de la api del temps
  */
 function generateIcon(data) {
     let icon;
@@ -705,8 +707,8 @@ function generateIcon(data) {
 
 /**
  * Kelvin a Celsius
- * @param {int} kelvin 
- * @returns int
+ * @param {int} kelvin - temperatura en kelvin
+ * @returns int - temperatura en celsius
  */
 function tempConverter(kelvin) {
     return Math.round(kelvin - 273.15);
@@ -714,8 +716,8 @@ function tempConverter(kelvin) {
 
 /**
  * Formateja la data de la api del temps.
- * @param {int} day 
- * @returns string
+ * @param {int} day - dia de la data
+ * @returns string - data en format dd/mm/yyyy
  */
 function getDate(day) {
     let date = new Date(new Date().getTime() + day * 60 * 60 * 1000);
@@ -724,7 +726,7 @@ function getDate(day) {
 
 /**
  * Posa les dades de la api del temps a la pagina segons la data.
- * @param {string[]} arr 
+ * @param {string[]} arr  - array de dades de la api del temps
  */
 function handleData(arr) {
     let now = 0;
@@ -808,7 +810,7 @@ function init_calendar() {
 
 /**
  * Crea els esdeveniments a partir de les dades del JSON extern.
- * @returns {string[]}
+ * @returns {string[]} - array de dades de la api del calendari
  */
 function ompleix_calendari() {
 
@@ -837,8 +839,8 @@ function ompleix_calendari() {
 
 /**
  * Utilitza una plantilla string desde la que crea els comentaris, i els posa a la pagina.
- * @param {int} id 
- * @param {string} comentaris 
+ * @param {int} id - id del comentari
+ * @param {string} comentaris - comentari
  */
 function item_comentario(id, comentaris) {
 
@@ -864,7 +866,7 @@ function item_comentario(id, comentaris) {
 
 /**
  * Buida el contenidor de comentaris i posa els nous.
- * @param {string} comentaris 
+ * @param {string} comentaris - comentari
  */
 function banner_comentarios(comentaris) {
 
@@ -910,8 +912,8 @@ function enviar_comentario() {
 
 /**
  * Valida el formulari per a que no hi hagi camps buits.
- * @param {event} evento 
- * @returns boolean
+ * @param {event} evento - esdeveniment del formulari
+ * @returns boolean - true si el formulari es correcte, false si no.
  */
 function valid_form(evento) {
     evento.preventDefault();
@@ -996,7 +998,7 @@ function carregarJsonldIndex() {
 
 /**
  * incrusta els tags JSON-LD a la pàgina.
- * @param {object} info 
+ * @param {object} info - objecte amb la informació dels tags JSON-LD
  */
 function loadJSON_LD(info) {
     const script = document.createElement('script');
