@@ -985,8 +985,9 @@ function carregarJsonldIndex() {
         "contentLocation": {
             "address": "Mallorca, Islas Baleares, Spain",
             "geo": {
-                "latitude": "39.14102458283336",
-                "longitude": "2.9450562680378676"
+                "@type": "GeoCoordinates",
+                "latitude": "39.14",
+                "longitude": "2.94"
             },
         },
         "genre": "Island, Nature, Mallorca, Cabrera",
