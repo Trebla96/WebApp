@@ -151,8 +151,6 @@ function carousel_itineraris() {
     }
 }
 
-
-
 /**
  * Dins la finestra modla crea la seccio de historia, i afegeix els elements.
  */
